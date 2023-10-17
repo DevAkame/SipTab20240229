@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-siptab-dev-105043-authRole",
+      "UnauthRoleArn": "arn:aws:iam::391872069948:role/amplify-siptab-dev-105043-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::391872069948:role/amplify-siptab-dev-105043-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-siptab-dev-105043-deployment",
+      "UnauthRoleName": "amplify-siptab-dev-105043-unauthRole",
+      "StackName": "amplify-siptab-dev-105043",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:391872069948:stack/amplify-siptab-dev-105043/963edf50-6c8f-11ee-8e9c-0e8e872514fb",
+      "AmplifyAppId": "d1nymwj1dh7ytp"
+    },
+    "categories": {
+      "auth": {
+        "siptaba34f1043": {}
+      }
+    }
+  }
+}
