@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import { Amplify } from 'aws-amplify';
+import awsExports from './aws-exports';
+import { Flex, withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
 function App() {
   return (
@@ -22,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-siptab-staging-24057-authRole",
+      "UnauthRoleArn": "arn:aws:iam::391872069948:role/amplify-siptab-staging-24057-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::391872069948:role/amplify-siptab-staging-24057-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-siptab-staging-24057-deployment",
+      "UnauthRoleName": "amplify-siptab-staging-24057-unauthRole",
+      "StackName": "amplify-siptab-staging-24057",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:391872069948:stack/amplify-siptab-staging-24057/eeb1c900-6e28-11ee-aa85-0e24f6652cc1",
+      "AmplifyAppId": "d1wkd6ao39jpb"
+    },
+    "categories": {
+      "auth": {
+        "siptab": {}
+      }
+    }
+  }
+}
