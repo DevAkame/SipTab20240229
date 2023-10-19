@@ -5,6 +5,8 @@ import awsExports from './aws-exports';
 import { Flex, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
+Amplify.configure(awsExports);
+
 function App() {
   return (
     <div className="App">
