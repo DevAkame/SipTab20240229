@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Auth, Hub } from 'aws-amplify';
 import {LoginForm } from '@aws-amplify/ui-react';
 import {NavBarHeader} from './ui-components';
+import { WithAuthenticatorOptions } from '@aws-amplify/ui-react';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -42,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default WithAuthenticatorOptions(App);
