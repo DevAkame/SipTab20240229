@@ -1,0 +1,47 @@
+type Event @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  StockDataPools: [StockDataPool] @manyToMany(relationName: "EventStockDataPool")
+  tenantsID: ID! @index(name: "byTenants")
+}
+
+type Tenants @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  StockDataPools: [StockDataPool] @hasMany(indexName: "byTenants", fields: ["id"])
+  Events: [Event] @hasMany(indexName: "byTenants", fields: ["id"])
+}
+
+enum Status {
+  ENABLE
+  DISABLE
+  ATHER
+}
+
+type StksCategory @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  StocksSubCategories: [StocksSubCategory] @hasMany(indexName: "byStksCategory", fields: ["id"])
+}
+
+type StockDataPool @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  itemName: String
+  barcode: Int
+  expiration: AWSJSON
+  stockInt: Int
+  limitInt: Int
+  value: Float
+  purchaseID: ID
+  untitledfield: String
+  status: Status
+  stockssubcategoryID: ID! @index(name: "byStocksSubCategory")
+  tenantsID: ID! @index(name: "byTenants")
+  events: [Event] @manyToMany(relationName: "EventStockDataPool")
+}
+
+type StocksSubCategory @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  stkscategoryID: ID! @index(name: "byStksCategory")
+  StockDataPools: [StockDataPool] @hasMany(indexName: "byStocksSubCategory", fields: ["id"])
+}
