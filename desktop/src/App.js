@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Auth, Hub } from 'aws-amplify';
+import { Amplify, Auth, Hub } from 'aws-amplify';
 import {LoginForm } from '@aws-amplify/ui-react';
 import {NavBarHeader} from './ui-components';
 import { WithAuthenticatorOptions } from '@aws-amplify/ui-react';
+
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
 function App() {
   const [user, setUser] = useState(null);
