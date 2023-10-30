@@ -10,7 +10,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "build",
-      "BuildCommand": "npm run-script build",
+      "BuildCommand": "node -v;npm run-script build",
       "StartCommand": "npm run-script start"
     }
   }
