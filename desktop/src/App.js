@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Auth, Hub } from 'aws-amplify';
+import {LoginForm } from '@aws-amplify/ui-react';
+import {NavBarHeader} from './ui-components';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+      .then(userData => {
+        setUser(userData);
+      })
+      .catch(() => {
+        setUser(null);
+      });
+
+    // Hubを使用してCognitoセッションの変更を監視
+    Hub.listen('auth', data => {
+      const { payload } = data;
+      if (payload.event === 'signOut') {
+        // ユーザーがログアウトした場合の処理
+        setUser(null);
+      }
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <div>
+          <NavBarHeader />
+        </div>
+      ) : (
+
+        
+        
+
+
+      )}
     </div>
   );
 }
