@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
-import {LoginForm } from '@aws-amplify/ui-react';
 import {NavBarHeader} from './ui-components';
-import awsExports from "./aws-exports";
-import { withAuthenticator } from 'aws-amplify-react';
-
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 function App() {
@@ -46,4 +45,4 @@ function App() {
   );
 }
 
-export default WithAuthenticator(App);
+export default withAuthenticator(App);
