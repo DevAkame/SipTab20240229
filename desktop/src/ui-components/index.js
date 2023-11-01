@@ -16,6 +16,7 @@ export { default as IconSetting128 } from "./IconSetting128";
 export { default as IconSetting32 } from "./IconSetting32";
 export { default as IconSetting512 } from "./IconSetting512";
 export { default as IconSetting64 } from "./IconSetting64";
+export { default as InputDataBtn } from "./InputDataBtn";
 export { default as ItemDataRow } from "./ItemDataRow";
 export { default as LoginForm } from "./LoginForm";
 export { default as Logo } from "./Logo";
