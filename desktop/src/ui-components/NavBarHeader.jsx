@@ -6,18 +6,20 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { useAuth } from "@aws-amplify/ui-react/internal";
 import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import LogoSipTab32 from "./LogoSipTab32";
 import {
   Button,
   Flex,
-  Heading,
   Icon,
   SelectField,
+  Text,
   View,
 } from "@aws-amplify/ui-react";
 export default function NavBarHeader(props) {
-  const { usermails, tenants, overrides, ...rest } = props;
+  const { overrides, ...rest } = props;
+  const authAttributes = useAuth().user?.attributes ?? {};
   const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
     <View
@@ -120,14 +122,28 @@ export default function NavBarHeader(props) {
             fontSize="24px"
             {...getOverrideProps(overrides, "\uD83D\uDD12Icon")}
           ></Icon>
-          <Heading
-            width="unset"
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(48,64,80,1)"
+            lineHeight="24px"
+            textAlign="right"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="165px"
             height="unset"
+            gap="unset"
+            alignItems="unset"
             shrink="0"
-            level="1"
-            children="user.username"
-            {...getOverrideProps(overrides, "Heading")}
-          ></Heading>
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children={authAttributes["email"]}
+            {...getOverrideProps(overrides, "label")}
+          ></Text>
           <Button
             width="unset"
             height="unset"

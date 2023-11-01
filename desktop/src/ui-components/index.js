@@ -4,8 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as AddRecode } from "./AddRecode";
-export { default as AddRecordForm } from "./AddRecordForm";
+export { default as DataAdd } from "./DataAdd";
 export { default as DataRow } from "./DataRow";
 export { default as DataRowCollection } from "./DataRowCollection";
 export { default as Filters } from "./Filters";

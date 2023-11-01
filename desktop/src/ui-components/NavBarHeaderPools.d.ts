@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, HeadingProps } from "@aws-amplify/ui-react";
+import { FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -19,11 +19,10 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarHeaderPoolsOverridesProps = {
     NavBarHeaderPools?: PrimitiveOverrideProps<FlexProps>;
-    Heading39232799?: PrimitiveOverrideProps<HeadingProps>;
-    Heading39232825?: PrimitiveOverrideProps<HeadingProps>;
-    Heading39232827?: PrimitiveOverrideProps<HeadingProps>;
-    Heading39232831?: PrimitiveOverrideProps<HeadingProps>;
-    Heading39232829?: PrimitiveOverrideProps<HeadingProps>;
+    Dashboard?: PrimitiveOverrideProps<TextProps>;
+    Pools?: PrimitiveOverrideProps<TextProps>;
+    Manage?: PrimitiveOverrideProps<TextProps>;
+    Log?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type NavBarHeaderPoolsProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: NavBarHeaderPoolsOverridesProps | undefined | null;

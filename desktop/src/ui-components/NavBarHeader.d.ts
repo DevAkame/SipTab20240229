@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { LogoSipTab32Props } from "./LogoSipTab32";
-import { ButtonProps, FlexProps, HeadingProps, IconProps, SelectFieldProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, SelectFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -27,13 +27,10 @@ export declare type NavBarHeaderOverridesProps = {
     NavGroupSelect?: PrimitiveOverrideProps<SelectFieldProps>;
     "Frame 453"?: PrimitiveOverrideProps<FlexProps>;
     "\uD83D\uDD12Icon"?: PrimitiveOverrideProps<IconProps>;
-    Heading?: PrimitiveOverrideProps<HeadingProps>;
+    label?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type NavBarHeaderProps = React.PropsWithChildren<Partial<ViewProps> & {
-    usermails?: React.ReactNode;
-    tenants?: any;
-} & {
     overrides?: NavBarHeaderOverridesProps | undefined | null;
 }>;
 export default function NavBarHeader(props: NavBarHeaderProps): React.ReactElement;

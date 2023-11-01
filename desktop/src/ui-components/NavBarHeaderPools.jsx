@@ -7,62 +7,106 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Flex, Heading } from "@aws-amplify/ui-react";
+import { Flex, Text } from "@aws-amplify/ui-react";
 export default function NavBarHeaderPools(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
-      gap="0"
+      gap="16px"
       direction="row"
       width="unset"
-      height="55px"
+      height="unset"
       justifyContent="flex-start"
-      alignItems="center"
+      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       {...getOverrideProps(overrides, "NavBarHeaderPools")}
       {...rest}
     >
-      <Heading
-        width="130px"
-        height="32px"
+      <Text
+        fontFamily="Inter"
+        fontSize="20px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="30px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
         shrink="0"
-        level="1"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
         children="Dashboard"
-        {...getOverrideProps(overrides, "Heading39232799")}
-      ></Heading>
-      <Heading
-        width="132px"
-        height="32px"
+        {...getOverrideProps(overrides, "Dashboard")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="20px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="30px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
         shrink="0"
-        level="1"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
         children="Pools"
-        {...getOverrideProps(overrides, "Heading39232825")}
-      ></Heading>
-      <Heading
-        width="130px"
-        height="32px"
+        {...getOverrideProps(overrides, "Pools")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="20px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="30px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
         shrink="0"
-        level="1"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
         children="Manage"
-        {...getOverrideProps(overrides, "Heading39232827")}
-      ></Heading>
-      <Heading
-        width="132px"
-        height="32px"
+        {...getOverrideProps(overrides, "Manage")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="20px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="30px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
         shrink="0"
-        level="1"
-        children="Logs"
-        {...getOverrideProps(overrides, "Heading39232831")}
-      ></Heading>
-      <Heading
-        width="130px"
-        height="32px"
-        shrink="0"
-        level="1"
-        children="Setting"
-        {...getOverrideProps(overrides, "Heading39232829")}
-      ></Heading>
+        position="relative"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Log"
+        {...getOverrideProps(overrides, "Log")}
+      ></Text>
     </Flex>
   );
 }
