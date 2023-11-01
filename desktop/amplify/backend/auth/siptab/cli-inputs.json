@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "siptabd446fcfd",
+    "resourceNameTruncated": "siptab9cb4db19",
     "userPoolName": "siptab",
     "autoVerifiedAttributes": [
       "email"
@@ -27,11 +27,7 @@
     ],
     "requiredAttributes": [
       "email",
-      "address",
-      "gender",
       "name",
-      "family_name",
-      "given_name",
       "phone_number"
     ],
     "aliasAttributes": [],
@@ -39,9 +35,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "siptabd446fcfd_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "siptab9cb4db19_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d446fcfd",
+    "sharedId": "9cb4db19",
     "resourceName": "siptab",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
@@ -55,21 +51,6 @@
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true,
-    "authRoleArn": {
-      "Fn::GetAtt": [
-        "AuthRole",
-        "Arn"
-      ]
-    },
-    "unauthRoleArn": {
-      "Fn::GetAtt": [
-        "UnauthRole",
-        "Arn"
-      ]
-    },
-    "breakCircularDependency": true,
-    "dependsOn": [],
-    "hostedUI": false
+    "useEnabledMfas": true
   }
 }

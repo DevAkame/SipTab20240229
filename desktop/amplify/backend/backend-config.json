@@ -43,11 +43,7 @@
         },
         "signupAttributes": [
           "EMAIL",
-          "ADDRESS",
-          "GENDER",
           "NAME",
-          "FAMILY_NAME",
-          "GIVEN_NAME",
           "PHONE_NUMBER"
         ],
         "socialProviders": [],
