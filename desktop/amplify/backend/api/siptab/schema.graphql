@@ -1,3 +1,16 @@
+type JobTittle @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  AsinUserOfTenants: [AsinUserOfTenant] @hasMany(indexName: "byJobTittle", fields: ["id"])
+}
+
+type AsinUserOfTenant @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  jobtittleID: ID! @index(name: "byJobTittle")
+  tenantID: ID
+  userID: ID
+}
+
 type Event @model @auth(rules: [{allow: public}]) {
   id: ID!
   StockDataPools: [StockDataPool] @manyToMany(relationName: "EventStockDataPool")
@@ -45,3 +58,4 @@ type StocksSubCategory @model @auth(rules: [{allow: public}]) {
   stkscategoryID: ID! @index(name: "byStksCategory")
   StockDataPools: [StockDataPool] @hasMany(indexName: "byStocksSubCategory", fields: ["id"])
 }
+ 
