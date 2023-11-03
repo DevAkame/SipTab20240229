@@ -1,12 +1,33 @@
-type JobTittle @model @auth(rules: [{allow: public}]) {
+type JobTitles @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String
-  AsinUserOfTenants: [AsinUserOfTenant] @hasMany(indexName: "byJobTittle", fields: ["id"])
+  UserProfiles: [UserProfiles] @hasMany(indexName: "byJobTitles", fields: ["id"])
+}
+
+type Sex @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  UserProfiles: [UserProfiles] @hasMany(indexName: "bySex", fields: ["id"])
+}
+
+type UserProfiles @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  fimlyNameKana: String
+  lastNameKana: String
+  fimlyNameKanzi: String
+  lastNameKanzi: String
+  postcode: String
+  emailAddress: AWSEmail
+  phoneNum: AWSPhone
+  userID: ID
+  birthday: AWSDate
+  jobtitlesID: ID! @index(name: "byJobTitles")
+  sexID: ID! @index(name: "bySex")
 }
 
 type AsinUserOfTenant @model @auth(rules: [{allow: public}]) {
   id: ID!
-  jobtittleID: ID! @index(name: "byJobTittle")
   tenantID: ID
   userID: ID
 }
