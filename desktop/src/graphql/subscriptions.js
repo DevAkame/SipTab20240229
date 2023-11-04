@@ -1,15 +1,225 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateJobTitles = /* GraphQL */ `
+  subscription OnCreateJobTitles(
+    $filter: ModelSubscriptionJobTitlesFilterInput
+  ) {
+    onCreateJobTitles(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateJobTitles = /* GraphQL */ `
+  subscription OnUpdateJobTitles(
+    $filter: ModelSubscriptionJobTitlesFilterInput
+  ) {
+    onUpdateJobTitles(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteJobTitles = /* GraphQL */ `
+  subscription OnDeleteJobTitles(
+    $filter: ModelSubscriptionJobTitlesFilterInput
+  ) {
+    onDeleteJobTitles(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateSex = /* GraphQL */ `
+  subscription OnCreateSex($filter: ModelSubscriptionSexFilterInput) {
+    onCreateSex(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateSex = /* GraphQL */ `
+  subscription OnUpdateSex($filter: ModelSubscriptionSexFilterInput) {
+    onUpdateSex(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteSex = /* GraphQL */ `
+  subscription OnDeleteSex($filter: ModelSubscriptionSexFilterInput) {
+    onDeleteSex(filter: $filter) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateUserProfiles = /* GraphQL */ `
+  subscription OnCreateUserProfiles(
+    $filter: ModelSubscriptionUserProfilesFilterInput
+  ) {
+    onCreateUserProfiles(filter: $filter) {
+      id
+      name
+      fimlyNameKana
+      lastNameKana
+      fimlyNameKanzi
+      lastNameKanzi
+      postcode
+      emailAddress
+      phoneNum
+      userID
+      birthday
+      jobtitlesID
+      sexID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateUserProfiles = /* GraphQL */ `
+  subscription OnUpdateUserProfiles(
+    $filter: ModelSubscriptionUserProfilesFilterInput
+  ) {
+    onUpdateUserProfiles(filter: $filter) {
+      id
+      name
+      fimlyNameKana
+      lastNameKana
+      fimlyNameKanzi
+      lastNameKanzi
+      postcode
+      emailAddress
+      phoneNum
+      userID
+      birthday
+      jobtitlesID
+      sexID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteUserProfiles = /* GraphQL */ `
+  subscription OnDeleteUserProfiles(
+    $filter: ModelSubscriptionUserProfilesFilterInput
+  ) {
+    onDeleteUserProfiles(filter: $filter) {
+      id
+      name
+      fimlyNameKana
+      lastNameKana
+      fimlyNameKanzi
+      lastNameKanzi
+      postcode
+      emailAddress
+      phoneNum
+      userID
+      birthday
+      jobtitlesID
+      sexID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateAsinUserOfTenant = /* GraphQL */ `
+  subscription OnCreateAsinUserOfTenant(
+    $filter: ModelSubscriptionAsinUserOfTenantFilterInput
+  ) {
+    onCreateAsinUserOfTenant(filter: $filter) {
+      id
+      tenantID
+      userID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateAsinUserOfTenant = /* GraphQL */ `
+  subscription OnUpdateAsinUserOfTenant(
+    $filter: ModelSubscriptionAsinUserOfTenantFilterInput
+  ) {
+    onUpdateAsinUserOfTenant(filter: $filter) {
+      id
+      tenantID
+      userID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteAsinUserOfTenant = /* GraphQL */ `
+  subscription OnDeleteAsinUserOfTenant(
+    $filter: ModelSubscriptionAsinUserOfTenantFilterInput
+  ) {
+    onDeleteAsinUserOfTenant(filter: $filter) {
+      id
+      tenantID
+      userID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateEvent = /* GraphQL */ `
   subscription OnCreateEvent($filter: ModelSubscriptionEventFilterInput) {
     onCreateEvent(filter: $filter) {
       id
-      tenantsID
       StockDataPools {
         nextToken
         __typename
       }
+      tenantsID
       createdAt
       updatedAt
       __typename
@@ -20,11 +230,11 @@ export const onUpdateEvent = /* GraphQL */ `
   subscription OnUpdateEvent($filter: ModelSubscriptionEventFilterInput) {
     onUpdateEvent(filter: $filter) {
       id
-      tenantsID
       StockDataPools {
         nextToken
         __typename
       }
+      tenantsID
       createdAt
       updatedAt
       __typename
@@ -35,11 +245,11 @@ export const onDeleteEvent = /* GraphQL */ `
   subscription OnDeleteEvent($filter: ModelSubscriptionEventFilterInput) {
     onDeleteEvent(filter: $filter) {
       id
-      tenantsID
       StockDataPools {
         nextToken
         __typename
       }
+      tenantsID
       createdAt
       updatedAt
       __typename
@@ -51,11 +261,11 @@ export const onCreateTenants = /* GraphQL */ `
     onCreateTenants(filter: $filter) {
       id
       name
-      Events {
+      StockDataPools {
         nextToken
         __typename
       }
-      StockDataPools {
+      Events {
         nextToken
         __typename
       }
@@ -70,11 +280,11 @@ export const onUpdateTenants = /* GraphQL */ `
     onUpdateTenants(filter: $filter) {
       id
       name
-      Events {
+      StockDataPools {
         nextToken
         __typename
       }
-      StockDataPools {
+      Events {
         nextToken
         __typename
       }
@@ -89,11 +299,11 @@ export const onDeleteTenants = /* GraphQL */ `
     onDeleteTenants(filter: $filter) {
       id
       name
-      Events {
+      StockDataPools {
         nextToken
         __typename
       }
-      StockDataPools {
+      Events {
         nextToken
         __typename
       }
@@ -160,7 +370,6 @@ export const onCreateStockDataPool = /* GraphQL */ `
   ) {
     onCreateStockDataPool(filter: $filter) {
       id
-      createdatetime
       itemName
       barcode
       expiration
@@ -171,8 +380,11 @@ export const onCreateStockDataPool = /* GraphQL */ `
       untitledfield
       status
       stockssubcategoryID
-      eventID
       tenantsID
+      events {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -185,7 +397,6 @@ export const onUpdateStockDataPool = /* GraphQL */ `
   ) {
     onUpdateStockDataPool(filter: $filter) {
       id
-      createdatetime
       itemName
       barcode
       expiration
@@ -196,8 +407,11 @@ export const onUpdateStockDataPool = /* GraphQL */ `
       untitledfield
       status
       stockssubcategoryID
-      eventID
       tenantsID
+      events {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -210,7 +424,6 @@ export const onDeleteStockDataPool = /* GraphQL */ `
   ) {
     onDeleteStockDataPool(filter: $filter) {
       id
-      createdatetime
       itemName
       barcode
       expiration
@@ -221,8 +434,11 @@ export const onDeleteStockDataPool = /* GraphQL */ `
       untitledfield
       status
       stockssubcategoryID
-      eventID
       tenantsID
+      events {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -275,6 +491,120 @@ export const onDeleteStocksSubCategory = /* GraphQL */ `
       stkscategoryID
       StockDataPools {
         nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateEventStockDataPool = /* GraphQL */ `
+  subscription OnCreateEventStockDataPool(
+    $filter: ModelSubscriptionEventStockDataPoolFilterInput
+  ) {
+    onCreateEventStockDataPool(filter: $filter) {
+      id
+      eventId
+      stockDataPoolId
+      event {
+        id
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      stockDataPool {
+        id
+        itemName
+        barcode
+        expiration
+        stockInt
+        limitInt
+        value
+        purchaseID
+        untitledfield
+        status
+        stockssubcategoryID
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateEventStockDataPool = /* GraphQL */ `
+  subscription OnUpdateEventStockDataPool(
+    $filter: ModelSubscriptionEventStockDataPoolFilterInput
+  ) {
+    onUpdateEventStockDataPool(filter: $filter) {
+      id
+      eventId
+      stockDataPoolId
+      event {
+        id
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      stockDataPool {
+        id
+        itemName
+        barcode
+        expiration
+        stockInt
+        limitInt
+        value
+        purchaseID
+        untitledfield
+        status
+        stockssubcategoryID
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteEventStockDataPool = /* GraphQL */ `
+  subscription OnDeleteEventStockDataPool(
+    $filter: ModelSubscriptionEventStockDataPoolFilterInput
+  ) {
+    onDeleteEventStockDataPool(filter: $filter) {
+      id
+      eventId
+      stockDataPoolId
+      event {
+        id
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      stockDataPool {
+        id
+        itemName
+        barcode
+        expiration
+        stockInt
+        limitInt
+        value
+        purchaseID
+        untitledfield
+        status
+        stockssubcategoryID
+        tenantsID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt

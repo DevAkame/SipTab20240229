@@ -1,15 +1,247 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getJobTitles = /* GraphQL */ `
+  query GetJobTitles($id: ID!) {
+    getJobTitles(id: $id) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listJobTitles = /* GraphQL */ `
+  query ListJobTitles(
+    $filter: ModelJobTitlesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listJobTitles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getSex = /* GraphQL */ `
+  query GetSex($id: ID!) {
+    getSex(id: $id) {
+      id
+      name
+      UserProfiles {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listSexes = /* GraphQL */ `
+  query ListSexes(
+    $filter: ModelSexFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSexes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getUserProfiles = /* GraphQL */ `
+  query GetUserProfiles($id: ID!) {
+    getUserProfiles(id: $id) {
+      id
+      name
+      fimlyNameKana
+      lastNameKana
+      fimlyNameKanzi
+      lastNameKanzi
+      postcode
+      emailAddress
+      phoneNum
+      userID
+      birthday
+      jobtitlesID
+      sexID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listUserProfiles = /* GraphQL */ `
+  query ListUserProfiles(
+    $filter: ModelUserProfilesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        fimlyNameKana
+        lastNameKana
+        fimlyNameKanzi
+        lastNameKanzi
+        postcode
+        emailAddress
+        phoneNum
+        userID
+        birthday
+        jobtitlesID
+        sexID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const userProfilesByJobtitlesID = /* GraphQL */ `
+  query UserProfilesByJobtitlesID(
+    $jobtitlesID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserProfilesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userProfilesByJobtitlesID(
+      jobtitlesID: $jobtitlesID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        fimlyNameKana
+        lastNameKana
+        fimlyNameKanzi
+        lastNameKanzi
+        postcode
+        emailAddress
+        phoneNum
+        userID
+        birthday
+        jobtitlesID
+        sexID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const userProfilesBySexID = /* GraphQL */ `
+  query UserProfilesBySexID(
+    $sexID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserProfilesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userProfilesBySexID(
+      sexID: $sexID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        fimlyNameKana
+        lastNameKana
+        fimlyNameKanzi
+        lastNameKanzi
+        postcode
+        emailAddress
+        phoneNum
+        userID
+        birthday
+        jobtitlesID
+        sexID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getAsinUserOfTenant = /* GraphQL */ `
+  query GetAsinUserOfTenant($id: ID!) {
+    getAsinUserOfTenant(id: $id) {
+      id
+      tenantID
+      userID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listAsinUserOfTenants = /* GraphQL */ `
+  query ListAsinUserOfTenants(
+    $filter: ModelAsinUserOfTenantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAsinUserOfTenants(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tenantID
+        userID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getEvent = /* GraphQL */ `
   query GetEvent($id: ID!) {
     getEvent(id: $id) {
       id
-      tenantsID
       StockDataPools {
         nextToken
         __typename
       }
+      tenantsID
       createdAt
       updatedAt
       __typename
@@ -67,11 +299,11 @@ export const getTenants = /* GraphQL */ `
     getTenants(id: $id) {
       id
       name
-      Events {
+      StockDataPools {
         nextToken
         __typename
       }
-      StockDataPools {
+      Events {
         nextToken
         __typename
       }
@@ -138,7 +370,6 @@ export const getStockDataPool = /* GraphQL */ `
   query GetStockDataPool($id: ID!) {
     getStockDataPool(id: $id) {
       id
-      createdatetime
       itemName
       barcode
       expiration
@@ -149,8 +380,11 @@ export const getStockDataPool = /* GraphQL */ `
       untitledfield
       status
       stockssubcategoryID
-      eventID
       tenantsID
+      events {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -166,7 +400,6 @@ export const listStockDataPools = /* GraphQL */ `
     listStockDataPools(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        createdatetime
         itemName
         barcode
         expiration
@@ -177,7 +410,6 @@ export const listStockDataPools = /* GraphQL */ `
         untitledfield
         status
         stockssubcategoryID
-        eventID
         tenantsID
         createdAt
         updatedAt
@@ -205,7 +437,6 @@ export const stockDataPoolsByStockssubcategoryID = /* GraphQL */ `
     ) {
       items {
         id
-        createdatetime
         itemName
         barcode
         expiration
@@ -216,46 +447,6 @@ export const stockDataPoolsByStockssubcategoryID = /* GraphQL */ `
         untitledfield
         status
         stockssubcategoryID
-        eventID
-        tenantsID
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const stockDataPoolsByEventID = /* GraphQL */ `
-  query StockDataPoolsByEventID(
-    $eventID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelStockDataPoolFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    stockDataPoolsByEventID(
-      eventID: $eventID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        createdatetime
-        itemName
-        barcode
-        expiration
-        stockInt
-        limitInt
-        value
-        purchaseID
-        untitledfield
-        status
-        stockssubcategoryID
-        eventID
         tenantsID
         createdAt
         updatedAt
@@ -283,7 +474,6 @@ export const stockDataPoolsByTenantsID = /* GraphQL */ `
     ) {
       items {
         id
-        createdatetime
         itemName
         barcode
         expiration
@@ -294,7 +484,6 @@ export const stockDataPoolsByTenantsID = /* GraphQL */ `
         untitledfield
         status
         stockssubcategoryID
-        eventID
         tenantsID
         createdAt
         updatedAt
@@ -364,6 +553,122 @@ export const stocksSubCategoriesByStkscategoryID = /* GraphQL */ `
         id
         name
         stkscategoryID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getEventStockDataPool = /* GraphQL */ `
+  query GetEventStockDataPool($id: ID!) {
+    getEventStockDataPool(id: $id) {
+      id
+      eventId
+      stockDataPoolId
+      event {
+        id
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      stockDataPool {
+        id
+        itemName
+        barcode
+        expiration
+        stockInt
+        limitInt
+        value
+        purchaseID
+        untitledfield
+        status
+        stockssubcategoryID
+        tenantsID
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listEventStockDataPools = /* GraphQL */ `
+  query ListEventStockDataPools(
+    $filter: ModelEventStockDataPoolFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listEventStockDataPools(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        eventId
+        stockDataPoolId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const eventStockDataPoolsByEventId = /* GraphQL */ `
+  query EventStockDataPoolsByEventId(
+    $eventId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelEventStockDataPoolFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    eventStockDataPoolsByEventId(
+      eventId: $eventId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        eventId
+        stockDataPoolId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const eventStockDataPoolsByStockDataPoolId = /* GraphQL */ `
+  query EventStockDataPoolsByStockDataPoolId(
+    $stockDataPoolId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelEventStockDataPoolFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    eventStockDataPoolsByStockDataPoolId(
+      stockDataPoolId: $stockDataPoolId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        eventId
+        stockDataPoolId
         createdAt
         updatedAt
         __typename
