@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Amplify, Auth, Hub } from 'aws-amplify';
+import { Amplify, Auth, Hub} from 'aws-amplify';
 import {NavBarHeader} from './ui-components';
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator ,Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
@@ -31,9 +31,9 @@ function App() {
   return (
     <div>
       {user ? (
-        <div>
+        <Flex direction=("column") alignItems=("center"){'>'}
           <NavBarHeader />
-        </div>
+        </Flex>
       ) : (
         <p>Not Auther it</p>
         
