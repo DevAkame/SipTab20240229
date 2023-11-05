@@ -34,6 +34,7 @@ function App() {
       {user ? (
           <div>
             <NavBarHeader />
+            <p>testdayo</p>
             <p>{user.attributes['custom:iam_id']}</p>
           </div>
         
