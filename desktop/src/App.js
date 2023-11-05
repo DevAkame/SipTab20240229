@@ -33,6 +33,7 @@ function App() {
       {user ? (
           
           <NavBarHeader />
+          <p>{user.attributes['custom:iam_id']}</p>
        
       ) : (
         <p>Not Auther it</p>
