@@ -33,7 +33,7 @@ function App() {
       {user ? (
           
 //          <Flex><NavBarHeader /></Flex>
-          <Flex><p>{user.attributes['custom:iam_id']}</p></Flex>
+          <p>{user.attributes['custom:iam_id']}</p>
        
       ) : (
         <p>Not Auther it</p>
