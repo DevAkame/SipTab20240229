@@ -29,16 +29,17 @@ function App() {
   }, []);
 
   return (
-    <Flex direction="column" alignItems="center">
       {user ? (
-          
-          <flex><NavBarHeader /><p>{user.attributes['custom:iam_id']}</p>
-       
+        <div>
+        <Flex direction="column" alignItems="center">          
+          <NavBarHeader />
+          <div>{user.attributes['custom:iam_id']}</div>
+        </Flex>
+        </div>
       ) : (
         <p>Not Auther it</p>
 
       )}
-    </Flex>
   );
 }
 
