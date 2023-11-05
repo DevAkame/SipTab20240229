@@ -32,8 +32,7 @@ function App() {
     <Flex direction="column" alignItems="center">
       {user ? (
           
-//          <Flex><NavBarHeader /></Flex>
-          <p>{user.attributes['custom:iam_id']}</p>
+          <flex><NavBarHeader /><p>{user.attributes['custom:iam_id']}</p>
        
       ) : (
         <p>Not Auther it</p>
