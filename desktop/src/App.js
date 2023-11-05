@@ -29,19 +29,16 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Flex direction="column" alignItems="center">
       {user ? (
-        <Flex direction=("column") alignItems=("center"){'>'}
+          
           <NavBarHeader />
-        </Flex>
+       
       ) : (
         <p>Not Auther it</p>
-        
-        
-
 
       )}
-    </div>
+    </Flex>
   );
 }
 
