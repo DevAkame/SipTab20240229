@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Amplify, Auth, Hub} from 'aws-amplify';
-import {NavBarHeader} from './ui-components';
-import { withAuthenticator ,Flex } from '@aws-amplify/ui-react';
+mport React, { useEffect, useState } from 'react';
+import { Amplify, Auth, Hub } from 'aws-amplify';
+import { NavBarHeader } from './ui-components';
+import { withAuthenticator, Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
@@ -30,21 +30,18 @@ function App() {
 
   return (
     <div>
-    <Flex direction="column" alignItems="center">          
-      {user ? (
+      <Flex direction="column" alignItems="center">
+        {user ? (
           <div>
             <NavBarHeader />
             <p>testdayo</p>
             <p>{user.attributes['custom:iam_id']}</p>
           </div>
-        
-      ) : (
-        <p>Not Auther it</p>
-
-      )}
-    </Flex>
+        ) : (
+          <p>Not Authenticated</p>
+        )}
+      </Flex>
     </div>
-
   );
 }
 
