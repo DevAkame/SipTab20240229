@@ -1,4 +1,4 @@
-mport React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
 import { NavBarHeader } from './ui-components';
 import { withAuthenticator, Flex } from '@aws-amplify/ui-react';
