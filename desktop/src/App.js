@@ -35,7 +35,8 @@ function App() {
           <div>
             <NavBarHeader />
             <p>testdayo</p>
-            <p>{user.attributes['custom:iam_id']}</p>
+            <p>{user.id}</p>
+            <p>testnandayo</p>
           </div>
         ) : (
           <p>Not Authenticated</p>
