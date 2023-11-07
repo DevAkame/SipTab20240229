@@ -5,25 +5,27 @@ import { withAuthenticator, useAuthenticator, Flex } from '@aws-amplify/ui-react
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
-import {getUserProfiles} from './graphql/queries'
+import { getUserProfiles } from './graphql/queries';
 
 Amplify.configure(awsExports);
 
 function App() {
   const [user, setUser] = useState(null);
-  
 
   useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .then(userData => {
+    const fetchUserData = async () => {
+      try {
+        const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
-      })
-      .catch(() => {
+      } catch (error) {
         setUser(null);
-      });
+      }
+    };
+
+    fetchUserData();
 
     // Hubを使用してCognitoセッションの変更を監視
-    Hub.listen('auth', data => {
+    Hub.listen('auth', (data) => {
       const { payload } = data;
       if (payload.event === 'signOut') {
         // ユーザーがログアウトした場合の処理
@@ -32,6 +34,9 @@ function App() {
     });
   }, []);
 
+  // コンポーネントの外で変数optを宣言
+  const opt = { filter: { id: user?.attributes.sub } };
+
   return (
     <div>
       <Flex direction="column" alignItems="center">
@@ -39,19 +44,18 @@ function App() {
           <div>
             <NavBarHeader />
             <p>testdayo</p>
-            
+
             <p>{user.attributes.sub}</p>
-            {const opt = { filter : { id : user.attributes.sub } }};
-            
-            {API.graphql(graphqlOperation(getUserProfiles, opt)).then(values=> {
-              
+
+            {/* GraphQLクエリを実行 */}
+            {API.graphql(graphqlOperation(getUserProfiles, opt)).then((values) => {
               const userProfilesData = values.data.getUserProfiles.items;
-              if( userProfilesData == null){
-                return(<p>値があったよ</p>)
+              if (userProfilesData == null) {
+                return <p>値があったよ</p>;
               } else {
-                return(<FirthSetUpProfiles />)
+                return <FirthSetUpProfiles />;
               }
-            })};
+            })}
             <p>testnandayo</p>
           </div>
         ) : (
