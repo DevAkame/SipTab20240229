@@ -5,7 +5,7 @@ import { Flex } from '@aws-amplify/ui-react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
 
-export function App() {
+function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -61,3 +61,6 @@ export function App() {
     </div>
   );
 }
+
+
+export default withAuthenticator(App);
