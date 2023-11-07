@@ -35,7 +35,7 @@ function App() {
           <div>
             <NavBarHeader />
             <p>testdayo</p>
-            <p>{user.identityId}</p>
+            <p>{user.sub}</p>
             <p>testnandayo</p>
           </div>
         ) : (
