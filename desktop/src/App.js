@@ -41,7 +41,8 @@ function App() {
             <p>testdayo</p>
             
             <p>{user.attributes.sub}</p>
-            {API.graphql(graphqlOperation(getUserProfiles)).then(values=> {
+            { opt = {filter: {id : user.attributes.sub}}};
+            {API.graphql(graphqlOperation(getUserProfiles, opt)).then(values=> {
               const userProfilesData = values.data.getUserProfiles.items;
               if( userProfilesData == null){
                 return(<p>値があったよ</p>)
