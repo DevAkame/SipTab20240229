@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
 import { NavBarHeader } from './ui-components';
-import { withAuthenticator, Flex } from '@aws-amplify/ui-react';
+import { withAuthenticator, useAuthenticator, Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 function App() {
   const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
@@ -35,7 +36,7 @@ function App() {
           <div>
             <NavBarHeader />
             <p>testdayo</p>
-            <p>{user.sub}</p>
+            <p>{user.attributes.sub}</p>
             <p>testnandayo</p>
           </div>
         ) : (
