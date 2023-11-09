@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Auth, Hub } from 'aws-amplify';
 import { FirthSetUpProfiles, NavBarHeader } from './ui-components';
 import { Flex } from '@aws-amplify/ui-react';
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, withAuthenticator } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
 
 function App() {
