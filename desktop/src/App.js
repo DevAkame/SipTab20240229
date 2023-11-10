@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
-
+import { CheckUserProfile } from './custom-job/orginCustomJob';
 Amplify.configure(awsExports);
 
 function App() {
@@ -47,14 +47,13 @@ function App() {
 
             <p>{user.attributes.sub}</p>
 
- /*           {API.graphql(graphqlOperation(getUserProfiles, opt)).then((values) => {
-              const userProfilesData = values.data.getUserProfiles.items;
-              if (userProfilesData == null) {
-                return <p>値があったよ</p>;
-              } else {
-                return <FirthSetUpProfiles />;
-              }
-            })} */
+            {
+              if(CheckUserProfile(user.attributes.sub) == 1).then(
+                <p>ユーザ登録済み</p>
+              ) else(
+                <FirthSetUpProfiles />
+              )
+            };
             <p>testnandayo</p>
           </div>
         ) : (
