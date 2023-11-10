@@ -17,16 +17,13 @@ export function CheckUserProfile(ids){
 
     API.graphql(graphqlOperation(getUserProfiles, opt)).then((values) => {
         const userProfilesData = values.data.getUserProfiles.items;
-        if (userProfilesData == null) {
+        if (userProfilesData === null) {
           return (
-            stats = 0
+            <div>認証済み</div>
           )
           } else {
-          return (
-            stats = 1
-          )
+          return ( <FirthSetUpProfiles /> )
         }
-    });
+    })
 
-    return stats;
 };
