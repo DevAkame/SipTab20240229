@@ -46,14 +46,6 @@ function App() {
             <p>testdayo</p>
 
             <p>{user.attributes.sub}</p>
-
-            {
-              if(CheckUserProfile(user.attributes.sub) == 1).then(
-                <p>ユーザ登録済み</p>
-              ) else(
-                <FirthSetUpProfiles />
-              )
-            };
             <p>testnandayo</p>
           </div>
         ) : (
