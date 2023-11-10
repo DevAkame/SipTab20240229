@@ -47,15 +47,14 @@ function App() {
 
             <p>{user.attributes.sub}</p>
 
-            {/* GraphQLクエリを実行 */}
-            {API.graphql(graphqlOperation(getUserProfiles, opt)).then((values) => {
+ /*           {API.graphql(graphqlOperation(getUserProfiles, opt)).then((values) => {
               const userProfilesData = values.data.getUserProfiles.items;
               if (userProfilesData == null) {
                 return <p>値があったよ</p>;
               } else {
                 return <FirthSetUpProfiles />;
               }
-            })}
+            })} */
             <p>testnandayo</p>
           </div>
         ) : (
