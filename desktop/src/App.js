@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
-import { CheckUserProfile } from '/custom-job/orginCustomJob';
+import { CheckUserProfile } from 'src/custom-job/orginCustomJob';
 Amplify.configure(awsExports);
 
 function App() {
