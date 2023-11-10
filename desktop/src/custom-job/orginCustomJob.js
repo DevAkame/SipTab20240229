@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
-import { FirthSetUpProfiles} from './ui-components';
+import { FirthSetUpProfiles} from '../ui-components';
 import { withAuthenticator, useAuthenticator, Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import awsExports from './aws-exports';
+import awsExports from '../aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 
 Amplify.configure(awsExports);
