@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
-import { CheckUserProfile } from 'src/custom-job/orginCustomJob';
+//import { CheckUserProfile } from 'src/custom-job/orginCustomJob';
 Amplify.configure(awsExports);
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             <p>testnandayo</p>
-            {CheckUserProfile(user.attributes.sub)};
+            // {CheckUserProfile(user.attributes.sub)};
           </div>
         ) : (
           <p>Not Authenticated</p>
