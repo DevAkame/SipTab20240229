@@ -47,7 +47,7 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             <p>testnandayo</p>
-            {CheckUserProfile(user.attributes.sub())}
+            {CheckUserProfile((Object.prototype.toString.call(user.attributes.sub)))}
           </div>
         ) : (
           <p>Not Authenticated</p>
