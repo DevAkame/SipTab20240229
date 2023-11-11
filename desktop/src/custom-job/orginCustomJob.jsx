@@ -18,6 +18,6 @@ Amplify.configure(awsExports);
 export function CheckUserProfile(arg01){
     API.graphql(graphqlOperation(listSexes)).then((values) => {
         const data = values.data.listSexes.items;
-        return ( <p>{toString(data)}</p> )
+        return ( <p>{data}</p> )
     })
 };
