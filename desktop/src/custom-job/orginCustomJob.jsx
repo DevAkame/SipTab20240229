@@ -17,8 +17,8 @@ Amplify.configure(awsExports);
 // 戻り値：　bool(ユーザ有り＝正)
 export function CheckUserProfile(arg01){
     const userProfilesData = null;
-    API.graphql(graphqlOperation(listStockDataPools)).then((values) => {
+    API.graphql(graphqlOperation(getSex,{id: "5454b79b-ac4f-481e-afbd-4df6765c44e5"})).then((values) => {
         const userProfilesData = values.data.listStockDataPools.items;
-        return ( <p>"testtstt"</p> )
+        return ( <p>{userProfilesData}</p> )
     })
 };
