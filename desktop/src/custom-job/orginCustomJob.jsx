@@ -14,9 +14,14 @@ import React from 'react';
 import { Amplify} from 'aws-amplify';
 import { API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../aws-exports';
+import { getSex } from '../graphql/queries';
 
 Amplify.configure(awsExports);
 
 export function CheckUserProfile(arg01){
-    return (<p>{arg01}</p>)
+    const userProfilesData = null;
+    API.graphql(graphqlOperation(getSex)).then((values) => {
+        const userProfilesData = values.data.getUserProfiles.items;
+        return ( <p>"testtstt"</p> )
+    })
 };
