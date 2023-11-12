@@ -16,9 +16,8 @@ Amplify.configure(awsExports);
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか
 // 戻り値：　bool(ユーザ有り＝正)
 export function CheckUserProfile(arg01){
-    API.graphql(graphqlOperation(listSexes)).then((values) => {
-        const data = values.data.listSexes.items;
-        console.log(toString(values.data?));
-        return ( <p>{data}</p> )
-    })
+    async () => {
+        console.log(
+            await API.graphql(graphqlOperation(listSexes)))
+    }
 };
