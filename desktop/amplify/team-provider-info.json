@@ -16,7 +16,13 @@
         "siptab": {}
       },
       "function": {
-        "siptabeb8d9eda": {}
+        "siptabeb8d9eda": {
+          "deploymentBucketName": "amplify-siptab-staging-24057-deployment",
+          "s3Key": "amplify-builds/siptabeb8d9eda-647641624f6367333539-build.zip"
+        }
+      },
+      "api": {
+        "siptab": {}
       }
     }
   }

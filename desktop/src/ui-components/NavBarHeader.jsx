@@ -7,7 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { useAuth } from "@aws-amplify/ui-react/internal";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import LogoSipTab32 from "./LogoSipTab32";
 import {
   Button,
@@ -20,6 +20,7 @@ import {
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
   const authAttributes = useAuth().user?.attributes ?? {};
+  const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
     <View
       width="1496px"
@@ -151,6 +152,9 @@ export default function NavBarHeader(props) {
             isDisabled={false}
             variation="destructive"
             children="Sign Out"
+            onClick={() => {
+              buttonOnClick();
+            }}
             {...getOverrideProps(overrides, "Button")}
           ></Button>
         </Flex>

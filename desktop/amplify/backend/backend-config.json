@@ -65,5 +65,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_siptabeb8d9eda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "siptabeb8d9eda"
+        }
+      ]
+    },
+    "AMPLIFY_function_siptabeb8d9eda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "siptabeb8d9eda"
+        }
+      ]
+    }
   }
 }

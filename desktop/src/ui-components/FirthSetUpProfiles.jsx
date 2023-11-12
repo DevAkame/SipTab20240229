@@ -535,7 +535,7 @@ export default function FirthSetUpProfiles(props) {
                   position="relative"
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
-                  children="Placeholder"
+                  children=""
                   {...getOverrideProps(overrides, "placeholder40376430")}
                 ></Text>
               </Flex>

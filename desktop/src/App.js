@@ -47,7 +47,13 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             <p>testnandayo</p>
-            {CheckUserProfile(String(user.attributes.sub))}
+            {CheckUserProfile(String(user.attributes.sub))};
+            {API.graphql(graphqlOperation(listSexes)).then(values=> {
+        const data = values.data.listSexes.items;
+        for(let item of data) {
+            console.log(toString(item));
+        }
+    })}
           </div>
         ) : (
           <p>Not Authenticated</p>
