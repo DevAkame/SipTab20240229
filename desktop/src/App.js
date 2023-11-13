@@ -4,7 +4,7 @@ import { NavBarHeader } from './ui-components';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-
+import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 Amplify.configure(awsExports);
 
