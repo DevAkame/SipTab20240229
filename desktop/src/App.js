@@ -8,7 +8,6 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
 import { CheckUserProfile } from './custom-job/orginCustomJob';
 
-import { listSexes } from './graphql/queries';
 
 Amplify.configure(awsExports);
 
@@ -51,12 +50,6 @@ function App() {
             <p>{user.attributes.sub}</p>
             <p>testnandayo</p>
             {CheckUserProfile(String(user.attributes.sub))};
-            {API.graphql(graphqlOperation(listSexes)).then(values=> {
-        const data = values.data.listSexes.items;
-        for(let item of data) {
-            console.log(toString(item));
-        }
-    })}
           </div>
         ) : (
           <p>Not Authenticated</p>
