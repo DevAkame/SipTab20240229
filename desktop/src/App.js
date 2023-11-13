@@ -7,6 +7,9 @@ import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
 import { CheckUserProfile } from './custom-job/orginCustomJob';
+
+import { listSexes } from './graphql/queries';
+
 Amplify.configure(awsExports);
 
 function App() {
