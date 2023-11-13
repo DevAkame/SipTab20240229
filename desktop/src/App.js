@@ -6,10 +6,18 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { API, graphqlOperation } from 'aws-amplify';
 import { getUserProfiles } from './graphql/queries';
-import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 
 Amplify.configure(awsExports);
+
+async function CheckUserProfile(strSubID){
+  const oneUserProfiles = await API.graphql({
+    query: getUserProfiles,
+    variables: { id: String(user.attributes.sub) }
+  });
+  console.log(oneUserProfiles);
+  return null;
+};
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,12 +46,6 @@ function App() {
 
   // コンポーネントの外で変数optを宣言
   const opt = { filter: { id: user?.attributes.sub } };
-  // Get a specific item
-  const oneUserProfiles = await API.graphql({
-    query: getUserProfiles,
-    variables: { id: String(user.attributes.sub) }
-  });
-  console.log(oneUserProfiles);
   return (
     <div>
       <Flex direction="column" alignItems="center">
@@ -53,6 +55,7 @@ function App() {
             <p>testdayo</p>
 
             <p>{user.attributes.sub}</p>
+            {CheckUserProfile(String(user.attributes.sub))};
             <p>testnandayo</p>
           </div>
         ) : (
