@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
-import { FirthSetUpProfiles, NavBarHeader } from './ui-components';
-import { withAuthenticator, useAuthenticator, Flex } from '@aws-amplify/ui-react';
+import { NavBarHeader } from './ui-components';
+import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-import { API, graphqlOperation } from 'aws-amplify';
-import { getUserProfiles } from './graphql/queries';
 
 
 Amplify.configure(awsExports);
 
-async function CheckUserProfile(strSubID){
-  const oneUserProfiles = await API.graphql({
-    query: getUserProfiles,
-    variables: { id: 'be98f05a-e74f-4e1f-9842-5bc5b8c96d9b' }
-  });
-  console.log(oneUserProfiles);
-  return null;
-};
+
 
 function App() {
   const [user, setUser] = useState(null);

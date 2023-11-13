@@ -4,22 +4,17 @@
 - CheckUserProfile(arg01) ユーザプロファイル登録チェック
 
 */
-import React from 'react';
-import { Amplify} from 'aws-amplify';
-import { Auth, API, graphqlOperation } from 'aws-amplify';
-import awsExports from '../aws-exports';
-import { getSex, listSexes } from '../graphql/queries';
-
-Amplify.configure(awsExports);
+import { API } from 'aws-amplify';
+import { getUserProfiles } from '../graphql/queries';
 
 // 概要：ユーザプロファイルテーブルに対象ユーザのレコードがあるかの判定を行う。
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか
 // 戻り値：　bool(ユーザ有り＝正)
-export function CheckUserProfile(arg01){
-    API.graphql(graphqlOperation(listSexes)).then(values=> {
-        const data = values.data.listSexes.items;
-        for(let item of data) {
-            console.log(item.name);
-        };
+export async function CheckUserProfile(strSubID){
+    const oneUserProfiles = await API.graphql({
+      query: getUserProfiles,
+      variables: { id: 'be98f05a-e74f-4e1f-9842-5bc5b8c96d9b' }
     });
-};
+    console.log(oneUserProfiles);
+    return null;
+  };
