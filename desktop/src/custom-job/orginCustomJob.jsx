@@ -19,7 +19,7 @@ export function CheckUserProfile(arg01){
     API.graphql(graphqlOperation(listSexes)).then(values=> {
         const data = values.data.listSexes.items;
         for(let item of data) {
-            console.log(JSON.item);
+            console.log(JSON.item.name);
         };
     });
 };
