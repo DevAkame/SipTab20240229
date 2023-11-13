@@ -35,8 +35,6 @@ function App() {
     });
   }, []);
 
-  // コンポーネントの外で変数optを宣言
-  const opt = { filter: { id: user?.attributes.sub } };
   return (
     <div>
       <Flex direction="column" alignItems="center">

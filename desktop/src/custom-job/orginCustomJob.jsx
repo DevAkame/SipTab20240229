@@ -13,7 +13,7 @@ import { getUserProfiles } from '../graphql/queries';
 export async function CheckUserProfile(strSubID){
     const oneUserProfiles = await API.graphql({
       query: getUserProfiles,
-      variables: { id: 'be98f05a-e74f-4e1f-9842-5bc5b8c96d9b' }
+      variables: { userID : '12344-444-444' }
     });
     console.log(oneUserProfiles);
     return null;
