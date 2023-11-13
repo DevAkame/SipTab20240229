@@ -20,7 +20,7 @@ type UserProfiles @model @auth(rules: [{allow: public}]) {
   postcode: String
   emailAddress: AWSEmail
   phoneNum: AWSPhone
-  userID: ID
+  userID: ID!
   birthday: AWSDate
   jobtitlesID: ID! @index(name: "byJobTitles")
   sexID: ID! @index(name: "bySex")
