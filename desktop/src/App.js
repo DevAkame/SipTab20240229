@@ -47,7 +47,7 @@ function App() {
             {CheckUserProfile(String(user.attributes.sub))};
             {
               fetch('https://zdak8h8rv4.execute-api.ap-northeast-1.amazonaws.com/default/siptabeb8d9eda-staging').then(response => {console.log(response)})
-              .catch(error => {console.log(error)})
+              .catch(error => console.log(error))
             }
             <p>testnandayo</p>
           </div>
