@@ -22,7 +22,7 @@
         },
         "siptab483193a7": {
           "deploymentBucketName": "amplify-siptab-staging-24057-deployment",
-          "s3Key": "amplify-builds/siptab483193a7-446c4736337873556841-build.zip"
+          "s3Key": "amplify-builds/siptab483193a7-436d5667375755695063-build.zip"
         }
       },
       "api": {
