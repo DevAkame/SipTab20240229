@@ -14,10 +14,9 @@ import {
   TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
+import { StockDataPool } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { API } from "aws-amplify";
-import { getStockDataPool } from "../graphql/queries";
-import { updateStockDataPool } from "../graphql/mutations";
+import { DataStore } from "aws-amplify";
 export default function StockDataPoolUpdateForm(props) {
   const {
     id: idProp,
@@ -82,12 +81,7 @@ export default function StockDataPoolUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await API.graphql({
-              query: getStockDataPool.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getStockDataPool
+        ? await DataStore.query(StockDataPool, idProp)
         : stockDataPoolModelProp;
       setStockDataPoolRecord(record);
     };
@@ -132,16 +126,16 @@ export default function StockDataPoolUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          category: category ?? null,
-          itemName: itemName ?? null,
-          barcode: barcode ?? null,
-          expiration: expiration ?? null,
-          stockInt: stockInt ?? null,
-          limitInt: limitInt ?? null,
-          status: status ?? null,
-          value: value ?? null,
-          purchaseID: purchaseID ?? null,
-          untitledfield: untitledfield ?? null,
+          category,
+          itemName,
+          barcode,
+          expiration,
+          stockInt,
+          limitInt,
+          status,
+          value,
+          purchaseID,
+          untitledfield,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -172,32 +166,27 @@ export default function StockDataPoolUpdateForm(props) {
             }
           });
           const modelFieldsToSave = {
-            itemName: modelFields.itemName ?? null,
-            barcode: modelFields.barcode ?? null,
-            expiration: modelFields.expiration ?? null,
-            stockInt: modelFields.stockInt ?? null,
-            limitInt: modelFields.limitInt ?? null,
-            status: modelFields.status ?? null,
-            value: modelFields.value ?? null,
-            purchaseID: modelFields.purchaseID ?? null,
-            untitledfield: modelFields.untitledfield ?? null,
+            itemName: modelFields.itemName,
+            barcode: modelFields.barcode,
+            expiration: modelFields.expiration,
+            stockInt: modelFields.stockInt,
+            limitInt: modelFields.limitInt,
+            status: modelFields.status,
+            value: modelFields.value,
+            purchaseID: modelFields.purchaseID,
+            untitledfield: modelFields.untitledfield,
           };
-          await API.graphql({
-            query: updateStockDataPool.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: stockDataPoolRecord.id,
-                ...modelFieldsToSave,
-              },
-            },
-          });
+          await DataStore.save(
+            StockDataPool.copyOf(stockDataPoolRecord, (updated) => {
+              Object.assign(updated, modelFieldsToSave);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

@@ -1,17 +1,85 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getUserProfile = /* GraphQL */ `
+  query GetUserProfile($id: ID!) {
+    getUserProfile(id: $id) {
+      id
+      sub
+      name
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const listUserProfiles = /* GraphQL */ `
+  query ListUserProfiles(
+    $filter: ModelUserProfileFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        sub
+        name
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncUserProfiles = /* GraphQL */ `
+  query SyncUserProfiles(
+    $filter: ModelUserProfileFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncUserProfiles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        sub
+        name
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
 export const getJobTitles = /* GraphQL */ `
   query GetJobTitles($id: ID!) {
     getJobTitles(id: $id) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -28,9 +96,42 @@ export const listJobTitles = /* GraphQL */ `
         name
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncJobTitles = /* GraphQL */ `
+  query SyncJobTitles(
+    $filter: ModelJobTitlesFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncJobTitles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -40,12 +141,11 @@ export const getSex = /* GraphQL */ `
     getSex(id: $id) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -62,137 +162,42 @@ export const listSexes = /* GraphQL */ `
         name
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
 `;
-export const getUserProfiles = /* GraphQL */ `
-  query GetUserProfiles($id: ID!) {
-    getUserProfiles(id: $id) {
-      id
-      name
-      fimlyNameKana
-      lastNameKana
-      fimlyNameKanzi
-      lastNameKanzi
-      postcode
-      emailAddress
-      phoneNum
-      userID
-      birthday
-      jobtitlesID
-      sexID
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listUserProfiles = /* GraphQL */ `
-  query ListUserProfiles(
-    $filter: ModelUserProfilesFilterInput
+export const syncSexes = /* GraphQL */ `
+  query SyncSexes(
+    $filter: ModelSexFilterInput
     $limit: Int
     $nextToken: String
+    $lastSync: AWSTimestamp
   ) {
-    listUserProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        fimlyNameKana
-        lastNameKana
-        fimlyNameKanzi
-        lastNameKanzi
-        postcode
-        emailAddress
-        phoneNum
-        userID
-        birthday
-        jobtitlesID
-        sexID
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const userProfilesByJobtitlesID = /* GraphQL */ `
-  query UserProfilesByJobtitlesID(
-    $jobtitlesID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelUserProfilesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    userProfilesByJobtitlesID(
-      jobtitlesID: $jobtitlesID
-      sortDirection: $sortDirection
+    syncSexes(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
+      lastSync: $lastSync
     ) {
       items {
         id
         name
-        fimlyNameKana
-        lastNameKana
-        fimlyNameKanzi
-        lastNameKanzi
-        postcode
-        emailAddress
-        phoneNum
-        userID
-        birthday
-        jobtitlesID
-        sexID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
-      __typename
-    }
-  }
-`;
-export const userProfilesBySexID = /* GraphQL */ `
-  query UserProfilesBySexID(
-    $sexID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelUserProfilesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    userProfilesBySexID(
-      sexID: $sexID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        fimlyNameKana
-        lastNameKana
-        fimlyNameKanzi
-        lastNameKanzi
-        postcode
-        emailAddress
-        phoneNum
-        userID
-        birthday
-        jobtitlesID
-        sexID
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
+      startedAt
       __typename
     }
   }
@@ -205,6 +210,9 @@ export const getAsinUserOfTenant = /* GraphQL */ `
       userID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -226,9 +234,43 @@ export const listAsinUserOfTenants = /* GraphQL */ `
         userID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncAsinUserOfTenants = /* GraphQL */ `
+  query SyncAsinUserOfTenants(
+    $filter: ModelAsinUserOfTenantFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncAsinUserOfTenants(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        tenantID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -239,11 +281,15 @@ export const getEvent = /* GraphQL */ `
       id
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       tenantsID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -260,9 +306,42 @@ export const listEvents = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncEvents = /* GraphQL */ `
+  query SyncEvents(
+    $filter: ModelEventFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncEvents(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        tenantsID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -287,9 +366,13 @@ export const eventsByTenantsID = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
@@ -301,14 +384,19 @@ export const getTenants = /* GraphQL */ `
       name
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       Events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -325,9 +413,42 @@ export const listTenants = /* GraphQL */ `
         name
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncTenants = /* GraphQL */ `
+  query SyncTenants(
+    $filter: ModelTenantsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTenants(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -339,10 +460,14 @@ export const getStksCategory = /* GraphQL */ `
       name
       StocksSubCategories {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -359,9 +484,42 @@ export const listStksCategories = /* GraphQL */ `
         name
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncStksCategories = /* GraphQL */ `
+  query SyncStksCategories(
+    $filter: ModelStksCategoryFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStksCategories(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -383,10 +541,14 @@ export const getStockDataPool = /* GraphQL */ `
       tenantsID
       events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -413,9 +575,52 @@ export const listStockDataPools = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncStockDataPools = /* GraphQL */ `
+  query SyncStockDataPools(
+    $filter: ModelStockDataPoolFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStockDataPools(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        itemName
+        barcode
+        expiration
+        stockInt
+        limitInt
+        value
+        purchaseID
+        untitledfield
+        status
+        stockssubcategoryID
+        tenantsID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -450,9 +655,13 @@ export const stockDataPoolsByStockssubcategoryID = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
@@ -487,9 +696,13 @@ export const stockDataPoolsByTenantsID = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
@@ -502,10 +715,14 @@ export const getStocksSubCategory = /* GraphQL */ `
       stkscategoryID
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -527,9 +744,43 @@ export const listStocksSubCategories = /* GraphQL */ `
         stkscategoryID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncStocksSubCategories = /* GraphQL */ `
+  query SyncStocksSubCategories(
+    $filter: ModelStocksSubCategoryFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStocksSubCategories(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        stkscategoryID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -555,9 +806,13 @@ export const stocksSubCategoriesByStkscategoryID = /* GraphQL */ `
         stkscategoryID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
@@ -573,6 +828,9 @@ export const getEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       stockDataPool {
@@ -590,10 +848,16 @@ export const getEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -615,9 +879,43 @@ export const listEventStockDataPools = /* GraphQL */ `
         stockDataPoolId
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncEventStockDataPools = /* GraphQL */ `
+  query SyncEventStockDataPools(
+    $filter: ModelEventStockDataPoolFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncEventStockDataPools(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        eventId
+        stockDataPoolId
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
@@ -643,9 +941,13 @@ export const eventStockDataPoolsByEventId = /* GraphQL */ `
         stockDataPoolId
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }
@@ -671,9 +973,13 @@ export const eventStockDataPoolsByStockDataPoolId = /* GraphQL */ `
         stockDataPoolId
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       nextToken
+      startedAt
       __typename
     }
   }

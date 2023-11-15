@@ -19,6 +19,13 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "siptab483193a7": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "siptabeb8d9eda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

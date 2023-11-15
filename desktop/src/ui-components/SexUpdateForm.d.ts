@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Sex } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -36,7 +37,7 @@ export declare type SexUpdateFormProps = React.PropsWithChildren<{
     overrides?: SexUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    sex?: any;
+    sex?: Sex;
     onSubmit?: (fields: SexUpdateFormInputValues) => SexUpdateFormInputValues;
     onSuccess?: (fields: SexUpdateFormInputValues) => void;
     onError?: (fields: SexUpdateFormInputValues, errorMessage: string) => void;

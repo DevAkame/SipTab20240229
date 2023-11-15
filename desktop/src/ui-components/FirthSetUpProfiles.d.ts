@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Sex, JobTitles, UserProfiles } from "../models";
 import { ButtonProps, FlexProps, HeadingProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -85,9 +86,9 @@ export declare type FirthSetUpProfilesOverridesProps = {
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type FirthSetUpProfilesProps = React.PropsWithChildren<Partial<ViewProps> & {
-    sex?: any;
-    jobTitles?: any;
-    userProfiles?: any;
+    sex?: Sex;
+    jobTitles?: JobTitles;
+    userProfiles?: UserProfiles;
 } & {
     overrides?: FirthSetUpProfilesOverridesProps | undefined | null;
 }>;

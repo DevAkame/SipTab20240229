@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { JobTitles } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -36,7 +37,7 @@ export declare type JobTitlesUpdateFormProps = React.PropsWithChildren<{
     overrides?: JobTitlesUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    jobTitles?: any;
+    jobTitles?: JobTitles;
     onSubmit?: (fields: JobTitlesUpdateFormInputValues) => JobTitlesUpdateFormInputValues;
     onSuccess?: (fields: JobTitlesUpdateFormInputValues) => void;
     onError?: (fields: JobTitlesUpdateFormInputValues, errorMessage: string) => void;

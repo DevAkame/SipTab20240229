@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { StksCategory } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -36,7 +37,7 @@ export declare type StksCategoryUpdateFormProps = React.PropsWithChildren<{
     overrides?: StksCategoryUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    stksCategory?: any;
+    stksCategory?: StksCategory;
     onSubmit?: (fields: StksCategoryUpdateFormInputValues) => StksCategoryUpdateFormInputValues;
     onSuccess?: (fields: StksCategoryUpdateFormInputValues) => void;
     onError?: (fields: StksCategoryUpdateFormInputValues, errorMessage: string) => void;

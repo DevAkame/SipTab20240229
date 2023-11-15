@@ -1,6 +1,60 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createUserProfile = /* GraphQL */ `
+  mutation CreateUserProfile(
+    $input: CreateUserProfileInput!
+    $condition: ModelUserProfileConditionInput
+  ) {
+    createUserProfile(input: $input, condition: $condition) {
+      id
+      sub
+      name
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updateUserProfile = /* GraphQL */ `
+  mutation UpdateUserProfile(
+    $input: UpdateUserProfileInput!
+    $condition: ModelUserProfileConditionInput
+  ) {
+    updateUserProfile(input: $input, condition: $condition) {
+      id
+      sub
+      name
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deleteUserProfile = /* GraphQL */ `
+  mutation DeleteUserProfile(
+    $input: DeleteUserProfileInput!
+    $condition: ModelUserProfileConditionInput
+  ) {
+    deleteUserProfile(input: $input, condition: $condition) {
+      id
+      sub
+      name
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
 export const createJobTitles = /* GraphQL */ `
   mutation CreateJobTitles(
     $input: CreateJobTitlesInput!
@@ -9,12 +63,11 @@ export const createJobTitles = /* GraphQL */ `
     createJobTitles(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -27,12 +80,11 @@ export const updateJobTitles = /* GraphQL */ `
     updateJobTitles(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -45,12 +97,11 @@ export const deleteJobTitles = /* GraphQL */ `
     deleteJobTitles(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -63,12 +114,11 @@ export const createSex = /* GraphQL */ `
     createSex(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -81,12 +131,11 @@ export const updateSex = /* GraphQL */ `
     updateSex(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -99,87 +148,11 @@ export const deleteSex = /* GraphQL */ `
     deleteSex(input: $input, condition: $condition) {
       id
       name
-      UserProfiles {
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
-      __typename
-    }
-  }
-`;
-export const createUserProfiles = /* GraphQL */ `
-  mutation CreateUserProfiles(
-    $input: CreateUserProfilesInput!
-    $condition: ModelUserProfilesConditionInput
-  ) {
-    createUserProfiles(input: $input, condition: $condition) {
-      id
-      name
-      fimlyNameKana
-      lastNameKana
-      fimlyNameKanzi
-      lastNameKanzi
-      postcode
-      emailAddress
-      phoneNum
-      userID
-      birthday
-      jobtitlesID
-      sexID
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateUserProfiles = /* GraphQL */ `
-  mutation UpdateUserProfiles(
-    $input: UpdateUserProfilesInput!
-    $condition: ModelUserProfilesConditionInput
-  ) {
-    updateUserProfiles(input: $input, condition: $condition) {
-      id
-      name
-      fimlyNameKana
-      lastNameKana
-      fimlyNameKanzi
-      lastNameKanzi
-      postcode
-      emailAddress
-      phoneNum
-      userID
-      birthday
-      jobtitlesID
-      sexID
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteUserProfiles = /* GraphQL */ `
-  mutation DeleteUserProfiles(
-    $input: DeleteUserProfilesInput!
-    $condition: ModelUserProfilesConditionInput
-  ) {
-    deleteUserProfiles(input: $input, condition: $condition) {
-      id
-      name
-      fimlyNameKana
-      lastNameKana
-      fimlyNameKanzi
-      lastNameKanzi
-      postcode
-      emailAddress
-      phoneNum
-      userID
-      birthday
-      jobtitlesID
-      sexID
-      createdAt
-      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -195,6 +168,9 @@ export const createAsinUserOfTenant = /* GraphQL */ `
       userID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -210,6 +186,9 @@ export const updateAsinUserOfTenant = /* GraphQL */ `
       userID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -225,6 +204,9 @@ export const deleteAsinUserOfTenant = /* GraphQL */ `
       userID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -238,11 +220,15 @@ export const createEvent = /* GraphQL */ `
       id
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       tenantsID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -256,11 +242,15 @@ export const updateEvent = /* GraphQL */ `
       id
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       tenantsID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -274,11 +264,15 @@ export const deleteEvent = /* GraphQL */ `
       id
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       tenantsID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -293,14 +287,19 @@ export const createTenants = /* GraphQL */ `
       name
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       Events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -315,14 +314,19 @@ export const updateTenants = /* GraphQL */ `
       name
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       Events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -337,14 +341,19 @@ export const deleteTenants = /* GraphQL */ `
       name
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       Events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -359,10 +368,14 @@ export const createStksCategory = /* GraphQL */ `
       name
       StocksSubCategories {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -377,10 +390,14 @@ export const updateStksCategory = /* GraphQL */ `
       name
       StocksSubCategories {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -395,10 +412,14 @@ export const deleteStksCategory = /* GraphQL */ `
       name
       StocksSubCategories {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -423,10 +444,14 @@ export const createStockDataPool = /* GraphQL */ `
       tenantsID
       events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -451,10 +476,14 @@ export const updateStockDataPool = /* GraphQL */ `
       tenantsID
       events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -479,10 +508,14 @@ export const deleteStockDataPool = /* GraphQL */ `
       tenantsID
       events {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -498,10 +531,14 @@ export const createStocksSubCategory = /* GraphQL */ `
       stkscategoryID
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -517,10 +554,14 @@ export const updateStocksSubCategory = /* GraphQL */ `
       stkscategoryID
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -536,10 +577,14 @@ export const deleteStocksSubCategory = /* GraphQL */ `
       stkscategoryID
       StockDataPools {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -558,6 +603,9 @@ export const createEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       stockDataPool {
@@ -575,10 +623,16 @@ export const createEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -597,6 +651,9 @@ export const updateEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       stockDataPool {
@@ -614,10 +671,16 @@ export const updateEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -636,6 +699,9 @@ export const deleteEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       stockDataPool {
@@ -653,10 +719,16 @@ export const deleteEventStockDataPool = /* GraphQL */ `
         tenantsID
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

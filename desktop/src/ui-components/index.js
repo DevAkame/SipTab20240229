@@ -54,4 +54,6 @@ export { default as StksCategoryUpdateForm } from "./StksCategoryUpdateForm";
 export { default as StockDataPoolUpdateForm } from "./StockDataPoolUpdateForm";
 export { default as TenantsCreateForm } from "./TenantsCreateForm";
 export { default as TenantsUpdateForm } from "./TenantsUpdateForm";
+export { default as UserProfileCreateForm } from "./UserProfileCreateForm";
+export { default as UserProfileUpdateForm } from "./UserProfileUpdateForm";
 export { default as studioTheme } from "./studioTheme";

@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { StockDataPool, StocksSubCategory, StksCategory } from "../models";
 import { ButtonProps, FlexProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -41,9 +42,9 @@ export declare type DataRowOverridesProps = {
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type DataRowProps = React.PropsWithChildren<Partial<FlexProps> & {
-    stockDataPool?: any;
-    stocksSubCategory?: any;
-    stksCategory?: any;
+    stockDataPool?: StockDataPool;
+    stocksSubCategory?: StocksSubCategory;
+    stksCategory?: StksCategory;
 } & {
     overrides?: DataRowOverridesProps | undefined | null;
 }>;

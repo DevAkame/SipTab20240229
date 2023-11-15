@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { StockDataPool } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -63,7 +64,7 @@ export declare type StockDataPoolUpdateFormProps = React.PropsWithChildren<{
     overrides?: StockDataPoolUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    stockDataPool?: any;
+    stockDataPool?: StockDataPool;
     onSubmit?: (fields: StockDataPoolUpdateFormInputValues) => StockDataPoolUpdateFormInputValues;
     onSuccess?: (fields: StockDataPoolUpdateFormInputValues) => void;
     onError?: (fields: StockDataPoolUpdateFormInputValues, errorMessage: string) => void;

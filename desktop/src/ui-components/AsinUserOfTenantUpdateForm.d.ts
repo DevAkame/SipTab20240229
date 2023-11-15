@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { AsinUserOfTenant } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -39,7 +40,7 @@ export declare type AsinUserOfTenantUpdateFormProps = React.PropsWithChildren<{
     overrides?: AsinUserOfTenantUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    asinUserOfTenant?: any;
+    asinUserOfTenant?: AsinUserOfTenant;
     onSubmit?: (fields: AsinUserOfTenantUpdateFormInputValues) => AsinUserOfTenantUpdateFormInputValues;
     onSuccess?: (fields: AsinUserOfTenantUpdateFormInputValues) => void;
     onError?: (fields: AsinUserOfTenantUpdateFormInputValues, errorMessage: string) => void;
