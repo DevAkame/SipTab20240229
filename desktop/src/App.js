@@ -23,8 +23,6 @@ function App() {
       }
     };
 
-    fetchUserData();
-
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
       const { payload } = data;
