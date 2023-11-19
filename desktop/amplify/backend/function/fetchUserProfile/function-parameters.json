@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "api": {
+      "siptab": [
+        "Query"
+      ]
+    },
+    "auth": {
+      "siptab": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "fetchUserProfile",
+      "environmentVariableName": "fetchUserProfile"
+    }
+  ]
+}
