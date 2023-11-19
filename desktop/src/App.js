@@ -38,7 +38,7 @@ function App() {
     });
   }, []);
 
-  const param = { filter: {sub: {eq: user.attributes.sub} }};
+  const param = { filter: {sub: {eq: String(user.attributes.sub)} }};
   const oneUserProfiles = API.graphql({
     query: listUserProfiles,
     variables: param
