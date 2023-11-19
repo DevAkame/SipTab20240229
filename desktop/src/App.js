@@ -4,7 +4,7 @@ import { NavBarHeader } from './ui-components';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-//import { CheckUserProfile } from './custom-job/orginCustomJob';
+import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 Amplify.configure(awsExports);
 
@@ -45,10 +45,7 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             
-            {
-              fetch('https://zdak8h8rv4.execute-api.ap-northeast-1.amazonaws.com/default/siptabeb8d9eda-staging').then(response => {console.log(response)})
-              .catch(error => console.log(error))
-            }
+            {CheckUserProfile("test")}
             <p>testnandayo</p>
           </div>
         ) : (

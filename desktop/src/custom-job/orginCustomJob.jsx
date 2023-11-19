@@ -5,7 +5,7 @@
 
 */
 import { API } from 'aws-amplify';
-import { getUserProfiles, listUserProfiles } from '../graphql/queries';
+import { listUserProfiles } from '../graphql/queries';
 
 // 概要：ユーザプロファイルテーブルに対象ユーザのレコードがあるかの判定を行う。
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか
