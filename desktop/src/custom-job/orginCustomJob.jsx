@@ -6,6 +6,7 @@
 */
 import { API } from 'aws-amplify';
 import { listUserProfiles } from '../graphql/queries';
+import { Amplify, Auth, Hub } from 'aws-amplify';
 
 // 概要：ユーザプロファイルテーブルに対象ユーザのレコードがあるかの判定を行う。
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか
@@ -14,7 +15,7 @@ export async function CheckUserProfile(strSubID){
   console.log(strSubID);
 
   const oneUserProfiles = await API.graphql({
-    query: listUserProfiles,
+    query: listUserProfiles(),
     variables: { filter: {sub: {eq: strSubID}} }
   });
   console.log(oneUserProfiles);
