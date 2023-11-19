@@ -45,7 +45,6 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             
-            {//CheckUserProfile(String(user.attributes.sub))}
             <p>testnandayo</p>
           </div>
         ) : (
