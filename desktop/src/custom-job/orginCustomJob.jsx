@@ -12,9 +12,9 @@ import { listUserProfiles } from '../graphql/queries';
 // 戻り値：　bool(ユーザ有り＝正)
 export async function CheckUserProfile(strSubID){
   console.log(strSubID);
-  
+
   const oneUserProfiles = await API.graphql({
-    query: listUserProfiles(),
+    query: listUserProfiles,
     variables: { filter: {sub: {eq: strSubID}} }
   });
   console.log(oneUserProfiles);
