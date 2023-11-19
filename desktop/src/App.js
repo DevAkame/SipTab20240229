@@ -45,6 +45,10 @@ function App() {
 
             <p>{user.attributes.sub}</p>
             
+            {
+              console.log("testday");
+              CheckUserProfile(String(user.attributes.sub))
+            }
             <p>testnandayo</p>
           </div>
         ) : (
