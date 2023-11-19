@@ -13,7 +13,7 @@ import { listUserProfiles } from '../graphql/queries';
 export async function CheckUserProfile(strSubID){
     const oneUserProfiles = await API.graphql({
       query: listUserProfiles(),
-      variables: { filter: {sub: {eq: user.attributes.sub}} }
+      variables: { filter: {sub: {eq: strSubID}} }
     });
     console.log(oneUserProfiles);
     return null;
