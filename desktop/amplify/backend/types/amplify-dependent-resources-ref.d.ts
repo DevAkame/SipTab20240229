@@ -1,9 +1,19 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
+    "fuchProfileAPI": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
+    },
     "siptab": {
       "GraphQLAPIEndpointOutput": "string",
       "GraphQLAPIIdOutput": "string",
       "GraphQLAPIKeyOutput": "string"
+    },
+    "siptabAPIsFuchUserProfile": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
     }
   },
   "auth": {
@@ -19,6 +29,20 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "SiptabFuchUserProfile": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "fetchUserProfile": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "siptab483193a7": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

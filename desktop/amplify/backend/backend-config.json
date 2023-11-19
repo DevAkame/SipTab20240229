@@ -1,7 +1,29 @@
 {
   "api": {
+    "fuchProfileAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "fetchUserProfile"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "siptab": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "siptab"
+        }
+      ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
@@ -11,6 +33,12 @@
                 "description": "api key description"
               },
               "authenticationType": "API_KEY"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authsiptab"
+              }
             }
           ],
           "defaultAuthentication": {
@@ -20,6 +48,20 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "siptabAPIsFuchUserProfile": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SiptabFuchUserProfile"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -59,6 +101,35 @@
     }
   },
   "function": {
+    "SiptabFuchUserProfile": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fetchUserProfile": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "siptab"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "siptab"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "siptab483193a7": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -71,6 +142,46 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_SiptabFuchUserProfile_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SiptabFuchUserProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_SiptabFuchUserProfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SiptabFuchUserProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchUserProfile_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchUserProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchUserProfile_fetchUserProfile": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchUserProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchUserProfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchUserProfile"
+        }
+      ]
+    },
     "AMPLIFY_function_siptab483193a7_deploymentBucketName": {
       "usedBy": [
         {

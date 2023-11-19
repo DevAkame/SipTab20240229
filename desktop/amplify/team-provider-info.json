@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-siptab-staging-24057-unauthRole",
       "StackName": "amplify-siptab-staging-24057",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:391872069948:stack/amplify-siptab-staging-24057/eeb1c900-6e28-11ee-aa85-0e24f6652cc1",
-      "AmplifyAppId": "d1wkd6ao39jpb"
+      "AmplifyAppId": "d1wkd6ao39jpb",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-siptab-staging-24057-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -23,10 +24,21 @@
         "siptab483193a7": {
           "deploymentBucketName": "amplify-siptab-staging-24057-deployment",
           "s3Key": "amplify-builds/siptab483193a7-436d5667375755695063-build.zip"
+        },
+        "fetchUserProfile": {
+          "deploymentBucketName": "amplify-siptab-staging-24057-deployment",
+          "s3Key": "amplify-builds/fetchUserProfile-414f56646a5a706b7969-build.zip",
+          "fetchUserProfile": "user.attributes.sub"
+        },
+        "SiptabFuchUserProfile": {
+          "deploymentBucketName": "amplify-siptab-staging-24057-deployment",
+          "s3Key": "amplify-builds/SiptabFuchUserProfile-74702b38497139517630-build.zip"
         }
       },
       "api": {
-        "siptab": {}
+        "siptab": {},
+        "fuchProfileAPI": {},
+        "siptabAPIsFuchUserProfile": {}
       }
     }
   }
