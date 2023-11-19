@@ -57,7 +57,7 @@ function App() {
             
             {
               //console.log("testday")
-              CheckUserProfile(user.attributes.sub)
+//              CheckUserProfile(user.attributes.sub)
             }
             <p>testnandayo</p>
           </div>
