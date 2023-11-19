@@ -6,6 +6,9 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import { CheckUserProfile } from './custom-job/orginCustomJob';
 
+import { listUserProfiles } from './graphql/queries';
+import { API } from 'aws-amplify';
+
 Amplify.configure(awsExports);
 
 
@@ -34,6 +37,13 @@ function App() {
       }
     });
   }, []);
+
+  const oneUserProfiles = API.graphql({
+    query: listUserProfiles(),
+    variables: { filter: {sub: {eq: strSubID}} }
+  });
+  console.log(oneUserProfiles);
+  
 
   return (
     <div>
