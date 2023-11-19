@@ -40,7 +40,7 @@ function App() {
 
   const oneUserProfiles = API.graphql({
     query: listUserProfiles(),
-    variables: { filter: {sub: {eq: strSubID}} }
+    variables: { filter: {sub: {eq: user.attributes.sub}} }
   });
   console.log(oneUserProfiles);
   
