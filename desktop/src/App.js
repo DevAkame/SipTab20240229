@@ -31,6 +31,7 @@ function App() {
         param = { filter: {sub: {eq: String(user.attributes.sub)} }};
         console.log(param);
       } catch (error){
+        console.log("user get errors");
         console.log(err);
       };
     };
