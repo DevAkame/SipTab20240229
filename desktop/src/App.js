@@ -43,21 +43,19 @@ function App() {
     });
   }, []);
 
+
+  console.log("get query");
+
   try {
     param = { filter: {sub: {eq: String(user.attributes.sub)} }};
-    console.log(param);
+    const oneUserProfiles = API.graphql({
+      query: listUserProfiles,
+      variables: param  
   } catch (error){
-    console.log("user get errors");
     console.log(error);
   };
 
 
-  const oneUserProfiles = API.graphql({
-    query: listUserProfiles,
-    variables: param
-  });
-
-  console.log("get query");
   if (oneUserProfiles !== null){
     console.log(oneUserProfiles);
   } else{
