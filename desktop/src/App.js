@@ -11,7 +11,7 @@ import { API } from 'aws-amplify';
 
 Amplify.configure(awsExports);
 
- const param = "";
+global.param = "";
 
 function App() {
   const [user, setUser] = useState(null);
