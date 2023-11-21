@@ -21,7 +21,7 @@ function App() {
       try {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
-        param = null;{ filter: {sub: {eq: String(user.attributes.sub)} }};
+        param = { filter: {sub: {eq: String(user.attributes.sub)} }};
 
       } catch (error) {
         setUser(null);
