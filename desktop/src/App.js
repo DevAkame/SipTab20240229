@@ -4,14 +4,14 @@ import { NavBarHeader } from './ui-components';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-import { CheckUserProfile } from './custom-job/orginCustomJob';
+//import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
 
 Amplify.configure(awsExports);
 
-
+const param = null;
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,6 +21,8 @@ function App() {
       try {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
+        param = null;{ filter: {sub: {eq: String(user.attributes.sub)} }};
+
       } catch (error) {
         setUser(null);
       }
@@ -38,7 +40,7 @@ function App() {
     });
   }, []);
 
-  const param = { filter: {sub: {eq: String(user.attributes.sub)} }};
+
   const oneUserProfiles = API.graphql({
     query: listUserProfiles,
     variables: param
