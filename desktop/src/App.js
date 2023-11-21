@@ -27,13 +27,7 @@ function App() {
         setUser(null);
       };
 
-      try {
-        param = { filter: {sub: {eq: String(user.attributes.sub)} }};
-        console.log(param);
-      } catch (error){
-        console.log("user get errors");
-        console.log(error);
-      };
+      
     };
 
 
@@ -48,6 +42,14 @@ function App() {
       }
     });
   }, []);
+
+  try {
+    param = { filter: {sub: {eq: String(user.attributes.sub)} }};
+    console.log(param);
+  } catch (error){
+    console.log("user get errors");
+    console.log(error);
+  };
 
 
   const oneUserProfiles = API.graphql({
