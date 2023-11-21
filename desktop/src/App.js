@@ -51,7 +51,8 @@ function App() {
     const oneUserProfiles = API.graphql({
       query: listUserProfiles,
       variables: param  
-  } catch (error){
+    };
+  } catch (error) {
     console.log(error);
   };
 
