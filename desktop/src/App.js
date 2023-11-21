@@ -32,7 +32,7 @@ function App() {
         console.log(param);
       } catch (error){
         console.log("user get errors");
-        console.log(err);
+        console.log(error);
       };
     };
 
