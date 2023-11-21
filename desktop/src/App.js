@@ -21,12 +21,20 @@ function App() {
       try {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
-        param = { filter: {sub: {eq: String(user.attributes.sub)} }};
+        
 
       } catch (error) {
         setUser(null);
-      }
+      };
+
+      try {
+        param = { filter: {sub: {eq: String(user.attributes.sub)} }};
+        console.log(param);
+      } catch (error){
+        console.log(err);
+      };
     };
+
 
     fetchUserData();
 
