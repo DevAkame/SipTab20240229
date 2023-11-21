@@ -56,8 +56,13 @@ function App() {
     query: listUserProfiles,
     variables: param
   });
-  console.log(oneUserProfiles);
-  
+
+  console.log("get query");
+  if (oneUserProfiles !== null){
+    console.log(oneUserProfiles);
+  } else{
+    console.log("is null");
+  };
 
   return (
     <div>
