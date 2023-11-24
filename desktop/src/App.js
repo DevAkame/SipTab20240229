@@ -47,7 +47,7 @@ function App() {
   console.log("get query");
 
   try {
-    param = { filter: {sub: {eq: String(user.attributes.sub)} }};
+    param = { filter: {sub: {eq: user.attributes.sub} }};
     const oneUserProfiles = API.graphql({
       query: listUserProfiles,
       variables: param,
