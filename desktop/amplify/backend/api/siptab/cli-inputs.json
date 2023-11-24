@@ -4,17 +4,14 @@
     "apiName": "siptab",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AWS_IAM"
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authsiptab"
     },
     "additionalAuthTypes": [
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authsiptab"
-      },
-      {
         "mode": "API_KEY",
-        "keyDescription": "api key description",
-        "expirationTime": 30
+        "expirationTime": 30,
+        "keyDescription": "api key description"
       }
     ],
     "conflictResolution": {
