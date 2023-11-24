@@ -12,9 +12,9 @@ import { API } from 'aws-amplify';
 Amplify.configure(awsExports);
 
 var param = "";
+export var [user, setUser] = userState(null);
 
 function App() {
-  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
