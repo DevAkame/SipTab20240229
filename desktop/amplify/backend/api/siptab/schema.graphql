@@ -1,9 +1,4 @@
-type UserProfile 
- @model
- @auth(rules: [
-  { allow: groups, groups: ["siptabUsers"], operations: [read] }
-  ]
-  ) {
+type UserProfile @model @auth(rules: [{allow: groups, groups: ["siptabUsers"], operations: [read]}, {allow: owner, operations: [create, read, update]}]) {
   id: ID!
   sub: ID!
   name: String
