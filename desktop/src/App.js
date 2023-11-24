@@ -50,8 +50,10 @@ function App() {
     param = { filter: {sub: {eq: String(user.attributes.sub)} }};
     const oneUserProfiles = API.graphql({
       query: listUserProfiles,
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
       variables: param 
     });
+    console.log(oneUserProfiles);
     if (oneUserProfiles !== null){
       console.log(oneUserProfiles);
     } else{
@@ -89,5 +91,11 @@ function App() {
 }
 
 export default withAuthenticator(App);
+
+
+
+
+
+
 
 
