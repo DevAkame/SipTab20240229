@@ -12,9 +12,9 @@ import { API } from 'aws-amplify';
 Amplify.configure(awsExports);
 
 var param = "";
-export var [user, setUser] = userState(null);
 
 function App() {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -50,10 +50,9 @@ function App() {
     param = { filter: {sub: {eq: String(user.attributes.sub)} }};
     const oneUserProfiles = API.graphql({
       query: listUserProfiles,
-      authMode: 'AMAZON_COGNITO_USER_POOLS',
-      variables: param 
+      variables: param,
+      authMode: 'AMAZON_COGNITO_USER_POOLS'
     });
-    console.log(oneUserProfiles);
     if (oneUserProfiles !== null){
       console.log(oneUserProfiles);
     } else{
@@ -91,11 +90,5 @@ function App() {
 }
 
 export default withAuthenticator(App);
-
-
-
-
-
-
 
 
