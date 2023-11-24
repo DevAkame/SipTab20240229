@@ -50,18 +50,19 @@ function App() {
     param = { filter: {sub: {eq: String(user.attributes.sub)} }};
     const oneUserProfiles = API.graphql({
       query: listUserProfiles,
-      variables: param  
+      variables: param 
     });
+    if (oneUserProfiles !== null){
+      console.log(oneUserProfiles);
+    } else{
+      console.log("is null");
+    };
   } catch (error) {
     console.log(error);
   };
 
 
-  if (oneUserProfiles !== null){
-    console.log(oneUserProfiles);
-  } else{
-    console.log("is null");
-  };
+  
 
   return (
     <div>
