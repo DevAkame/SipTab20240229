@@ -44,7 +44,7 @@ function App() {
     });
   }, []);
 
-  var ObjsetUsreProfile = "";
+  const ObjsetUsreProfile = "";
   console.log("get query");
 
   try {
@@ -54,7 +54,8 @@ function App() {
       variables: param,
       authMode: 'AMAZON_COGNITO_USER_POOLS'
     });
-    console.log(oneUserProfiles);
+    console.log(Object.keys(oneUserProfiles.data.items[0]).length);
+    console.log(oneUserProfiles.items);
     if (oneUserProfiles.data ){
       console.log(oneUserProfiles.data);
     } else{
