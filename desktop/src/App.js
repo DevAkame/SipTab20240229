@@ -46,11 +46,10 @@ function App() {
 
 
   console.log("get query");
-  var ObjsetUsreProfile = "";
 
   try {
     param = { filter: {sub: {eq: user.attributes.sub} }};
-    const oneUserProfiles = API.graphql({
+    var oneUserProfiles = API.graphql({
       query: listUserProfiles,
       variables: param,
       authMode: 'AMAZON_COGNITO_USER_POOLS'
