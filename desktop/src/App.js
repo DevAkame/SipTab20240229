@@ -4,11 +4,12 @@ import { NavBarHeader } from './ui-components';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
+
 //import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
-
+import FirthSetUpProfiles, { FirthSetUpProfilesProps } from './ui-components/FirthSetUpProfiles';
 Amplify.configure(awsExports);
 
 var param = "";
@@ -45,6 +46,7 @@ function App() {
 
 
   console.log("get query");
+  var ObjsetUsreProfile = "";
 
   try {
     param = { filter: {sub: {eq: user.attributes.sub} }};
@@ -57,6 +59,8 @@ function App() {
       console.log(oneUserProfiles);
     } else{
       console.log("is null");
+      ObjsetUsreProfile = "<FirthSetUpProfiles />";
+      
     };
   } catch (error) {
     console.log(error);
@@ -74,6 +78,7 @@ function App() {
             <p>testdayo</p>
 
             <p>{user.attributes.sub}</p>
+            {ObjsetUsreProfile}
             
             {
               //console.log("testday")
