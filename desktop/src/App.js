@@ -55,8 +55,8 @@ function App() {
       authMode: 'AMAZON_COGNITO_USER_POOLS'
     });
     console.log(oneUserProfiles);
-    if (oneUserProfiles.data.items.length ){
-      console.log(oneUserProfiles);
+    if (oneUserProfiles.data ){
+      console.log(oneUserProfiles.data);
     } else{
       console.log("is null");
       ObjsetUsreProfile = <FirthSetUpProfiles />;
