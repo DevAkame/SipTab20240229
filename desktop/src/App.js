@@ -60,7 +60,7 @@ function App() {
       console.log(oneUserProfiles);
     } else{
       console.log("is null");
-      ObjsetUsreProfile = "<FirthSetUpProfiles />";
+      ObjsetUsreProfile = <FirthSetUpProfiles />;
       
     };
   } catch (error) {
