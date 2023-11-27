@@ -44,7 +44,7 @@ function App() {
     });
   }, []);
 
-
+  var ObjsetUsreProfile = "";
   console.log("get query");
 
   try {
