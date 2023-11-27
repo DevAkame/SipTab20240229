@@ -55,7 +55,7 @@ function App() {
       variables: param,
       authMode: 'AMAZON_COGNITO_USER_POOLS'
     });
-    if (!oneUserProfiles.item.length ){
+    if (oneUserProfiles.item.length ){
       console.log(oneUserProfiles);
     } else{
       console.log("is null");
