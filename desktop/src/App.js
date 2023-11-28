@@ -55,8 +55,9 @@ function App() {
       authMode: 'AMAZON_COGNITO_USER_POOLS'
     });
 //    console.log(Object.keys());
-    console.log(oneUserProfiles.Promise[0]);
-    console.log(oneUserProfiles;
+    console.log(oneUserProfiles);
+    console.log(oneUserProfiles.data.data);
+
     if (oneUserProfiles.data ){
       console.log(oneUserProfiles.data);
     } else{
