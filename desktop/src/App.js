@@ -56,7 +56,10 @@ function App() {
     });
 //    console.log(Object.keys());
     console.log(oneUserProfiles);
-    console.log(oneUserProfiles.data[listUserProfiles]);
+    console.log(oneUserProfiles[PromiseResult]);
+    console.log(oneUserProfiles[PromiseResult].data);
+    console.log(oneUserProfiles[PromiseResult].data.listUserProfiles.items.length);
+    
 
     if (oneUserProfiles.data ){
       console.log(oneUserProfiles.data);
