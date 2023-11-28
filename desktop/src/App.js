@@ -56,8 +56,7 @@ function App() {
     });
 //    console.log(Object.keys());
     console.log(oneUserProfiles.Promise[0]);
-    console.log(tmpObj.data);
-    console.log(oneUserProfiles.data);
+    console.log(oneUserProfiles;
     if (oneUserProfiles.data ){
       console.log(oneUserProfiles.data);
     } else{
