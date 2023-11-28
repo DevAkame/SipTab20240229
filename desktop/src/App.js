@@ -56,6 +56,8 @@ function App() {
     });
 //    console.log(Object.keys());
     console.log(oneUserProfiles);
+    const tmpObj = JSON.parse(oneUserProfiles);
+    console.log(tmpObj[1].data);
     console.log(oneUserProfiles.data);
     if (oneUserProfiles.data ){
       console.log(oneUserProfiles.data);
