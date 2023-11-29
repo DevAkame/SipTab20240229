@@ -12,7 +12,7 @@ import { API } from 'aws-amplify';
 import FirthSetUpProfiles, { FirthSetUpProfilesProps } from './ui-components/FirthSetUpProfiles';
 Amplify.configure(awsExports);
 
-var param = "";
+var param = null;
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,8 +25,6 @@ function App() {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
         param = { filter: {sub: {eq: user.attributes.sub} }};
-  
-        
 
       } catch (error) {
         setUser(null);
@@ -71,6 +69,7 @@ function App() {
   try {
     if (UserProfileItems.length ){
       console.log(UserProfileItems.length);
+      console.log('atai aruyo');
     } else{
       console.log("is null");
       ObjsetUsreProfile = <FirthSetUpProfiles />;
