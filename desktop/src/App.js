@@ -46,22 +46,25 @@ function App() {
 
   const ObjsetUsreProfile = "";
   console.log("get query");
+  param = { filter: {sub: {eq: user.attributes.sub} }};
+  var oneUserProfilesPromise = API.graphql({
+    query: listUserProfiles,
+    variables: param,
+    authMode: 'AMAZON_COGNITO_USER_POOLS'
+  });
+
+  oneUserProfilesPromise.then(result => {
+    const itemsLength = result.data.listUserProfiles.items.length;
+    console.log(itemsLength);
+  }).catch(error => {
+    console.error(error);
+  });
+
+
+
 
   try {
-    param = { filter: {sub: {eq: user.attributes.sub} }};
-    var oneUserProfiles = API.graphql({
-      query: listUserProfiles,
-      variables: param,
-      authMode: 'AMAZON_COGNITO_USER_POOLS'
-    }).then(value);
-//    console.log(Object.keys());
-    console.log(oneUserProfiles);
-    console.log(oneUserProfiles[PromiseResult]);
-    console.log(oneUserProfiles[PromiseResult].data);
-    console.log(oneUserProfiles[PromiseResult].data.listUserProfiles.items.length);
-    
-
-    if (oneUserProfiles.data ){
+    if (itemsLength ){
       console.log(oneUserProfiles.data);
     } else{
       console.log("is null");
@@ -71,6 +74,9 @@ function App() {
   } catch (error) {
     console.log(error);
   };
+
+
+
 
 
   
