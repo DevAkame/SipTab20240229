@@ -103,7 +103,10 @@ function App() {
             <p>testnandayo</p>
           </div>
         ) : (
+          <>
           <p>Not Authenticated</p>
+          <NavBarHeader />
+          </>
         )}
       </Flex>
     </div>
