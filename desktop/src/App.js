@@ -53,9 +53,11 @@ function App() {
     authMode: 'AMAZON_COGNITO_USER_POOLS'
   });
 
+  var UserProfileItems = "";
+
   oneUserProfilesPromise.then(result => {
-    const itemsLength = result.data.listUserProfiles.items.length;
-    console.log(itemsLength);
+    UserProfileItems = result.data.listUserProfiles.items;
+    console.log(UserProfileItems);
   }).catch(error => {
     console.error(error);
   });
@@ -64,8 +66,8 @@ function App() {
 
 
   try {
-    if (itemsLength ){
-      console.log(oneUserProfiles.data);
+    if (UserProfileItems.length ){
+      console.log(UserProfileItems.length);
     } else{
       console.log("is null");
       ObjsetUsreProfile = <FirthSetUpProfiles />;
