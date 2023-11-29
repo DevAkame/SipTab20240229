@@ -16,12 +16,16 @@ var param = "";
 
 function App() {
   const [user, setUser] = useState(null);
+  var param = "";
+  var UserProfileItems = "";
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
+        param = { filter: {sub: {eq: user.attributes.sub} }};
+  
         
 
       } catch (error) {
@@ -46,14 +50,13 @@ function App() {
 
   const ObjsetUsreProfile = "";
   console.log("get query");
-  param = { filter: {sub: {eq: user.attributes.sub} }};
+  
   var oneUserProfilesPromise = API.graphql({
     query: listUserProfiles,
     variables: param,
     authMode: 'AMAZON_COGNITO_USER_POOLS'
   });
 
-  var UserProfileItems = "";
 
   oneUserProfilesPromise.then(result => {
     UserProfileItems = result.data.listUserProfiles.items;
