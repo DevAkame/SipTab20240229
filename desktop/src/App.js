@@ -53,7 +53,7 @@ function App() {
       query: listUserProfiles,
       variables: param,
       authMode: 'AMAZON_COGNITO_USER_POOLS'
-    });
+    }).then(value);
 //    console.log(Object.keys());
     console.log(oneUserProfiles);
     console.log(oneUserProfiles[PromiseResult]);
