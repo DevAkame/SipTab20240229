@@ -12,12 +12,13 @@ import { API } from 'aws-amplify';
 import FirthSetUpProfiles, { FirthSetUpProfilesProps } from './ui-components/FirthSetUpProfiles';
 Amplify.configure(awsExports);
 
-var param = null;
+
 
 function App() {
   const [user, setUser] = useState(null);
   var param = "";
   var UserProfileItems = "";
+  const ObjsetUsreProfile = "";
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -25,6 +26,21 @@ function App() {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
         param = { filter: {sub: {eq: user.attributes.sub} }};
+
+        var oneUserProfilesPromise = await API.graphql({
+          query: listUserProfiles,
+          variables: param,
+          authMode: 'AMAZON_COGNITO_USER_POOLS'
+        });
+
+        if (UserProfileItems.length ){
+          console.log(UserProfileItems.length);
+          console.log('atai aruyo');
+        } else{
+          console.log("is null");
+          ObjsetUsreProfile = <FirthSetUpProfiles />;
+          
+        };
 
       } catch (error) {
         setUser(null);
@@ -46,14 +62,8 @@ function App() {
     });
   }, []);
 
-  const ObjsetUsreProfile = "";
-  console.log("get query");
   
-  var oneUserProfilesPromise = API.graphql({
-    query: listUserProfiles,
-    variables: param,
-    authMode: 'AMAZON_COGNITO_USER_POOLS'
-  });
+  
 
 
   oneUserProfilesPromise.then(result => {
@@ -62,28 +72,6 @@ function App() {
   }).catch(error => {
     console.error(error);
   });
-
-
-
-
-  try {
-    if (UserProfileItems.length ){
-      console.log(UserProfileItems.length);
-      console.log('atai aruyo');
-    } else{
-      console.log("is null");
-      ObjsetUsreProfile = <FirthSetUpProfiles />;
-      
-    };
-  } catch (error) {
-    console.log(error);
-  };
-
-
-
-
-
-  
 
   return (
     <div>
@@ -104,8 +92,8 @@ function App() {
           </div>
         ) : (
           <>
-          <p>Not Authenticated</p>
-          <NavBarHeader />
+            <p>Not Authenticated</p>
+            <NavBarHeader />
           </>
         )}
       </Flex>
