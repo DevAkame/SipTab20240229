@@ -33,6 +33,13 @@ function App() {
           authMode: 'AMAZON_COGNITO_USER_POOLS'
         });
 
+        oneUserProfilesPromise.then(result => {
+          UserProfileItems = result.data.listUserProfiles.items;
+          console.log(UserProfileItems);
+        }).catch(error => {
+          console.error(error);
+        });
+
         if (UserProfileItems.length ){
           console.log(UserProfileItems.length);
           console.log('atai aruyo');
@@ -41,6 +48,8 @@ function App() {
           ObjsetUsreProfile = <FirthSetUpProfiles />;
           
         };
+
+        
 
       } catch (error) {
         setUser(null);
@@ -66,12 +75,7 @@ function App() {
   
 
 
-  oneUserProfilesPromise.then(result => {
-    UserProfileItems = result.data.listUserProfiles.items;
-    console.log(UserProfileItems);
-  }).catch(error => {
-    console.error(error);
-  });
+  
 
   return (
     <div>
