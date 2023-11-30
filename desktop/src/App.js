@@ -27,6 +27,11 @@ function App() {
         setUser(userData);
         param = { filter: {sub: {eq: user.attributes.sub} }};
 
+      } catch (error) {
+        setUser(null);
+      };
+
+      try {
         var oneUserProfilesPromise = await API.graphql({
           query: listUserProfiles,
           variables: param,
@@ -48,13 +53,9 @@ function App() {
           ObjsetUsreProfile = <FirthSetUpProfiles />;
           
         };
-
-        
-
-      } catch (error) {
-        setUser(null);
+      } catch (error){
+        console.log(error);
       };
-
       
     };
 
