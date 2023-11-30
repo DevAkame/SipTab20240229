@@ -25,14 +25,13 @@ function App() {
       try {
         const userData = await Auth.currentAuthenticatedUser();
         setUser(userData);
-        param = { filter: {sub: {eq: user.attributes.sub} }};
 
       } catch (error) {
         setUser(null);
-        param = null;
       };
       if(param){
         try {
+          param = { filter: {sub: {eq: user.attributes.sub} }};
           var oneUserProfilesPromise = await API.graphql({
             query: listUserProfiles,
             variables: param,
