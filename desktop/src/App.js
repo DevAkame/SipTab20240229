@@ -29,32 +29,34 @@ function App() {
 
       } catch (error) {
         setUser(null);
+        param = null;
       };
+      if(param){
+        try {
+          var oneUserProfilesPromise = await API.graphql({
+            query: listUserProfiles,
+            variables: param,
+            authMode: 'AMAZON_COGNITO_USER_POOLS'
+          });
 
-      try {
-        var oneUserProfilesPromise = await API.graphql({
-          query: listUserProfiles,
-          variables: param,
-          authMode: 'AMAZON_COGNITO_USER_POOLS'
-        });
+          oneUserProfilesPromise.then(result => {
+            UserProfileItems = result.data.listUserProfiles.items;
+            console.log(UserProfileItems);
+          }).catch(error => {
+            console.error(error);
+          });
 
-        oneUserProfilesPromise.then(result => {
-          UserProfileItems = result.data.listUserProfiles.items;
-          console.log(UserProfileItems);
-        }).catch(error => {
-          console.error(error);
-        });
+          if (UserProfileItems.length ){
+            console.log(UserProfileItems.length);
+            console.log('atai aruyo');
+          } else{
+            console.log("is null");
+            ObjsetUsreProfile = <FirthSetUpProfiles />;
 
-        if (UserProfileItems.length ){
-          console.log(UserProfileItems.length);
-          console.log('atai aruyo');
-        } else{
-          console.log("is null");
-          ObjsetUsreProfile = <FirthSetUpProfiles />;
-          
+          };
+        } catch (error){
+          console.log(error);
         };
-      } catch (error){
-        console.log(error);
       };
       
     };
@@ -68,6 +70,7 @@ function App() {
       if (payload.event === 'signOut') {
         // ユーザーがログアウトした場合の処理
         setUser(null);
+        param = null;
       }
     });
   }, []);
