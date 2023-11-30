@@ -29,35 +29,32 @@ function App() {
       } catch (error) {
         setUser(null);
       };
-      if(param){
-        try {
-          param = { filter: {sub: {eq: user.attributes.sub} }};
-          var oneUserProfilesPromise = await API.graphql({
-            query: listUserProfiles,
-            variables: param,
-            authMode: 'AMAZON_COGNITO_USER_POOLS'
-          });
+      try {
+        param = { filter: {sub: {eq: user.attributes.sub} }};
+        var oneUserProfilesPromise = await API.graphql({
+          query: listUserProfiles,
+          variables: param,
+          authMode: 'AMAZON_COGNITO_USER_POOLS'
+        });
 
-          oneUserProfilesPromise.then(result => {
-            UserProfileItems = result.data.listUserProfiles.items;
-            console.log(UserProfileItems);
-          }).catch(error => {
-            console.error(error);
-          });
+        oneUserProfilesPromise.then(result => {
+          UserProfileItems = result.data.listUserProfiles.items;
+          console.log(UserProfileItems);
+        }).catch(error => {
+          console.error(error);
+        });
 
-          if (UserProfileItems.length ){
-            console.log(UserProfileItems.length);
-            console.log('atai aruyo');
-          } else{
-            console.log("is null");
-            ObjsetUsreProfile = <FirthSetUpProfiles />;
+        if (UserProfileItems.length ){
+          console.log(UserProfileItems.length);
+          console.log('atai aruyo');
+        } else{
+          console.log("is null");
+          ObjsetUsreProfile = <FirthSetUpProfiles />;
 
-          };
-        } catch (error){
-          console.log(error);
         };
-      };
-      
+      } catch (error){
+        console.log(error);
+      };      
     };
 
 
