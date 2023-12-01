@@ -29,9 +29,10 @@ function App() {
       } catch (error) {
         setUser(null);
       };
+
       try {
         param = { filter: {sub: {eq: user.attributes.sub} }};
-        var oneUserProfilesPromise = await API.graphql({
+        var oneUserProfilesPromise = API.graphql({
           query: listUserProfiles,
           variables: param,
           authMode: 'AMAZON_COGNITO_USER_POOLS'
