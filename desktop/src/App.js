@@ -31,6 +31,7 @@ function App() {
       };
 
       try {
+        console.log("test");
         param = { filter: {sub: {eq: user.attributes.sub} }};
         var oneUserProfilesPromise = API.graphql({
           query: listUserProfiles,
@@ -38,6 +39,7 @@ function App() {
           authMode: 'AMAZON_COGNITO_USER_POOLS'
         });
 
+        console.log("test2");
         oneUserProfilesPromise.then(result => {
           UserProfileItems = result.data.listUserProfiles.items;
           console.log(UserProfileItems);
