@@ -14,6 +14,8 @@ Amplify.configure(awsExports);
 
 
 
+
+
 function App() {
   const [user, setUser] = useState(null);
   var param = "";
@@ -34,9 +36,11 @@ function App() {
 
 
     fetchUserData();
-
-    param = { filter: {sub: {eq: user.attributes.sub} }};
-
+    if (user){
+      console.log("user iruyo");
+      param = { filter: {sub: {eq: user.attributes.sub} }};
+    };
+    
     try {
       console.log("test");
       var oneUserProfilesPromise = API.graphql({
