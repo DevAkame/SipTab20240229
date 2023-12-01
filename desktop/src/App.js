@@ -40,15 +40,13 @@ function App() {
       param = { filter: {sub: {eq: user.attributes.sub} }};
     };
 
-    try {
-      console.log("test");
+    
       var oneUserProfilesPromise = API.graphql({
         query: listUserProfiles,
         variables: param,
         authMode: 'AMAZON_COGNITO_USER_POOLS'
       });
 
-      console.log("test2");
       oneUserProfilesPromise.then(result => {
         UserProfileItems = result.data.listUserProfiles.items;
         console.log(UserProfileItems);
@@ -64,9 +62,7 @@ function App() {
         ObjsetUsreProfile = <FirthSetUpProfiles />;
 
       };
-    } catch (error){
-      console.log(error);
-    };      
+       
 
 
     // Hubを使用してCognitoセッションの変更を監視
