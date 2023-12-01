@@ -53,7 +53,9 @@ function App() {
       console.error(error);
     });
 
-    if (!UserProfileItems.length ){
+    if (UserProfileItems.length ){
+      console.log("atai aruyo");
+    }else{
       console.log("is null");
       ObjsetUsreProfile = <FirthSetUpProfiles />;
     };
@@ -68,12 +70,7 @@ function App() {
       }
     });
   }, []);
-
-  
-  
-
-
-  
+ 
 
   return (
     <div>
