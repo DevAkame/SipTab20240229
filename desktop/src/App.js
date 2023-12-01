@@ -54,16 +54,10 @@ function App() {
         console.error(error);
       });
 
-      if (UserProfileItems.length ){
-        console.log(UserProfileItems.length);
-        console.log('atai aruyo');
-      } else{
+      if (!UserProfileItems.length ){
         console.log("is null");
         ObjsetUsreProfile = <FirthSetUpProfiles />;
-
       };
-       
-
 
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
