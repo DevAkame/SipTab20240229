@@ -53,7 +53,7 @@ function App() {
       console.error(error);
     });
 
-    if (UserProfileItems.length ){
+    if (UserProfileItems.length > 0){
       console.log("atai aruyo");
     }else{
       console.log("is null");
@@ -70,6 +70,8 @@ function App() {
       }
     });
   }, []);
+
+
  
 
   return (
