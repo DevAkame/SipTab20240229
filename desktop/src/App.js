@@ -36,7 +36,7 @@ function App() {
     
     fetchUserData();
 
-    if (user){
+    if (user !== null){
       console.log("user iruyo");
       param = { filter: {sub: {eq: user.attributes.sub} }};
     };
@@ -53,7 +53,7 @@ function App() {
       console.error(error);
     });
 
-    if (UserProfileItems.length >= 0){
+    if (UserProfileItems.length >= 1){
       console.log("atai aruyo");
     }else{
       console.log("is null");
@@ -71,24 +71,13 @@ function App() {
     });
   }, []);
 
-
- 
-
   return (
     <div>
       <Flex direction="column" alignItems="center">
         {user ? (
           <div>
             <NavBarHeader />
-
-            <p>{user.attributes.sub}</p>
             {ObjsetUsreProfile}
-            
-            {
-              //console.log("testday")
-//              CheckUserProfile(user.attributes.sub)
-            }
-            <p>testnandayo</p>
           </div>
         ) : (
           <>
