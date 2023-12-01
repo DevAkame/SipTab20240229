@@ -20,7 +20,7 @@ function App() {
   const [user, setUser] = useState(null);
   var param = "";
   var UserProfileItems = "";
-  const ObjsetUsreProfile = "";
+  var ObjsetUsreProfile = "";
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -33,14 +33,13 @@ function App() {
       };
 
     };
-
-
+    
     fetchUserData();
     if (user){
       console.log("user iruyo");
       param = { filter: {sub: {eq: user.attributes.sub} }};
     };
-    
+
     try {
       console.log("test");
       var oneUserProfilesPromise = API.graphql({
@@ -93,7 +92,6 @@ function App() {
         {user ? (
           <div>
             <NavBarHeader />
-            <p>testdayo</p>
 
             <p>{user.attributes.sub}</p>
             {ObjsetUsreProfile}
