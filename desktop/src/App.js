@@ -30,9 +30,10 @@ function App() {
         setUser(null);
       };
 
+      param = { filter: {sub: {eq: user.attributes.sub} }};
+
       try {
         console.log("test");
-        param = { filter: {sub: {eq: user.attributes.sub} }};
         var oneUserProfilesPromise = API.graphql({
           query: listUserProfiles,
           variables: param,
