@@ -35,29 +35,28 @@ function App() {
     };
     
     fetchUserData();
+
     if (user){
       console.log("user iruyo");
       param = { filter: {sub: {eq: user.attributes.sub} }};
     };
 
-    
-      var oneUserProfilesPromise = API.graphql({
-        query: listUserProfiles,
-        variables: param,
-        authMode: 'AMAZON_COGNITO_USER_POOLS'
-      });
+    var oneUserProfilesPromise = API.graphql({
+      query: listUserProfiles,
+      variables: param,
+      authMode: 'AMAZON_COGNITO_USER_POOLS'
+    });
 
-      oneUserProfilesPromise.then(result => {
-        UserProfileItems = result.data.listUserProfiles.items;
-        console.log(UserProfileItems);
-      }).catch(error => {
-        console.error(error);
-      });
+    oneUserProfilesPromise.then(result => {
+      UserProfileItems = result.data.listUserProfiles.items;
+    }).catch(error => {
+      console.error(error);
+    });
 
-      if (!UserProfileItems.length ){
-        console.log("is null");
-        ObjsetUsreProfile = <FirthSetUpProfiles />;
-      };
+    if (!UserProfileItems.length ){
+      console.log("is null");
+      ObjsetUsreProfile = <FirthSetUpProfiles />;
+    };
 
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
