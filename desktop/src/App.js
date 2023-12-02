@@ -17,7 +17,7 @@ Amplify.configure(awsExports);
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  var [user, setUser] = useState(null);
   var param = "";
   var UserProfileItems = "";
   var ObjsetUsreProfile = "";
