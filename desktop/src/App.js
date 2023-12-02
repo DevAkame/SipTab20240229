@@ -36,6 +36,21 @@ function App() {
     
     fetchUserData();
 
+    
+
+    // Hubを使用してCognitoセッションの変更を監視
+    Hub.listen('auth', (data) => {
+      const { payload } = data;
+      if (payload.event === 'signOut') {
+        // ユーザーがログアウトした場合の処理
+        setUser(null);
+        param = null;
+      }
+    });
+  }, []);
+
+
+  useEffect(() => {
     if (user !== null){
       console.log("user iruyo");
       param = { filter: {sub: {eq: user.attributes.sub} }};
@@ -52,24 +67,19 @@ function App() {
     }).catch(error => {
       console.error(error);
     });
+
     console.log(UserProfileItems.length);
+    
     if (UserProfileItems.length >= 1){
       console.log("atai aruyo");
     }else{
       console.log("is null");
       ObjsetUsreProfile = <FirthSetUpProfiles />;
+      console.log(ObjsetUsreProfile);
     };
 
-    // Hubを使用してCognitoセッションの変更を監視
-    Hub.listen('auth', (data) => {
-      const { payload } = data;
-      if (payload.event === 'signOut') {
-        // ユーザーがログアウトした場合の処理
-        setUser(null);
-        param = null;
-      }
-    });
-  }, []);
+  },[setUser]);
+
 
   return (
     <div>
