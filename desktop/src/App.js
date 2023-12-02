@@ -41,12 +41,13 @@ function App() {
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
       const { payload } = data;
+      console.log(payload.event);
       if (payload.event === 'signOut') {
         // ユーザーがログアウトした場合の処理
         setUser(null);
       };
 
-      if (payload.event === 'signedIn'){
+      if (payload.event === 'signedIn') {
         console.log("user iruyo");
         param = { filter: {sub: {eq: user.attributes.sub} }};
 
