@@ -44,40 +44,42 @@ function App() {
       if (payload.event === 'signOut') {
         // ユーザーがログアウトした場合の処理
         setUser(null);
-      }
+      };
+
+      if (payload.event === 'signedln'){
+        console.log("user iruyo");
+        param = { filter: {sub: {eq: user.attributes.sub} }};
+
+        var oneUserProfilesPromise = API.graphql({
+          query: listUserProfiles,
+          variables: param,
+          authMode: 'AMAZON_COGNITO_USER_POOLS'
+        });
+
+        oneUserProfilesPromise.then(result => {
+          UserProfileItems = result.data.listUserProfiles.items;
+        }).catch(error => {
+          console.error(error);
+        });
+    
+        console.log(UserProfileItems.length);
+        
+        if (UserProfileItems.length >= 1){
+          console.log("atai aruyo");
+        }else{
+          console.log("is null");
+          ObjsetUsreProfile = <FirthSetUpProfiles />;
+          console.log(ObjsetUsreProfile);
+        };
+    
+      };
+
     });
   }, []);
 
 
-  useEffect(() => {
-    if (user){
-      console.log("user iruyo");
-      param = { filter: {sub: {eq: user.attributes.sub} }};
-    };
 
-    var oneUserProfilesPromise = API.graphql({
-      query: listUserProfiles,
-      variables: param,
-      authMode: 'AMAZON_COGNITO_USER_POOLS'
-    });
 
-    oneUserProfilesPromise.then(result => {
-      UserProfileItems = result.data.listUserProfiles.items;
-    }).catch(error => {
-      console.error(error);
-    });
-
-    console.log(UserProfileItems.length);
-    
-    if (UserProfileItems.length >= 1){
-      console.log("atai aruyo");
-    }else{
-      console.log("is null");
-      ObjsetUsreProfile = <FirthSetUpProfiles />;
-      console.log(ObjsetUsreProfile);
-    };
-
-  },[setUser]);
 
 
   return (
