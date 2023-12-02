@@ -17,7 +17,7 @@ Amplify.configure(awsExports);
 
 
 function App() {
-  var [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   var param = "";
   var UserProfileItems = "";
   var ObjsetUsreProfile = "";
@@ -37,6 +37,11 @@ function App() {
     fetchUserData();
 
     
+    try{
+      console.log(user.attributes.sub)
+    } catch(error) {
+      console.log(error)
+    };
 
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
