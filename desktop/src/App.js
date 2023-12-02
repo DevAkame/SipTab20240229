@@ -52,7 +52,7 @@ function App() {
     }).catch(error => {
       console.error(error);
     });
-
+    console.log(UserProfileItems.length);
     if (UserProfileItems.length >= 1){
       console.log("atai aruyo");
     }else{
