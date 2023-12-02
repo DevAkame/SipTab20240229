@@ -46,7 +46,7 @@ function App() {
         setUser(null);
       };
 
-      if (payload.event === 'signedln'){
+      if (payload.event === 'signedIn'){
         console.log("user iruyo");
         param = { filter: {sub: {eq: user.attributes.sub} }};
 
