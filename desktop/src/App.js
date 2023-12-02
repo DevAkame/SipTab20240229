@@ -44,14 +44,13 @@ function App() {
       if (payload.event === 'signOut') {
         // ユーザーがログアウトした場合の処理
         setUser(null);
-        param = null;
       }
     });
   }, []);
 
 
   useEffect(() => {
-    if (user !== null){
+    if (user){
       console.log("user iruyo");
       param = { filter: {sub: {eq: user.attributes.sub} }};
     };
