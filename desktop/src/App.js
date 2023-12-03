@@ -18,9 +18,9 @@ Amplify.configure(awsExports);
 
 function App() {
   const [user, setUser] = useState(null);
-  var param = "";
-  var UserProfileItems = "";
-  var ObjsetUsreProfile = "";
+  var param = null;
+  var UserProfileItems = null;
+  var ObjsetUsreProfile = null;
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -31,6 +31,16 @@ function App() {
       } catch (error) {
         setUser(null);
       };
+      
+      try {
+        param = { filter: {sub: {eq: user.attributes.sub} }};
+        console.log(user.attributes.sub);
+      } catch (error) {
+        console.log(error);
+      };
+
+      if
+      
 
     };
     
@@ -53,8 +63,6 @@ function App() {
       };
 
       if (payload.event === 'signIn') {
-        console.log("user iruyo");
-        param = { filter: {sub: {eq: user.attributes.sub} }};
 
         var oneUserProfilesPromise = API.graphql({
           query: listUserProfiles,
