@@ -54,12 +54,6 @@ function App() {
         setUser(null);
       };
       
-      try {
-        
-        console.log(user.attributes.sub);
-      } catch (error) {
-        console.log(error);
-      };
     };
     
     fetchUserData();
@@ -76,11 +70,14 @@ function App() {
     });
   }, []);
 
-  try{
-  fechUserProfiles(user.attributes.sub);
-}catch (error){
-  console.log(error);
-};
+  useEffect(() => {
+    if (user !== null){
+      console.log("aa");
+    } else {
+      console.log("bb");
+    };
+  },user);
+  
 
   return (
     <div>
