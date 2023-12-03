@@ -13,7 +13,30 @@ import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 Amplify.configure(awsExports);
 
 
+async function fechUserProfiles (subStr){
 
+  param = { filter: {sub: {eq: subStr} }};
+  const oneUserProfilesPromise = await API.graphql({
+    query: listUserProfiles,
+    variables: param,
+    authMode: 'AMAZON_COGNITO_USER_POOLS'
+  });
+
+  oneUserProfilesPromise.then(result => {
+    UserProfileItems = result.data.listUserProfiles.items;
+  }).catch(error => {
+    console.error(error);
+  });
+
+  if (UserProfileItems.length >= 0){
+    console.log("atai aruyo");
+    return 1;
+  }else{
+    console.log("is null");
+    return 0;
+  };
+
+};
 
 
 function App() {
@@ -33,26 +56,16 @@ function App() {
       };
       
       try {
-        param = { filter: {sub: {eq: user.attributes.sub} }};
+        
         console.log(user.attributes.sub);
       } catch (error) {
         console.log(error);
       };
-
-      if
-      
-
     };
     
     fetchUserData();
-
+    fechUserProfiles(user.attributes.sub);
     
-    try{
-      console.log(user.attributes.sub)
-    } catch(error) {
-      console.log(error)
-    };
-
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
       const { payload } = data;
@@ -61,35 +74,10 @@ function App() {
         // ユーザーがログアウトした場合の処理
         setUser(null);
       };
-
-      if (payload.event === 'signIn') {
-
-        var oneUserProfilesPromise = API.graphql({
-          query: listUserProfiles,
-          variables: param,
-          authMode: 'AMAZON_COGNITO_USER_POOLS'
-        });
-
-        oneUserProfilesPromise.then(result => {
-          UserProfileItems = result.data.listUserProfiles.items;
-        }).catch(error => {
-          console.error(error);
-        });
-    
-        console.log(UserProfileItems.length);
-        
-        if (UserProfileItems.length >= 1){
-          console.log("atai aruyo");
-        }else{
-          console.log("is null");
-          ObjsetUsreProfile = <FirthSetUpProfiles />;
-          console.log(ObjsetUsreProfile);
-        };
-    
-      };
-
     });
   }, []);
+
+
 
 
 
