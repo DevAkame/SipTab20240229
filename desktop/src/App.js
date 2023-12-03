@@ -23,7 +23,7 @@ async function fechUserProfiles(subStr){
     authMode: 'AMAZON_COGNITO_USER_POOLS'
   });
 
-  oneUserProfilesPromise.then(result => {
+  await oneUserProfilesPromise.then(result => {
     UserProfileItems = result.data.listUserProfiles.items;
   }).catch(error => {
     console.error(error);
