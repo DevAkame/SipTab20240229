@@ -29,6 +29,7 @@ async function fechUserProfiles(subStr){
   }).catch(error => {
     console.error(error);
   });
+  console.log(UserProfileItems.length);
 
   if (UserProfileItems.length >= 0){
     console.log("atai aruyo");
