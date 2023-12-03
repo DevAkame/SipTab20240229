@@ -17,13 +17,13 @@ async function fechUserProfiles(subStr){
   var param = null;
   var UserProfileItems = null;
   param = { filter: {sub: {eq: subStr} }};
-  const oneUserProfilesPromise = await API.graphql({
+  const oneUserProfilesPromise = API.graphql({
     query: listUserProfiles,
     variables: param,
     authMode: 'AMAZON_COGNITO_USER_POOLS'
   });
 
-  await oneUserProfilesPromise.then(result => {
+  oneUserProfilesPromise.then(result => {
     UserProfileItems = result.data.listUserProfiles.items;
   }).catch(error => {
     console.error(error);
