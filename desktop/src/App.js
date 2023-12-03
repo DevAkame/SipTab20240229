@@ -14,7 +14,8 @@ Amplify.configure(awsExports);
 
 
 async function fechUserProfiles (subStr){
-
+  var param = null;
+  var UserProfileItems = null;
   param = { filter: {sub: {eq: subStr} }};
   const oneUserProfilesPromise = await API.graphql({
     query: listUserProfiles,
@@ -41,8 +42,6 @@ async function fechUserProfiles (subStr){
 
 function App() {
   const [user, setUser] = useState(null);
-  var param = null;
-  var UserProfileItems = null;
   var ObjsetUsreProfile = null;
 
   useEffect(() => {
