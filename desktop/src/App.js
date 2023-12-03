@@ -76,14 +76,11 @@ function App() {
     });
   }, []);
 
+  try{
   fechUserProfiles(user.attributes.sub);
-
-
-
-
-
-
-
+}catch (error){
+  console.log(error);
+};
 
   return (
     <div>
