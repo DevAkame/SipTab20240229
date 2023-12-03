@@ -10,7 +10,6 @@ import awsExports from './aws-exports';
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
-import { use } from 'chai';
 Amplify.configure(awsExports);
 
 
