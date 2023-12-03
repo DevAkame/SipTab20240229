@@ -17,7 +17,6 @@ async function fechUserProfiles(subStr){
   var param = null;
   var UserProfileItems = null;
   param = { filter: {sub: {eq: subStr} }};
-  console.log(param);
   const oneUserProfilesPromise = API.graphql({
     query: listUserProfiles,
     variables: param,
@@ -29,7 +28,7 @@ async function fechUserProfiles(subStr){
   }).catch(error => {
     console.error(error);
   });
-  console.log(UserProfileItems.length);
+  console.log(UserProfileItems);
 
   if (UserProfileItems.length >= 0){
     console.log("atai aruyo");
