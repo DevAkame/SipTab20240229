@@ -63,7 +63,7 @@ function App() {
     };
     
     fetchUserData();
-    fechUserProfiles(user.attributes.sub);
+    
     
     // Hubを使用してCognitoセッションの変更を監視
     Hub.listen('auth', (data) => {
@@ -75,6 +75,8 @@ function App() {
       };
     });
   }, []);
+
+  fechUserProfiles(user.attributes.sub);
 
 
 
