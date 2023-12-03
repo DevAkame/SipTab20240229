@@ -13,7 +13,7 @@ import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 Amplify.configure(awsExports);
 
 
-async function fechUserProfiles (subStr){
+async function fechUserProfiles(subStr){
   var param = null;
   var UserProfileItems = null;
   param = { filter: {sub: {eq: subStr} }};
@@ -74,6 +74,7 @@ function App() {
     if (user !== null){
       console.log("aa");
       console.log(user.attributes.sub);
+      fechUserProfiles(user.attributes.sub);
     } else {
       console.log("bb");
     };
