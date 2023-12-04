@@ -5,7 +5,6 @@ import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-//import { CheckUserProfile } from './custom-job/orginCustomJob';
 
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
@@ -28,14 +27,12 @@ async function fechUserProfiles(subStr){
   }).catch(error => {
     console.error(error);
   });
-  console.log(UserProfileItems);
 
   if (UserProfileItems.length >= 0){
-    console.log("atai aruyo");
-    return 1;
+    return FirthSetUpProfiles;
   }else{
     console.log("is null");
-    return 0;
+    return UserProfileItems;
   };
 
 };
@@ -43,7 +40,7 @@ async function fechUserProfiles(subStr){
 
 function App() {
   const [user, setUser] = useState(null);
-  var ObjsetUsreProfile = null;
+  var tmpObj = null;
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -73,11 +70,10 @@ function App() {
 
   useEffect(() => {
     if (user !== null){
-      console.log("aa");
-      console.log(user.attributes.sub);
-      fechUserProfiles(user.attributes.sub);
-    } else {
-      console.log("bb");
+      tmpObj = fechUserProfiles(user.attributes.sub);
+      if (!tmpObj.length){
+        ObjsetUsreProfile = tmpObj;
+      }
     };
   },user);
   
