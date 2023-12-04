@@ -29,7 +29,7 @@ async function fechUserProfiles(subStr){
   });
 
   if (UserProfileItems.length >= 0){
-    return FirthSetUpProfiles;
+    return <FirthSetUpProfiles />;
   }else{
     console.log("is null");
     return UserProfileItems;
@@ -78,6 +78,7 @@ function App() {
           userProfilesAry = tmpObj;
         };
       } catch (error){
+        console.log(error);
         ObjsetUsreProfile = tmpObj;
       };
     };
