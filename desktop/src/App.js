@@ -73,6 +73,8 @@ function App() {
   useEffect(() => {
     if (user !== null){
       tmpObj = fechUserProfiles(user.attributes.sub);
+      console.log(tmpObj);
+
       try{
         if (tmpObj.length){
           userProfilesAry = tmpObj;
