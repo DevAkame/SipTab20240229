@@ -41,6 +41,7 @@ async function fechUserProfiles(subStr){
 function App() {
   const [user, setUser] = useState(null);
   var tmpObj = null;
+  var userProfilesAry = null;
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -71,9 +72,13 @@ function App() {
   useEffect(() => {
     if (user !== null){
       tmpObj = fechUserProfiles(user.attributes.sub);
-      if (!tmpObj.length){
+      try{
+        if (tmpObj.length){
+          userProfilesAry = tmpObj;
+        };
+      } catch (error){
         ObjsetUsreProfile = tmpObj;
-      }
+      };
     };
   },user);
   
