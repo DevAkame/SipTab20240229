@@ -94,6 +94,7 @@ function App() {
           <div>
             <NavBarHeader />
             {ObjsetUsreProfile}
+            <FirthSetUpProfiles />
           </div>
         ) : (
           <>
