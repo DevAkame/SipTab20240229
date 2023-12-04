@@ -42,6 +42,7 @@ function App() {
   const [user, setUser] = useState(null);
   var tmpObj = null;
   var userProfilesAry = null;
+  var ObjsetUsreProfile = null;
 
   useEffect(() => {
     const fetchUserData = async () => {
