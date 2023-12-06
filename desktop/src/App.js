@@ -5,9 +5,6 @@ import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-import { MainHeader } from './custom-components/MainNavigate';
-
-
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
