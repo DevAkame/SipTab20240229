@@ -6,7 +6,7 @@ export function MainHeader() {
 
     return (
         <>
-            <img src={`${process.env.PUBLIC_URL}/img.siptabIcon.png`} alt="SipTabLogo" />
+            <img src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
         </>
     )
 }
