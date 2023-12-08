@@ -93,8 +93,7 @@ function App() {
         {user ? (
           <div>
             <NavBarHeader />
-            <MainHeader />
-
+            <MainHeader name={user.attributes.name} />
             {ObjsetUsreProfile}
             <FirthSetUpProfiles />
           </div>
