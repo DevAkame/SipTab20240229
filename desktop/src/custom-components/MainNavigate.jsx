@@ -8,8 +8,15 @@ export function MainHeader() {
 
 
     return (
-        <>
-            <img src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
-        </>
+        <Flex direction="column">
+            <div className="lefty">
+                <img src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
+                <SelectField options={['all','test01','Chelish Cutting Dyning Girls Bar']}></SelectField>
+            </div>
+            <div className="righty">
+                <h2>Akame</h2>
+                <button loadingText="" onClick={() => alert('hellow')}>Sign Out</button>
+            </div>
+        </Flex>
     )
 }
