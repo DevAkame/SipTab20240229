@@ -15,6 +15,7 @@ export function MainHeader() {
             </div>
             <div className="righty">
                 <h2>Akame</h2>
+                <h2>test</h2>
                 <button loadingText="" onClick={() => alert('hellow')}>Sign Out</button>
             </div>
         </Flex>
