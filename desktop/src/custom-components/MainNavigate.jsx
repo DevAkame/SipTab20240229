@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useAuth } from "@aws-amplify/ui-react/internal";
-import { getOverrideProps, useAuthSignOutAction } from "./utils";
+import { getOverrideProps, useAuthSignOutAction } from "./../ui-components/utils";
 import {Flex, SelectField,Text} from "@aws-amplify/ui-react"
 
 
