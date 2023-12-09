@@ -10,7 +10,10 @@ export function MainHeader(props) {
     
     return (
         <Flex direction="column">
-            <img src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
+            <img
+            width="16px"
+            height="16px"
+            src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
             <SelectField options={["All","Cherish Premium"]}></SelectField>
             <Text
             fontFamily="Inter"
