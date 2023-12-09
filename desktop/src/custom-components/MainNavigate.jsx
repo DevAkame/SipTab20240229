@@ -13,6 +13,11 @@ export function MainHeader(props) {
             <img
             width="16px"
             height="16px"
+            display="block"
+            direction="column"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
             src={`${process.env.PUBLIC_URL}/img/siptabIcon.png`} alt="SipTabLogo" />
             <SelectField options={["All","Cherish Premium"]}></SelectField>
             <Text
