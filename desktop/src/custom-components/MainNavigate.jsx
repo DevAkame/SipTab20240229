@@ -11,8 +11,8 @@ export function MainHeader(props) {
     return (
         <Flex direction="column">
             <img
-            width="16px"
-            height="16px"
+            width="100px"
+            height="100px"
             display="block"
             direction="column"
             alignSelf="stretch"
