@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { Tenants } from "../models";
+import { AutocompleteProps, GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Tenants, StockDataPool, Event } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -24,14 +24,20 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type TenantsUpdateFormInputValues = {
     name?: string;
+    StockDataPools?: StockDataPool[];
+    Events?: Event[];
 };
 export declare type TenantsUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
+    StockDataPools?: ValidationFunction<StockDataPool>;
+    Events?: ValidationFunction<Event>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type TenantsUpdateFormOverridesProps = {
     TenantsUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
+    StockDataPools?: PrimitiveOverrideProps<AutocompleteProps>;
+    Events?: PrimitiveOverrideProps<AutocompleteProps>;
 } & EscapeHatchProps;
 export declare type TenantsUpdateFormProps = React.PropsWithChildren<{
     overrides?: TenantsUpdateFormOverridesProps | undefined | null;

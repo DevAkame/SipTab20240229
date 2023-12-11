@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { LogoSipTab32Props } from "./LogoSipTab32";
-import { ButtonProps, FlexProps, IconProps, SelectFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, SelectFieldProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -19,18 +19,17 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarHeaderOverridesProps = {
-    NavBarHeader?: PrimitiveOverrideProps<ViewProps>;
+    NavBarHeader?: PrimitiveOverrideProps<FlexProps>;
     "Frame 454"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 450"?: PrimitiveOverrideProps<FlexProps>;
     LogoSipTab32?: LogoSipTab32Props;
-    SelectField?: PrimitiveOverrideProps<SelectFieldProps>;
     NavGroupSelect?: PrimitiveOverrideProps<SelectFieldProps>;
     "Frame 453"?: PrimitiveOverrideProps<FlexProps>;
     "\uD83D\uDD12Icon"?: PrimitiveOverrideProps<IconProps>;
     label?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
-export declare type NavBarHeaderProps = React.PropsWithChildren<Partial<ViewProps> & {
+export declare type NavBarHeaderProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: NavBarHeaderOverridesProps | undefined | null;
 }>;
 export default function NavBarHeader(props: NavBarHeaderProps): React.ReactElement;

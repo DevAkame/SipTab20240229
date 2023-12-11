@@ -2,7 +2,7 @@
   "AppSyncApiName": "siptab",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-11-24T03:38:27.657Z",
+  "AuthModeLastUpdated": "2023-12-11T04:13:26.374Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authsiptab",

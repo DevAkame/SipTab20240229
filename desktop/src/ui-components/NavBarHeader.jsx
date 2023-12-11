@@ -9,28 +9,21 @@ import * as React from "react";
 import { useAuth } from "@aws-amplify/ui-react/internal";
 import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import LogoSipTab32 from "./LogoSipTab32";
-import {
-  Button,
-  Flex,
-  Icon,
-  SelectField,
-  Text,
-  View,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Icon, SelectField, Text } from "@aws-amplify/ui-react";
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
   const authAttributes = useAuth().user?.attributes ?? {};
   const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
-    <View
-      width="1496px"
-      height="66px"
-      display="block"
-      gap="unset"
-      alignItems="unset"
-      justifyContent="unset"
+    <Flex
+      gap="10px"
+      direction="column"
+      width="unset"
+      height="unset"
+      justifyContent="center"
+      alignItems="center"
       position="relative"
-      padding="0px 0px 0px 0px"
+      padding="15px 14px 15px 14px"
       backgroundColor="rgba(255,255,255,1)"
       {...getOverrideProps(overrides, "NavBarHeader")}
       {...rest}
@@ -42,9 +35,8 @@ export default function NavBarHeader(props) {
         height="unset"
         justifyContent="flex-start"
         alignItems="flex-start"
-        position="absolute"
-        top="18px"
-        left="14px"
+        shrink="0"
+        position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 454")}
       >
@@ -65,24 +57,13 @@ export default function NavBarHeader(props) {
             height="31.22px"
             display="block"
             gap="unset"
-            alignItems="unset"
+            alignItems=""
             justifyContent="unset"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "LogoSipTab32")}
           ></LogoSipTab32>
-          <SelectField
-            width="200px"
-            height="unset"
-            shrink="0"
-            placeholder="Placeholder"
-            size="small"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "SelectField")}
-          ></SelectField>
           <SelectField
             width="150px"
             height="unset"
@@ -159,6 +140,6 @@ export default function NavBarHeader(props) {
           ></Button>
         </Flex>
       </Flex>
-    </View>
+    </Flex>
   );
 }

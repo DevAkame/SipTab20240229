@@ -4,7 +4,7 @@ import { NavBarHeader } from './ui-components';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-
+import SipTabMainHeader from './ui-components';
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
@@ -92,15 +92,14 @@ function App() {
       <Flex direction="column" alignItems="center">
         {user ? (
           <div>
-            <NavBarHeader />
-            <MainHeader name={user.attributes.name} />
+            <SipTabMainHeader />
             {ObjsetUsreProfile}
             <FirthSetUpProfiles />
           </div>
         ) : (
           <>
             <p>Not Authenticated</p>
-            <NavBarHeader />
+            <SipTabMainHeader />
           </>
         )}
       </Flex>

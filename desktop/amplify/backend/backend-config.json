@@ -28,6 +28,9 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
+              "authenticationType": "AWS_IAM"
+            },
+            {
               "apiKeyConfig": {
                 "apiKeyExpirationDays": 30,
                 "description": "api key description"
@@ -210,6 +213,13 @@
           "resourceName": "siptabeb8d9eda"
         }
       ]
+    }
+  },
+  "storage": {
+    "s3siptabwebimages": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

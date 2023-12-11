@@ -5,7 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { AutocompleteProps, GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { StocksSubCategory } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -23,14 +24,17 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type StksCategoryCreateFormInputValues = {
     name?: string;
+    StocksSubCategories?: StocksSubCategory[];
 };
 export declare type StksCategoryCreateFormValidationValues = {
     name?: ValidationFunction<string>;
+    StocksSubCategories?: ValidationFunction<StocksSubCategory>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type StksCategoryCreateFormOverridesProps = {
     StksCategoryCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
+    StocksSubCategories?: PrimitiveOverrideProps<AutocompleteProps>;
 } & EscapeHatchProps;
 export declare type StksCategoryCreateFormProps = React.PropsWithChildren<{
     overrides?: StksCategoryCreateFormOverridesProps | undefined | null;
