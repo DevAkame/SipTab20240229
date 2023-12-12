@@ -215,11 +215,5 @@
       ]
     }
   },
-  "storage": {
-    "s3siptabwebimages": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
-    }
-  }
+  "storage": {}
 }

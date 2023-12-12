@@ -57,11 +57,5 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     }
-  },
-  "storage": {
-    "s3siptabwebimages": {
-      "BucketName": "string",
-      "Region": "string"
-    }
   }
 }
