@@ -52,7 +52,6 @@ export { default as SexCreateForm } from "./SexCreateForm";
 export { default as SexUpdateForm } from "./SexUpdateForm";
 export { default as SideBar } from "./SideBar";
 export { default as SipTabMainHeader } from "./SipTabMainHeader";
-export { default as SipTabMainHeaderCollection } from "./SipTabMainHeaderCollection";
 export { default as StksCategoryCreateForm } from "./StksCategoryCreateForm";
 export { default as StksCategoryUpdateForm } from "./StksCategoryUpdateForm";
 export { default as StockDataPoolCreateForm } from "./StockDataPoolCreateForm";
