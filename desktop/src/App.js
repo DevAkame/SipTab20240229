@@ -8,7 +8,6 @@ import SipTabMainHeader from './ui-components';
 import { listUserProfiles } from './graphql/queries';
 import { API } from 'aws-amplify';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
-import { MainHeader } from './custom-components/MainNavigate';
 Amplify.configure(awsExports);
 
 
