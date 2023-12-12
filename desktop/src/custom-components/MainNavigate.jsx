@@ -3,7 +3,7 @@ import { useAuth } from "@aws-amplify/ui-react/internal";
 import { getOverrideProps, useAuthSignOutAction } from "../ui-components/utils";
 import {Flex, SelectField,Text} from "@aws-amplify/ui-react"
 import { createUseStyles } from 'react-jss';
-
+/*
 const useStyle = createUseStyles({
     styleIconImg:{
         width: 50px,
@@ -72,3 +72,4 @@ export function MainHeader(props) {
         </Flex>
     )
 }
+*/
