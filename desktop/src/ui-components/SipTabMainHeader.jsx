@@ -57,8 +57,7 @@ export default function SipTabMainHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          siptabicon=""
-          src="{`${process.env.PUBLIC_URL}/img/siptabIcon.png`}"
+          src="siptab.png"
           {...getOverrideProps(overrides, "SipTabIcon")}
         ></Image>
         <SelectField
