@@ -90,7 +90,13 @@ function App() {
       <Flex direction="column" alignItems="center">
         {user ? (
           <div>
-            <SipTabMainHeader />
+            <SipTabMainHeader 
+              overrides={
+                {"SipTabIcon":{
+                  src :`${process.env.PUBLIC_URL}/img/siptabIcon.png`
+                }}
+              }
+            />
             {ObjsetUsreProfile}
             <FirthSetUpProfiles />
           </div>
