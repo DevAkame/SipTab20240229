@@ -90,12 +90,16 @@ function App() {
       <Flex 
       direction="column"
       alignItems="center"
-      width="100vw"
       >
         {user ? (
           <div>
             <SipTabMainHeader
               width="100vw"
+              max-width="2400px"
+//              webkit-box-pack="justify"
+//              ms-flex-pack="justify"
+              justify-content="space-between"
+
               overrides={
                 {"SipTabIcon":{
                   src :`${process.env.PUBLIC_URL}/img/siptabIcon.png`
