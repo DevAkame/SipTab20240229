@@ -87,10 +87,15 @@ function App() {
 
   return (
     <div>
-      <Flex direction="column" alignItems="center">
+      <Flex 
+      direction="column"
+      alignItems="center"
+      width="100vw"
+      >
         {user ? (
           <div>
-            <SipTabMainHeader 
+            <SipTabMainHeader
+              width="100vw"
               overrides={
                 {"SipTabIcon":{
                   src :`${process.env.PUBLIC_URL}/img/siptabIcon.png`
