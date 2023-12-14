@@ -24,7 +24,7 @@ export default function SipTabMainHeader(props) {
       direction="row"
       width="unset"
       height="unset"
-      justifyContent="flex-start"
+      justifyContent="space-between"
       alignItems="center"
       overflow="hidden"
       position="relative"
