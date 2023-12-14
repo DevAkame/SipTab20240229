@@ -1,5 +1,87 @@
 export const schema = {
     "models": {
+        "UserAsignTenant": {
+            "name": "UserAsignTenant",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "userSub": {
+                    "name": "userSub",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Status": {
+                    "name": "Status",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tenantsID": {
+                    "name": "tenantsID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "UserAsignTenants",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTenants",
+                        "fields": [
+                            "tenantsID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "UserProfile": {
             "name": "UserProfile",
             "fields": {
@@ -385,6 +467,22 @@ export const schema = {
                     "isArray": true,
                     "type": {
                         "model": "Event"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "tenantsID"
+                        ]
+                    }
+                },
+                "UserAsignTenants": {
+                    "name": "UserAsignTenants",
+                    "isArray": true,
+                    "type": {
+                        "model": "UserAsignTenant"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -880,5 +978,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "96ee7bd2b7af9805f50e51451b1fe5e6"
+    "version": "c5b3632ed57d2370f0f26108e7813106"
 };

@@ -19,7 +19,7 @@ import {
   TextField,
   useTheme,
 } from "@aws-amplify/ui-react";
-import { Tenants, StockDataPool, Event } from "../models";
+import { Tenants, StockDataPool, Event, UserAsignTenant } from "../models";
 import {
   fetchByPath,
   getOverrideProps,
@@ -197,12 +197,16 @@ export default function TenantsCreateForm(props) {
     name: "",
     StockDataPools: [],
     Events: [],
+    UserAsignTenants: [],
   };
   const [name, setName] = React.useState(initialValues.name);
   const [StockDataPools, setStockDataPools] = React.useState(
     initialValues.StockDataPools
   );
   const [Events, setEvents] = React.useState(initialValues.Events);
+  const [UserAsignTenants, setUserAsignTenants] = React.useState(
+    initialValues.UserAsignTenants
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
@@ -212,6 +216,9 @@ export default function TenantsCreateForm(props) {
     setEvents(initialValues.Events);
     setCurrentEventsValue(undefined);
     setCurrentEventsDisplayValue("");
+    setUserAsignTenants(initialValues.UserAsignTenants);
+    setCurrentUserAsignTenantsValue(undefined);
+    setCurrentUserAsignTenantsDisplayValue("");
     setErrors({});
   };
   const [
@@ -225,9 +232,17 @@ export default function TenantsCreateForm(props) {
     React.useState("");
   const [currentEventsValue, setCurrentEventsValue] = React.useState(undefined);
   const EventsRef = React.createRef();
+  const [
+    currentUserAsignTenantsDisplayValue,
+    setCurrentUserAsignTenantsDisplayValue,
+  ] = React.useState("");
+  const [currentUserAsignTenantsValue, setCurrentUserAsignTenantsValue] =
+    React.useState(undefined);
+  const UserAsignTenantsRef = React.createRef();
   const getIDValue = {
     StockDataPools: (r) => JSON.stringify({ id: r?.id }),
     Events: (r) => JSON.stringify({ id: r?.id }),
+    UserAsignTenants: (r) => JSON.stringify({ id: r?.id }),
   };
   const StockDataPoolsIdSet = new Set(
     Array.isArray(StockDataPools)
@@ -239,6 +254,11 @@ export default function TenantsCreateForm(props) {
       ? Events.map((r) => getIDValue.Events?.(r))
       : getIDValue.Events?.(Events)
   );
+  const UserAsignTenantsIdSet = new Set(
+    Array.isArray(UserAsignTenants)
+      ? UserAsignTenants.map((r) => getIDValue.UserAsignTenants?.(r))
+      : getIDValue.UserAsignTenants?.(UserAsignTenants)
+  );
   const stockDataPoolRecords = useDataStoreBinding({
     type: "collection",
     model: StockDataPool,
@@ -247,14 +267,20 @@ export default function TenantsCreateForm(props) {
     type: "collection",
     model: Event,
   }).items;
+  const userAsignTenantRecords = useDataStoreBinding({
+    type: "collection",
+    model: UserAsignTenant,
+  }).items;
   const getDisplayValue = {
     StockDataPools: (r) => `${r?.itemName ? r?.itemName + " - " : ""}${r?.id}`,
     Events: (r) => r?.id,
+    UserAsignTenants: (r) => `${r?.userSub ? r?.userSub + " - " : ""}${r?.id}`,
   };
   const validations = {
     name: [],
     StockDataPools: [],
     Events: [],
+    UserAsignTenants: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -285,6 +311,7 @@ export default function TenantsCreateForm(props) {
           name,
           StockDataPools,
           Events,
+          UserAsignTenants,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -351,6 +378,18 @@ export default function TenantsCreateForm(props) {
               return promises;
             }, [])
           );
+          promises.push(
+            ...UserAsignTenants.reduce((promises, original) => {
+              promises.push(
+                DataStore.save(
+                  UserAsignTenant.copyOf(original, (updated) => {
+                    updated.tenantsID = tenants.id;
+                  })
+                )
+              );
+              return promises;
+            }, [])
+          );
           await Promise.all(promises);
           if (onSuccess) {
             onSuccess(modelFields);
@@ -379,6 +418,7 @@ export default function TenantsCreateForm(props) {
               name: value,
               StockDataPools,
               Events,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -401,6 +441,7 @@ export default function TenantsCreateForm(props) {
               name,
               StockDataPools: values,
               Events,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             values = result?.StockDataPools ?? values;
@@ -484,6 +525,7 @@ export default function TenantsCreateForm(props) {
               name,
               StockDataPools,
               Events: values,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             values = result?.Events ?? values;
@@ -550,6 +592,94 @@ export default function TenantsCreateForm(props) {
           ref={EventsRef}
           labelHidden={true}
           {...getOverrideProps(overrides, "Events")}
+        ></Autocomplete>
+      </ArrayField>
+      <ArrayField
+        onChange={async (items) => {
+          let values = items;
+          if (onChange) {
+            const modelFields = {
+              name,
+              StockDataPools,
+              Events,
+              UserAsignTenants: values,
+            };
+            const result = onChange(modelFields);
+            values = result?.UserAsignTenants ?? values;
+          }
+          setUserAsignTenants(values);
+          setCurrentUserAsignTenantsValue(undefined);
+          setCurrentUserAsignTenantsDisplayValue("");
+        }}
+        currentFieldValue={currentUserAsignTenantsValue}
+        label={"User asign tenants"}
+        items={UserAsignTenants}
+        hasError={errors?.UserAsignTenants?.hasError}
+        runValidationTasks={async () =>
+          await runValidationTasks(
+            "UserAsignTenants",
+            currentUserAsignTenantsValue
+          )
+        }
+        errorMessage={errors?.UserAsignTenants?.errorMessage}
+        getBadgeText={getDisplayValue.UserAsignTenants}
+        setFieldValue={(model) => {
+          setCurrentUserAsignTenantsDisplayValue(
+            model ? getDisplayValue.UserAsignTenants(model) : ""
+          );
+          setCurrentUserAsignTenantsValue(model);
+        }}
+        inputFieldRef={UserAsignTenantsRef}
+        defaultFieldValue={""}
+      >
+        <Autocomplete
+          label="User asign tenants"
+          isRequired={false}
+          isReadOnly={false}
+          placeholder="Search UserAsignTenant"
+          value={currentUserAsignTenantsDisplayValue}
+          options={userAsignTenantRecords
+            .filter(
+              (r) =>
+                !UserAsignTenantsIdSet.has(getIDValue.UserAsignTenants?.(r))
+            )
+            .map((r) => ({
+              id: getIDValue.UserAsignTenants?.(r),
+              label: getDisplayValue.UserAsignTenants?.(r),
+            }))}
+          onSelect={({ id, label }) => {
+            setCurrentUserAsignTenantsValue(
+              userAsignTenantRecords.find((r) =>
+                Object.entries(JSON.parse(id)).every(
+                  ([key, value]) => r[key] === value
+                )
+              )
+            );
+            setCurrentUserAsignTenantsDisplayValue(label);
+            runValidationTasks("UserAsignTenants", label);
+          }}
+          onClear={() => {
+            setCurrentUserAsignTenantsDisplayValue("");
+          }}
+          onChange={(e) => {
+            let { value } = e.target;
+            if (errors.UserAsignTenants?.hasError) {
+              runValidationTasks("UserAsignTenants", value);
+            }
+            setCurrentUserAsignTenantsDisplayValue(value);
+            setCurrentUserAsignTenantsValue(undefined);
+          }}
+          onBlur={() =>
+            runValidationTasks(
+              "UserAsignTenants",
+              currentUserAsignTenantsDisplayValue
+            )
+          }
+          errorMessage={errors.UserAsignTenants?.errorMessage}
+          hasError={errors.UserAsignTenants?.hasError}
+          ref={UserAsignTenantsRef}
+          labelHidden={true}
+          {...getOverrideProps(overrides, "UserAsignTenants")}
         ></Autocomplete>
       </ArrayField>
       <Flex

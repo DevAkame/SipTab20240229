@@ -60,6 +60,8 @@ export { default as StocksSubCategoryCreateForm } from "./StocksSubCategoryCreat
 export { default as StocksSubCategoryUpdateForm } from "./StocksSubCategoryUpdateForm";
 export { default as TenantsCreateForm } from "./TenantsCreateForm";
 export { default as TenantsUpdateForm } from "./TenantsUpdateForm";
+export { default as UserAsignTenantCreateForm } from "./UserAsignTenantCreateForm";
+export { default as UserAsignTenantUpdateForm } from "./UserAsignTenantUpdateForm";
 export { default as UserProfileCreateForm } from "./UserProfileCreateForm";
 export { default as UserProfileUpdateForm } from "./UserProfileUpdateForm";
 export { default as studioTheme } from "./studioTheme";

@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { AutocompleteProps, GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { StockDataPool, Event } from "../models";
+import { StockDataPool, Event, UserAsignTenant } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -26,11 +26,13 @@ export declare type TenantsCreateFormInputValues = {
     name?: string;
     StockDataPools?: StockDataPool[];
     Events?: Event[];
+    UserAsignTenants?: UserAsignTenant[];
 };
 export declare type TenantsCreateFormValidationValues = {
     name?: ValidationFunction<string>;
     StockDataPools?: ValidationFunction<StockDataPool>;
     Events?: ValidationFunction<Event>;
+    UserAsignTenants?: ValidationFunction<UserAsignTenant>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type TenantsCreateFormOverridesProps = {
@@ -38,6 +40,7 @@ export declare type TenantsCreateFormOverridesProps = {
     name?: PrimitiveOverrideProps<TextFieldProps>;
     StockDataPools?: PrimitiveOverrideProps<AutocompleteProps>;
     Events?: PrimitiveOverrideProps<AutocompleteProps>;
+    UserAsignTenants?: PrimitiveOverrideProps<AutocompleteProps>;
 } & EscapeHatchProps;
 export declare type TenantsCreateFormProps = React.PropsWithChildren<{
     overrides?: TenantsCreateFormOverridesProps | undefined | null;

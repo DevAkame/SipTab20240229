@@ -8,9 +8,10 @@ const Status = {
   "ATHER": "ATHER"
 };
 
-const { UserProfile, JobTitles, Sex, AsinUserOfTenant, Event, Tenants, StksCategory, StockDataPool, StocksSubCategory, EventStockDataPool } = initSchema(schema);
+const { UserAsignTenant, UserProfile, JobTitles, Sex, AsinUserOfTenant, Event, Tenants, StksCategory, StockDataPool, StocksSubCategory, EventStockDataPool } = initSchema(schema);
 
 export {
+  UserAsignTenant,
   UserProfile,
   JobTitles,
   Sex,

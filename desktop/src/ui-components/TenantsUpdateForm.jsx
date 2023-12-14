@@ -19,7 +19,7 @@ import {
   TextField,
   useTheme,
 } from "@aws-amplify/ui-react";
-import { Tenants, StockDataPool, Event } from "../models";
+import { Tenants, StockDataPool, Event, UserAsignTenant } from "../models";
 import {
   fetchByPath,
   getOverrideProps,
@@ -198,12 +198,16 @@ export default function TenantsUpdateForm(props) {
     name: "",
     StockDataPools: [],
     Events: [],
+    UserAsignTenants: [],
   };
   const [name, setName] = React.useState(initialValues.name);
   const [StockDataPools, setStockDataPools] = React.useState(
     initialValues.StockDataPools
   );
   const [Events, setEvents] = React.useState(initialValues.Events);
+  const [UserAsignTenants, setUserAsignTenants] = React.useState(
+    initialValues.UserAsignTenants
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = tenantsRecord
@@ -212,6 +216,7 @@ export default function TenantsUpdateForm(props) {
           ...tenantsRecord,
           StockDataPools: linkedStockDataPools,
           Events: linkedEvents,
+          UserAsignTenants: linkedUserAsignTenants,
         }
       : initialValues;
     setName(cleanValues.name);
@@ -221,6 +226,9 @@ export default function TenantsUpdateForm(props) {
     setEvents(cleanValues.Events ?? []);
     setCurrentEventsValue(undefined);
     setCurrentEventsDisplayValue("");
+    setUserAsignTenants(cleanValues.UserAsignTenants ?? []);
+    setCurrentUserAsignTenantsValue(undefined);
+    setCurrentUserAsignTenantsDisplayValue("");
     setErrors({});
   };
   const [tenantsRecord, setTenantsRecord] = React.useState(tenantsModelProp);
@@ -228,6 +236,10 @@ export default function TenantsUpdateForm(props) {
   const canUnlinkStockDataPools = false;
   const [linkedEvents, setLinkedEvents] = React.useState([]);
   const canUnlinkEvents = false;
+  const [linkedUserAsignTenants, setLinkedUserAsignTenants] = React.useState(
+    []
+  );
+  const canUnlinkUserAsignTenants = false;
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
@@ -240,6 +252,10 @@ export default function TenantsUpdateForm(props) {
       setLinkedStockDataPools(linkedStockDataPools);
       const linkedEvents = record ? await record.Events.toArray() : [];
       setLinkedEvents(linkedEvents);
+      const linkedUserAsignTenants = record
+        ? await record.UserAsignTenants.toArray()
+        : [];
+      setLinkedUserAsignTenants(linkedUserAsignTenants);
     };
     queryData();
   }, [idProp, tenantsModelProp]);
@@ -247,6 +263,7 @@ export default function TenantsUpdateForm(props) {
     tenantsRecord,
     linkedStockDataPools,
     linkedEvents,
+    linkedUserAsignTenants,
   ]);
   const [
     currentStockDataPoolsDisplayValue,
@@ -259,9 +276,17 @@ export default function TenantsUpdateForm(props) {
     React.useState("");
   const [currentEventsValue, setCurrentEventsValue] = React.useState(undefined);
   const EventsRef = React.createRef();
+  const [
+    currentUserAsignTenantsDisplayValue,
+    setCurrentUserAsignTenantsDisplayValue,
+  ] = React.useState("");
+  const [currentUserAsignTenantsValue, setCurrentUserAsignTenantsValue] =
+    React.useState(undefined);
+  const UserAsignTenantsRef = React.createRef();
   const getIDValue = {
     StockDataPools: (r) => JSON.stringify({ id: r?.id }),
     Events: (r) => JSON.stringify({ id: r?.id }),
+    UserAsignTenants: (r) => JSON.stringify({ id: r?.id }),
   };
   const StockDataPoolsIdSet = new Set(
     Array.isArray(StockDataPools)
@@ -273,6 +298,11 @@ export default function TenantsUpdateForm(props) {
       ? Events.map((r) => getIDValue.Events?.(r))
       : getIDValue.Events?.(Events)
   );
+  const UserAsignTenantsIdSet = new Set(
+    Array.isArray(UserAsignTenants)
+      ? UserAsignTenants.map((r) => getIDValue.UserAsignTenants?.(r))
+      : getIDValue.UserAsignTenants?.(UserAsignTenants)
+  );
   const stockDataPoolRecords = useDataStoreBinding({
     type: "collection",
     model: StockDataPool,
@@ -281,14 +311,20 @@ export default function TenantsUpdateForm(props) {
     type: "collection",
     model: Event,
   }).items;
+  const userAsignTenantRecords = useDataStoreBinding({
+    type: "collection",
+    model: UserAsignTenant,
+  }).items;
   const getDisplayValue = {
     StockDataPools: (r) => `${r?.itemName ? r?.itemName + " - " : ""}${r?.id}`,
     Events: (r) => r?.id,
+    UserAsignTenants: (r) => `${r?.userSub ? r?.userSub + " - " : ""}${r?.id}`,
   };
   const validations = {
     name: [],
     StockDataPools: [],
     Events: [],
+    UserAsignTenants: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -319,6 +355,7 @@ export default function TenantsUpdateForm(props) {
           name,
           StockDataPools,
           Events,
+          UserAsignTenants,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -441,6 +478,51 @@ export default function TenantsUpdateForm(props) {
               )
             );
           });
+          const userAsignTenantsToLink = [];
+          const userAsignTenantsToUnLink = [];
+          const userAsignTenantsSet = new Set();
+          const linkedUserAsignTenantsSet = new Set();
+          UserAsignTenants.forEach((r) =>
+            userAsignTenantsSet.add(getIDValue.UserAsignTenants?.(r))
+          );
+          linkedUserAsignTenants.forEach((r) =>
+            linkedUserAsignTenantsSet.add(getIDValue.UserAsignTenants?.(r))
+          );
+          linkedUserAsignTenants.forEach((r) => {
+            if (!userAsignTenantsSet.has(getIDValue.UserAsignTenants?.(r))) {
+              userAsignTenantsToUnLink.push(r);
+            }
+          });
+          UserAsignTenants.forEach((r) => {
+            if (
+              !linkedUserAsignTenantsSet.has(getIDValue.UserAsignTenants?.(r))
+            ) {
+              userAsignTenantsToLink.push(r);
+            }
+          });
+          userAsignTenantsToUnLink.forEach((original) => {
+            if (!canUnlinkUserAsignTenants) {
+              throw Error(
+                `UserAsignTenant ${original.id} cannot be unlinked from Tenants because tenantsID is a required field.`
+              );
+            }
+            promises.push(
+              DataStore.save(
+                UserAsignTenant.copyOf(original, (updated) => {
+                  updated.tenantsID = null;
+                })
+              )
+            );
+          });
+          userAsignTenantsToLink.forEach((original) => {
+            promises.push(
+              DataStore.save(
+                UserAsignTenant.copyOf(original, (updated) => {
+                  updated.tenantsID = tenantsRecord.id;
+                })
+              )
+            );
+          });
           const modelFieldsToSave = {
             name: modelFields.name,
           };
@@ -476,6 +558,7 @@ export default function TenantsUpdateForm(props) {
               name: value,
               StockDataPools,
               Events,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -498,6 +581,7 @@ export default function TenantsUpdateForm(props) {
               name,
               StockDataPools: values,
               Events,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             values = result?.StockDataPools ?? values;
@@ -581,6 +665,7 @@ export default function TenantsUpdateForm(props) {
               name,
               StockDataPools,
               Events: values,
+              UserAsignTenants,
             };
             const result = onChange(modelFields);
             values = result?.Events ?? values;
@@ -647,6 +732,94 @@ export default function TenantsUpdateForm(props) {
           ref={EventsRef}
           labelHidden={true}
           {...getOverrideProps(overrides, "Events")}
+        ></Autocomplete>
+      </ArrayField>
+      <ArrayField
+        onChange={async (items) => {
+          let values = items;
+          if (onChange) {
+            const modelFields = {
+              name,
+              StockDataPools,
+              Events,
+              UserAsignTenants: values,
+            };
+            const result = onChange(modelFields);
+            values = result?.UserAsignTenants ?? values;
+          }
+          setUserAsignTenants(values);
+          setCurrentUserAsignTenantsValue(undefined);
+          setCurrentUserAsignTenantsDisplayValue("");
+        }}
+        currentFieldValue={currentUserAsignTenantsValue}
+        label={"User asign tenants"}
+        items={UserAsignTenants}
+        hasError={errors?.UserAsignTenants?.hasError}
+        runValidationTasks={async () =>
+          await runValidationTasks(
+            "UserAsignTenants",
+            currentUserAsignTenantsValue
+          )
+        }
+        errorMessage={errors?.UserAsignTenants?.errorMessage}
+        getBadgeText={getDisplayValue.UserAsignTenants}
+        setFieldValue={(model) => {
+          setCurrentUserAsignTenantsDisplayValue(
+            model ? getDisplayValue.UserAsignTenants(model) : ""
+          );
+          setCurrentUserAsignTenantsValue(model);
+        }}
+        inputFieldRef={UserAsignTenantsRef}
+        defaultFieldValue={""}
+      >
+        <Autocomplete
+          label="User asign tenants"
+          isRequired={false}
+          isReadOnly={false}
+          placeholder="Search UserAsignTenant"
+          value={currentUserAsignTenantsDisplayValue}
+          options={userAsignTenantRecords
+            .filter(
+              (r) =>
+                !UserAsignTenantsIdSet.has(getIDValue.UserAsignTenants?.(r))
+            )
+            .map((r) => ({
+              id: getIDValue.UserAsignTenants?.(r),
+              label: getDisplayValue.UserAsignTenants?.(r),
+            }))}
+          onSelect={({ id, label }) => {
+            setCurrentUserAsignTenantsValue(
+              userAsignTenantRecords.find((r) =>
+                Object.entries(JSON.parse(id)).every(
+                  ([key, value]) => r[key] === value
+                )
+              )
+            );
+            setCurrentUserAsignTenantsDisplayValue(label);
+            runValidationTasks("UserAsignTenants", label);
+          }}
+          onClear={() => {
+            setCurrentUserAsignTenantsDisplayValue("");
+          }}
+          onChange={(e) => {
+            let { value } = e.target;
+            if (errors.UserAsignTenants?.hasError) {
+              runValidationTasks("UserAsignTenants", value);
+            }
+            setCurrentUserAsignTenantsDisplayValue(value);
+            setCurrentUserAsignTenantsValue(undefined);
+          }}
+          onBlur={() =>
+            runValidationTasks(
+              "UserAsignTenants",
+              currentUserAsignTenantsDisplayValue
+            )
+          }
+          errorMessage={errors.UserAsignTenants?.errorMessage}
+          hasError={errors.UserAsignTenants?.hasError}
+          ref={UserAsignTenantsRef}
+          labelHidden={true}
+          {...getOverrideProps(overrides, "UserAsignTenants")}
         ></Autocomplete>
       </ArrayField>
       <Flex

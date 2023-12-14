@@ -10,6 +10,38 @@ export enum Status {
 
 
 
+type EagerUserAsignTenant = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserAsignTenant, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly userSub?: string | null;
+  readonly Status?: string | null;
+  readonly tenantsID: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyUserAsignTenant = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserAsignTenant, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly userSub?: string | null;
+  readonly Status?: string | null;
+  readonly tenantsID: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type UserAsignTenant = LazyLoading extends LazyLoadingDisabled ? EagerUserAsignTenant : LazyUserAsignTenant
+
+export declare const UserAsignTenant: (new (init: ModelInit<UserAsignTenant>) => UserAsignTenant) & {
+  copyOf(source: UserAsignTenant, mutator: (draft: MutableModel<UserAsignTenant>) => MutableModel<UserAsignTenant> | void): UserAsignTenant;
+}
+
 type EagerUserProfile = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<UserProfile, 'id'>;
@@ -165,6 +197,7 @@ type EagerTenants = {
   readonly name?: string | null;
   readonly StockDataPools?: (StockDataPool | null)[] | null;
   readonly Events?: (Event | null)[] | null;
+  readonly UserAsignTenants?: (UserAsignTenant | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -178,6 +211,7 @@ type LazyTenants = {
   readonly name?: string | null;
   readonly StockDataPools: AsyncCollection<StockDataPool>;
   readonly Events: AsyncCollection<Event>;
+  readonly UserAsignTenants: AsyncCollection<UserAsignTenant>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
