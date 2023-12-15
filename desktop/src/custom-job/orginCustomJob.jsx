@@ -6,17 +6,31 @@
 */
 import { API } from 'aws-amplify';
 import { listUserProfiles } from '../graphql/queries';
-import { Amplify, Auth, Hub } from 'aws-amplify';
 
 // 概要：ユーザプロファイルテーブルに対象ユーザのレコードがあるかの判定を行う。
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか
 // 戻り値：　bool(ユーザ有り＝正)
-export async function CheckUserProfile(strSubID){
-  
-  const oneUserProfiles = await API.graphql({
-    query: listUserProfiles(),
-    variables: { filter: {sub: {eq: strSubID}} }
+export async function fechUserProfiles(subStr){
+  var param = null;
+  var UserProfileItems = null;
+  param = { filter: {sub: {eq: subStr} }};
+  const oneUserProfilesPromise = API.graphql({
+    query: listUserProfiles,
+    variables: param,
+    authMode: 'AMAZON_COGNITO_USER_POOLS'
   });
-  console.log(oneUserProfiles);
-  return null;
+
+  await oneUserProfilesPromise.then(result => {
+    UserProfileItems = result.data.listUserProfiles.items;
+  }).catch(error => {
+    console.error(error);
+  });
+
+  if (UserProfileItems.length >= 0){
+    return <FirthSetUpProfiles />;
+  }else{
+    console.log("is null");
+    return UserProfileItems;
   };
+
+};

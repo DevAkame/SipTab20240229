@@ -4,42 +4,21 @@ import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import {SipTabMainHeader} from './ui-components';
-import { listUserProfiles } from './graphql/queries';
-import { API } from 'aws-amplify';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
+
+
+// imported Orign Jobs
+import { fechUserProfiles } from './custom-job/orginCustomJob';
+
 Amplify.configure(awsExports);
 
 
-async function fechUserProfiles(subStr){
-  var param = null;
-  var UserProfileItems = null;
-  param = { filter: {sub: {eq: subStr} }};
-  const oneUserProfilesPromise = API.graphql({
-    query: listUserProfiles,
-    variables: param,
-    authMode: 'AMAZON_COGNITO_USER_POOLS'
-  });
 
-  await oneUserProfilesPromise.then(result => {
-    UserProfileItems = result.data.listUserProfiles.items;
-  }).catch(error => {
-    console.error(error);
-  });
-
-  if (UserProfileItems.length >= 0){
-    return <FirthSetUpProfiles />;
-  }else{
-    console.log("is null");
-    return UserProfileItems;
-  };
-
-};
 
 
 function App() {
   const [user, setUser] = useState(null);
   var tmpObj = null;
-  var userProfilesAry = null;
   var ObjsetUsreProfile = null;
 
   useEffect(() => {
@@ -96,10 +75,6 @@ function App() {
             <SipTabMainHeader
               width="100vw"
               max-width="2400px"
-//              webkit-box-pack="justify"
-//              ms-flex-pack="justify"
-              justify-content="space-between"
-
               overrides={
                 {"SipTabIcon":{
                   src :`${process.env.PUBLIC_URL}/img/siptabIcon.png`
