@@ -6,6 +6,7 @@
 */
 import { API } from 'aws-amplify';
 import { listUserProfiles } from '../graphql/queries';
+import { FirthSetUpProfiles } from '../ui-components';
 
 // 概要：ユーザプロファイルテーブルに対象ユーザのレコードがあるかの判定を行う。
 // 利用方法：CheckUserProfile(String(【ユーザID】)) ※user.attributes.subとか

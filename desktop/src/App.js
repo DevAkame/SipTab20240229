@@ -82,7 +82,6 @@ function App() {
                 }}
               }
             />
-            {ObjsetUsreProfile}
             <FirthSetUpProfiles />
           </div>
         ) : (
