@@ -770,8 +770,8 @@ export default function StockDataPoolCreateForm(props) {
           {...getOverrideProps(overrides, "statusoption1")}
         ></option>
         <option
-          children="Ather"
-          value="ATHER"
+          children="Paused"
+          value="PAUSED"
           {...getOverrideProps(overrides, "statusoption2")}
         ></option>
       </SelectField>

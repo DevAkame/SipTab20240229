@@ -5,10 +5,44 @@ import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@a
 export enum Status {
   ENABLE = "ENABLE",
   DISABLE = "DISABLE",
-  ATHER = "ATHER"
+  PAUSED = "PAUSED"
 }
 
 
+
+type EagerUISideNav = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UISideNav, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name?: string | null;
+  readonly src?: string | null;
+  readonly path?: string | null;
+  readonly status?: Status | keyof typeof Status | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyUISideNav = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UISideNav, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name?: string | null;
+  readonly src?: string | null;
+  readonly path?: string | null;
+  readonly status?: Status | keyof typeof Status | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type UISideNav = LazyLoading extends LazyLoadingDisabled ? EagerUISideNav : LazyUISideNav
+
+export declare const UISideNav: (new (init: ModelInit<UISideNav>) => UISideNav) & {
+  copyOf(source: UISideNav, mutator: (draft: MutableModel<UISideNav>) => MutableModel<UISideNav> | void): UISideNav;
+}
 
 type EagerUserAsignTenant = {
   readonly [__modelMeta__]: {
@@ -17,8 +51,9 @@ type EagerUserAsignTenant = {
   };
   readonly id: string;
   readonly userSub?: string | null;
-  readonly Status?: string | null;
+  readonly TenantState?: Status | keyof typeof Status | null;
   readonly tenantsID: string;
+  readonly UserState?: Status | keyof typeof Status | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -30,8 +65,9 @@ type LazyUserAsignTenant = {
   };
   readonly id: string;
   readonly userSub?: string | null;
-  readonly Status?: string | null;
+  readonly TenantState?: Status | keyof typeof Status | null;
   readonly tenantsID: string;
+  readonly UserState?: Status | keyof typeof Status | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

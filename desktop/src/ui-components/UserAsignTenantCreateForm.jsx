@@ -15,6 +15,7 @@ import {
   Grid,
   Icon,
   ScrollView,
+  SelectField,
   Text,
   TextField,
   useTheme,
@@ -195,19 +196,24 @@ export default function UserAsignTenantCreateForm(props) {
   } = props;
   const initialValues = {
     userSub: "",
-    Status: "",
+    TenantState: "",
     tenantsID: undefined,
+    UserState: "",
   };
   const [userSub, setUserSub] = React.useState(initialValues.userSub);
-  const [Status, setStatus] = React.useState(initialValues.Status);
+  const [TenantState, setTenantState] = React.useState(
+    initialValues.TenantState
+  );
   const [tenantsID, setTenantsID] = React.useState(initialValues.tenantsID);
+  const [UserState, setUserState] = React.useState(initialValues.UserState);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setUserSub(initialValues.userSub);
-    setStatus(initialValues.Status);
+    setTenantState(initialValues.TenantState);
     setTenantsID(initialValues.tenantsID);
     setCurrentTenantsIDValue(undefined);
     setCurrentTenantsIDDisplayValue("");
+    setUserState(initialValues.UserState);
     setErrors({});
   };
   const [currentTenantsIDDisplayValue, setCurrentTenantsIDDisplayValue] =
@@ -224,8 +230,9 @@ export default function UserAsignTenantCreateForm(props) {
   };
   const validations = {
     userSub: [],
-    Status: [],
+    TenantState: [],
     tenantsID: [{ type: "Required" }],
+    UserState: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -254,8 +261,9 @@ export default function UserAsignTenantCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           userSub,
-          Status,
+          TenantState,
           tenantsID,
+          UserState,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -311,8 +319,9 @@ export default function UserAsignTenantCreateForm(props) {
           if (onChange) {
             const modelFields = {
               userSub: value,
-              Status,
+              TenantState,
               tenantsID,
+              UserState,
             };
             const result = onChange(modelFields);
             value = result?.userSub ?? value;
@@ -327,32 +336,49 @@ export default function UserAsignTenantCreateForm(props) {
         hasError={errors.userSub?.hasError}
         {...getOverrideProps(overrides, "userSub")}
       ></TextField>
-      <TextField
-        label="Status"
-        isRequired={false}
-        isReadOnly={false}
-        value={Status}
+      <SelectField
+        label="Tenant state"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={TenantState}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               userSub,
-              Status: value,
+              TenantState: value,
               tenantsID,
+              UserState,
             };
             const result = onChange(modelFields);
-            value = result?.Status ?? value;
+            value = result?.TenantState ?? value;
           }
-          if (errors.Status?.hasError) {
-            runValidationTasks("Status", value);
+          if (errors.TenantState?.hasError) {
+            runValidationTasks("TenantState", value);
           }
-          setStatus(value);
+          setTenantState(value);
         }}
-        onBlur={() => runValidationTasks("Status", Status)}
-        errorMessage={errors.Status?.errorMessage}
-        hasError={errors.Status?.hasError}
-        {...getOverrideProps(overrides, "Status")}
-      ></TextField>
+        onBlur={() => runValidationTasks("TenantState", TenantState)}
+        errorMessage={errors.TenantState?.errorMessage}
+        hasError={errors.TenantState?.hasError}
+        {...getOverrideProps(overrides, "TenantState")}
+      >
+        <option
+          children="Enable"
+          value="ENABLE"
+          {...getOverrideProps(overrides, "TenantStateoption0")}
+        ></option>
+        <option
+          children="Disable"
+          value="DISABLE"
+          {...getOverrideProps(overrides, "TenantStateoption1")}
+        ></option>
+        <option
+          children="Paused"
+          value="PAUSED"
+          {...getOverrideProps(overrides, "TenantStateoption2")}
+        ></option>
+      </SelectField>
       <ArrayField
         lengthLimit={1}
         onChange={async (items) => {
@@ -360,8 +386,9 @@ export default function UserAsignTenantCreateForm(props) {
           if (onChange) {
             const modelFields = {
               userSub,
-              Status,
+              TenantState,
               tenantsID: value,
+              UserState,
             };
             const result = onChange(modelFields);
             value = result?.tenantsID ?? value;
@@ -436,6 +463,49 @@ export default function UserAsignTenantCreateForm(props) {
           {...getOverrideProps(overrides, "tenantsID")}
         ></Autocomplete>
       </ArrayField>
+      <SelectField
+        label="User state"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={UserState}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              userSub,
+              TenantState,
+              tenantsID,
+              UserState: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.UserState ?? value;
+          }
+          if (errors.UserState?.hasError) {
+            runValidationTasks("UserState", value);
+          }
+          setUserState(value);
+        }}
+        onBlur={() => runValidationTasks("UserState", UserState)}
+        errorMessage={errors.UserState?.errorMessage}
+        hasError={errors.UserState?.hasError}
+        {...getOverrideProps(overrides, "UserState")}
+      >
+        <option
+          children="Enable"
+          value="ENABLE"
+          {...getOverrideProps(overrides, "UserStateoption0")}
+        ></option>
+        <option
+          children="Disable"
+          value="DISABLE"
+          {...getOverrideProps(overrides, "UserStateoption1")}
+        ></option>
+        <option
+          children="Paused"
+          value="PAUSED"
+          {...getOverrideProps(overrides, "UserStateoption2")}
+        ></option>
+      </SelectField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

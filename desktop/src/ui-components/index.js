@@ -52,6 +52,8 @@ export { default as SexCreateForm } from "./SexCreateForm";
 export { default as SexUpdateForm } from "./SexUpdateForm";
 export { default as SideBar } from "./SideBar";
 export { default as SipTabMainHeader } from "./SipTabMainHeader";
+export { default as SipTabSideNav } from "./SipTabSideNav";
+export { default as SipTabSideNaveCard } from "./SipTabSideNaveCard";
 export { default as StksCategoryCreateForm } from "./StksCategoryCreateForm";
 export { default as StksCategoryUpdateForm } from "./StksCategoryUpdateForm";
 export { default as StockDataPoolCreateForm } from "./StockDataPoolCreateForm";
@@ -60,6 +62,8 @@ export { default as StocksSubCategoryCreateForm } from "./StocksSubCategoryCreat
 export { default as StocksSubCategoryUpdateForm } from "./StocksSubCategoryUpdateForm";
 export { default as TenantsCreateForm } from "./TenantsCreateForm";
 export { default as TenantsUpdateForm } from "./TenantsUpdateForm";
+export { default as UISideNavCreateForm } from "./UISideNavCreateForm";
+export { default as UISideNavUpdateForm } from "./UISideNavUpdateForm";
 export { default as UserAsignTenantCreateForm } from "./UserAsignTenantCreateForm";
 export { default as UserAsignTenantUpdateForm } from "./UserAsignTenantUpdateForm";
 export { default as UserProfileCreateForm } from "./UserProfileCreateForm";

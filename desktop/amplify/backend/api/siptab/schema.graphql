@@ -1,8 +1,17 @@
+type UISideNav @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  src: String
+  path: String
+  status: Status
+}
+
 type UserAsignTenant @model @auth(rules: [{allow: private}]) {
   id: ID!
   userSub: String
-  Status: String
+  TenantState: Status
   tenantsID: ID! @index(name: "byTenants")
+  UserState: Status
 }
 
 type UserProfile @model @auth(rules: [{allow: groups, groups: ["siptabUsers"], operations: [read]}, {allow: owner, operations: [create, read, update]}]) {
@@ -44,7 +53,7 @@ type Tenants @model @auth(rules: [{allow: public}]) {
 enum Status {
   ENABLE
   DISABLE
-  ATHER
+  PAUSED
 }
 
 type StksCategory @model @auth(rules: [{allow: public}]) {

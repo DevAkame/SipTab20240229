@@ -3,7 +3,7 @@ import { Amplify, Auth, Hub } from 'aws-amplify';
 import { withAuthenticator,  Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-import {SipTabMainHeader} from './ui-components';
+import {SipTabMainHeader, SipTabSideNav} from './ui-components';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 
 
@@ -68,11 +68,12 @@ function App() {
   return (
     <div>
       <Flex 
-      direction="column"
+      direction="row"
       alignItems="center"
       >
         {user ? (
           <div>
+            <Flex direction="row">
             <SipTabMainHeader
               width="100vw"
               max-width="2400px"
@@ -81,9 +82,17 @@ function App() {
                   src :`${process.env.PUBLIC_URL}/img/siptabIcon.png`
                 }}
               }
+              
+
             />
+            </Flex>
+            <Flex direction="column">
+            <SipTabSideNav />
             <FirthSetUpProfiles />
+            </Flex>
+
           </div>
+
         ) : (
           <>
             <p>Not Authenticated</p>

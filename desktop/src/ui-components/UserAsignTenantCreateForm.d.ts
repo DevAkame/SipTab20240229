@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { AutocompleteProps, GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { AutocompleteProps, GridProps, SelectFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -23,20 +23,23 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type UserAsignTenantCreateFormInputValues = {
     userSub?: string;
-    Status?: string;
+    TenantState?: string;
     tenantsID?: string;
+    UserState?: string;
 };
 export declare type UserAsignTenantCreateFormValidationValues = {
     userSub?: ValidationFunction<string>;
-    Status?: ValidationFunction<string>;
+    TenantState?: ValidationFunction<string>;
     tenantsID?: ValidationFunction<string>;
+    UserState?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type UserAsignTenantCreateFormOverridesProps = {
     UserAsignTenantCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     userSub?: PrimitiveOverrideProps<TextFieldProps>;
-    Status?: PrimitiveOverrideProps<TextFieldProps>;
+    TenantState?: PrimitiveOverrideProps<SelectFieldProps>;
     tenantsID?: PrimitiveOverrideProps<AutocompleteProps>;
+    UserState?: PrimitiveOverrideProps<SelectFieldProps>;
 } & EscapeHatchProps;
 export declare type UserAsignTenantCreateFormProps = React.PropsWithChildren<{
     overrides?: UserAsignTenantCreateFormOverridesProps | undefined | null;

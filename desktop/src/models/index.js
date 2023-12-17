@@ -5,12 +5,13 @@ import { schema } from './schema';
 const Status = {
   "ENABLE": "ENABLE",
   "DISABLE": "DISABLE",
-  "ATHER": "ATHER"
+  "PAUSED": "PAUSED"
 };
 
-const { UserAsignTenant, UserProfile, JobTitles, Sex, AsinUserOfTenant, Event, Tenants, StksCategory, StockDataPool, StocksSubCategory, EventStockDataPool } = initSchema(schema);
+const { UISideNav, UserAsignTenant, UserProfile, JobTitles, Sex, AsinUserOfTenant, Event, Tenants, StksCategory, StockDataPool, StocksSubCategory, EventStockDataPool } = initSchema(schema);
 
 export {
+  UISideNav,
   UserAsignTenant,
   UserProfile,
   JobTitles,

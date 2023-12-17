@@ -1,5 +1,87 @@
 export const schema = {
     "models": {
+        "UISideNav": {
+            "name": "UISideNav",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "src": {
+                    "name": "src",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "path": {
+                    "name": "path",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "status": {
+                    "name": "status",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Status"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "UISideNavs",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "private",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "UserAsignTenant": {
             "name": "UserAsignTenant",
             "fields": {
@@ -17,10 +99,12 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "Status": {
-                    "name": "Status",
+                "TenantState": {
+                    "name": "TenantState",
                     "isArray": false,
-                    "type": "String",
+                    "type": {
+                        "enum": "Status"
+                    },
                     "isRequired": false,
                     "attributes": []
                 },
@@ -29,6 +113,15 @@ export const schema = {
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
+                    "attributes": []
+                },
+                "UserState": {
+                    "name": "UserState",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Status"
+                    },
+                    "isRequired": false,
                     "attributes": []
                 },
                 "createdAt": {
@@ -972,11 +1065,11 @@ export const schema = {
             "values": [
                 "ENABLE",
                 "DISABLE",
-                "ATHER"
+                "PAUSED"
             ]
         }
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "c5b3632ed57d2370f0f26108e7813106"
+    "version": "09d3e4c73af77b61cd0863e3eb1d3aff"
 };
