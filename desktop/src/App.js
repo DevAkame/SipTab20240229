@@ -97,6 +97,7 @@ function App() {
 
         ) : (
           <>
+          <SipTabMainHeader />
             <FirthSetUpProfiles />
           </>
         )}
