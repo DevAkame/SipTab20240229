@@ -73,7 +73,7 @@ function App() {
       >
         {user ? (
           <div>
-            <Flex direction="row">
+            <Flex direction="column">
             <SipTabMainHeader
               width="100vw"
               max-width="2400px"
@@ -85,12 +85,12 @@ function App() {
               
 
             />
+            
+              <Flex direction="row">
+                <SipTabSideNav />
+                <FirthSetUpProfiles />
+              </Flex>
             </Flex>
-            <Flex direction="column">
-            <SipTabSideNav />
-            <FirthSetUpProfiles />
-            </Flex>
-
           </div>
 
         ) : (
