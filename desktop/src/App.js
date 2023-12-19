@@ -47,22 +47,24 @@ function App() {
       };
     });
   }, []);
-
+  var flugProfiles = false;
   useEffect(() => {
     if (user !== null){
       tmpObj = fechUserProfiles(user.attributes.sub);
-      console.log(tmpObj);
 
       try{
         if (tmpObj.length){
+          flugProfiles = true;
           userProfilesAry = tmpObj;
+          
         };
       } catch (error){
         console.log(error);
-        ObjsetUsreProfile = tmpObj;
       };
     };
   },user);
+
+
   
 
   return (
@@ -71,7 +73,7 @@ function App() {
       direction="row"
       alignItems="center"
       >
-        {user ? (
+        {flugProfiles ? (
           <div>
             <Flex direction="column">
             <SipTabMainHeader
@@ -88,15 +90,14 @@ function App() {
             
               <Flex direction="row">
                 <SipTabSideNav />
-                <FirthSetUpProfiles />
+                
               </Flex>
             </Flex>
           </div>
 
         ) : (
           <>
-            <p>Not Authenticated</p>
-            <SipTabMainHeader />
+            <FirthSetUpProfiles />
           </>
         )}
       </Flex>
