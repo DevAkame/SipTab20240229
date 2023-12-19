@@ -48,6 +48,8 @@ export declare type SipTabSideNavOverridesProps = {
     label4290241?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type SipTabSideNavProps = React.PropsWithChildren<Partial<FlexProps> & {
+    width?: String;
+} & {
     overrides?: SipTabSideNavOverridesProps | undefined | null;
 }>;
 export default function SipTabSideNav(props: SipTabSideNavProps): React.ReactElement;

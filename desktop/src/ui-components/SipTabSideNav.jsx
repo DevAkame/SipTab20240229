@@ -6,15 +6,17 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function SipTabSideNav(props) {
-  const { overrides, ...rest } = props;
+  const { width, overrides, ...rest } = props;
+  const sipTabSideNaveCardFourTwoNineZeroTwoFiveEightOnClick =
+    useNavigateAction({ type: "url", url: "" });
   return (
     <Flex
       gap="2px"
       direction="column"
-      width="unset"
+      width="150px"
       height="unset"
       justifyContent="flex-start"
       alignItems="flex-start"
@@ -37,6 +39,9 @@ export default function SipTabSideNav(props) {
         position="relative"
         padding="10px 10px 10px 10px"
         backgroundColor="rgba(255,255,255,1)"
+        onClick={() => {
+          sipTabSideNaveCardFourTwoNineZeroTwoFiveEightOnClick();
+        }}
         {...getOverrideProps(overrides, "SipTabSideNaveCard4290258")}
       >
         <Image
