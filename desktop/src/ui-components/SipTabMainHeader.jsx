@@ -47,8 +47,8 @@ export default function SipTabMainHeader(props) {
         {...getOverrideProps(overrides, "SipTabIconTeantFreame")}
       >
         <Image
-          width="50px"
-          height="50px"
+          width="20px"
+          height="20px"
           display="block"
           gap="unset"
           alignItems="unset"
