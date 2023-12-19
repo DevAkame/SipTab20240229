@@ -16,7 +16,7 @@ export default function SipTabSideNav(props) {
     <Flex
       gap="2px"
       direction="column"
-      width="150px"
+      width="100px"
       height="unset"
       justifyContent="flex-start"
       alignItems="flex-start"
