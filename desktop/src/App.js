@@ -7,6 +7,8 @@ import {SipTabMainHeader, SipTabSideNav} from './ui-components';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 
 
+import { createRoot } from 'react-dom/client';
+
 // imported Orign Jobs
 import { fechUserProfiles } from './custom-job/orginCustomJob';
 
@@ -21,9 +23,9 @@ function App() {
   var tmpObj = null;
   var userProfilesAry = null;
   var ObjsetUsreProfile = null;
-  const root = ReactDOM.createRoot(
-    document.getElementsByTagName('body')
-  );
+  const container = document.getElementById('app');
+  const root = createRoot(container);
+  
 
 
   useEffect(() => {
