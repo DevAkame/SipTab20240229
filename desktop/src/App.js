@@ -73,6 +73,7 @@ function App() {
       direction="row"
       alignItems="center"
       >
+        <p>{flugProfiles}</p>
         {flugProfiles ? (
           <div>
             <Flex direction="column">
