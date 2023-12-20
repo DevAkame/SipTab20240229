@@ -21,6 +21,10 @@ function App() {
   var tmpObj = null;
   var userProfilesAry = null;
   var ObjsetUsreProfile = null;
+  const root = ReactDOM.createRoot(
+    document.getElementsByTagName('body')
+  );
+
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -61,6 +65,9 @@ function App() {
       } catch (error){
         console.log(error);
       };
+      if (!flugProfiles){
+        root.render(<FirthSetUpProfiles />);
+      };
     };
   },user);
 
@@ -73,7 +80,6 @@ function App() {
       direction="row"
       alignItems="center"
       >
-        <p>{flugProfiles}</p>
         {flugProfiles ? (
           <div>
             <Flex direction="column">
