@@ -68,7 +68,7 @@ function App() {
         console.log(error);
       };
       if (!flugProfiles){
-        root.render(<FirthSetUpProfiles />);
+        root.render(<><SipTabMainHeader /><FirthSetUpProfiles /></>);
       };
     };
   },user);
