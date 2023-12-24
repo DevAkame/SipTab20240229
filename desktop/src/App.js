@@ -9,7 +9,7 @@ import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 import { createRoot } from 'react-dom/client';
 
 // amplify Views 
-import { Image } from '@aws-amplify/ui-react';
+import { View,Image } from '@aws-amplify/ui-react';
 
 // imported Orign Jobs
 import { fechUserProfiles } from './custom-job/orginCustomJob';
@@ -17,7 +17,7 @@ import { fechUserProfiles } from './custom-job/orginCustomJob';
 Amplify.configure(awsExports);
 
 
-function SignUpView(){
+function SignUpView() {
   return(
     <Flex direction="row">
       <View 
@@ -42,7 +42,7 @@ function SignUpView(){
       </View>      
     </Flex>
   )
-}
+};
 
 
 function App() {
@@ -143,6 +143,6 @@ function App() {
 }
 
 //export default withAuthenticator(App);
-export default SignUpView();
+export default SignUpView;
 
 
