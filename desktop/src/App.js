@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
-import { withAuthenticator,  Flex, View } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import {SipTabMainHeader, SipTabSideNav, SipTabSignIn} from './ui-components';
@@ -9,7 +9,7 @@ import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 import { createRoot } from 'react-dom/client';
 
 // amplify Views 
-import { View,Image } from '@aws-amplify/ui-react';
+import { View,Image,Flex } from '@aws-amplify/ui-react';
 
 // imported Orign Jobs
 import { fechUserProfiles } from './custom-job/orginCustomJob';
