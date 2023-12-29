@@ -21,7 +21,7 @@ export default function SipTabDisption(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
-      backgroundColor="rgba(64,170,191,0.5)"
+      backgroundColor="rgba(64,170,191,0.15)"
       {...getOverrideProps(overrides, "SipTabDisption")}
       {...rest}
     >
@@ -126,7 +126,7 @@ export default function SipTabDisption(props) {
         basis="0"
         alignSelf="stretch"
         position="relative"
-        padding="10px 10px 0px 10px"
+        padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "DisFooder")}
       >
         <Flex
@@ -140,6 +140,7 @@ export default function SipTabDisption(props) {
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
+          backgroundColor="rgba(255,255,255,1)"
           {...getOverrideProps(overrides, "InfoAkame")}
         >
           <Image
