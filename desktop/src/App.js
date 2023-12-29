@@ -9,10 +9,13 @@ import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 import { createRoot } from 'react-dom/client';
 
 // amplify Views 
-import { View,Image,Flex } from '@aws-amplify/ui-react';
+import { View,Flex } from '@aws-amplify/ui-react';
 
 // imported Orign Jobs
 import { fechUserProfiles } from './custom-job/orginCustomJob';
+
+// OverRide Views
+import { OrideSipTabDisption } from './custom-components/OrideSipTabDisption';
 
 Amplify.configure(awsExports);
 
@@ -20,19 +23,7 @@ Amplify.configure(awsExports);
 function SignUpView() {
   return(
     <Flex direction="row">
-      <View 
-        as="div"
-        width="50%"
-        height="auto"
-      >
-      <Image
-        alt="SipTab direction"
-        src='${process.env.PUBLIC_URL}/img/siptabIcon.png'
-        objectFit="initial"
-        width="100%"
-        height="auto"
-      ></Image>
-      </View>
+      {OrideSipTabDisption()}
       <View
         as="div"
         width="50%"

@@ -6,9 +6,11 @@
 
 export { default as AsinUserOfTenantCreateForm } from "./AsinUserOfTenantCreateForm";
 export { default as AsinUserOfTenantUpdateForm } from "./AsinUserOfTenantUpdateForm";
+export { default as Component1 } from "./Component1";
 export { default as DataAdd } from "./DataAdd";
 export { default as DataRow } from "./DataRow";
 export { default as DataRowCollection } from "./DataRowCollection";
+export { default as DisDis } from "./DisDis";
 export { default as EventCreateForm } from "./EventCreateForm";
 export { default as EventUpdateForm } from "./EventUpdateForm";
 export { default as Filters } from "./Filters";
@@ -52,10 +54,13 @@ export { default as SexCreateForm } from "./SexCreateForm";
 export { default as SexUpdateForm } from "./SexUpdateForm";
 export { default as SideBar } from "./SideBar";
 export { default as SipTabCreateAccount } from "./SipTabCreateAccount";
+export { default as SipTabDisption } from "./SipTabDisption";
+export { default as SipTabForgetPassword } from "./SipTabForgetPassword";
 export { default as SipTabMainHeader } from "./SipTabMainHeader";
 export { default as SipTabSideNav } from "./SipTabSideNav";
 export { default as SipTabSideNaveCard } from "./SipTabSideNaveCard";
 export { default as SipTabSignIn } from "./SipTabSignIn";
+export { default as SipTabSignInOrCreateAcountChangeBar } from "./SipTabSignInOrCreateAcountChangeBar";
 export { default as StksCategoryCreateForm } from "./StksCategoryCreateForm";
 export { default as StksCategoryUpdateForm } from "./StksCategoryUpdateForm";
 export { default as StockDataPoolCreateForm } from "./StockDataPoolCreateForm";
