@@ -9,10 +9,10 @@ export function OrideSipTabDisption(){
             overrides={
                 {
                     "siptab_icon 1":{
-                        src :`${process.env.PUBLIC_URL}/img/common/akame.png`
+                        src :`${process.env.PUBLIC_URL}/img/common/siptab_icon.png`
                   },
                     "LogAkame":{
-                        src :`${process.env.PUBLIC_URL}/img/common/siptab_icon.png`
+                        src :`${process.env.PUBLIC_URL}/img/common/akame.png`
                 }
             }}
         />
