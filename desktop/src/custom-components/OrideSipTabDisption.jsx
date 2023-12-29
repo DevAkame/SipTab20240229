@@ -10,11 +10,11 @@ export function OrideSipTabDisption(){
                 {
                     "siptab_icon 1":{
                         src :`${process.env.PUBLIC_URL}/img/common/akame.png`
-                  },
+                  }
                     "LogAkame":{
                         src :`${process.env.PUBLIC_URL}/img/common/siptab_icon.png`
                 }
-            }
+            }}
         />
 
     )
