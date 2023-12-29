@@ -3,7 +3,7 @@ import { Amplify, Auth, Hub } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
-import {SipTabMainHeader, SipTabSideNav, SipTabSignIn} from './ui-components';
+import {SipTabMainHeader, SipTabSideNav} from './ui-components';
 import FirthSetUpProfiles from './ui-components/FirthSetUpProfiles';
 
 import { createRoot } from 'react-dom/client';
@@ -15,7 +15,8 @@ import { View,Flex } from '@aws-amplify/ui-react';
 import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 // OverRide Views
-import { OrideSipTabDisptionView } from './custom-components/OrideSipTabDisption';
+import { SipTabDisptionView } from './custom-components/OrideSipTabDisption';
+import { SipTabLoginView } from './custom-components/OrideSipTabLogin';
 
 Amplify.configure(awsExports);
 
@@ -23,8 +24,8 @@ Amplify.configure(awsExports);
 function SignUpView() {
   return(
     <Flex direction="colomn">
-      {OrideSipTabDisptionView()}
-      {OrideSipTabDisptionView()}    
+      {SipTabDisptionView()}
+      {SipTabLoginView()}
     </Flex>
   )
 };
