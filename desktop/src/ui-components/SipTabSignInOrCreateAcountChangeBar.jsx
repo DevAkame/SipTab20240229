@@ -1,0 +1,50 @@
+/***************************************************************************
+ * The contents of this file were generated with Amplify Studio.           *
+ * Please refrain from making any modifications to this file.              *
+ * Any changes to this file will be overwritten when running amplify pull. *
+ **************************************************************************/
+
+/* eslint-disable */
+import * as React from "react";
+import { getOverrideProps } from "./utils";
+import { Button, Flex } from "@aws-amplify/ui-react";
+export default function SipTabSignInOrCreateAcountChangeBar(props) {
+  const { overrides, ...rest } = props;
+  return (
+    <Flex
+      gap="10px"
+      direction="row"
+      width="unset"
+      height="unset"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+      overflow="hidden"
+      position="relative"
+      padding="10px 10px 10px 10px"
+      backgroundColor="rgba(255,255,255,1)"
+      {...getOverrideProps(overrides, "SipTabSignInOrCreateAcountChangeBar")}
+      {...rest}
+    >
+      <Button
+        width="150px"
+        height="unset"
+        shrink="0"
+        size="small"
+        isDisabled={false}
+        variation="link"
+        children="SingIn"
+        {...getOverrideProps(overrides, "SignInBtn")}
+      ></Button>
+      <Button
+        width="150px"
+        height="unset"
+        shrink="0"
+        size="small"
+        isDisabled={true}
+        variation="link"
+        children="CreateAcount"
+        {...getOverrideProps(overrides, "CreateAcountBtn")}
+      ></Button>
+    </Flex>
+  );
+}
