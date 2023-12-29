@@ -15,22 +15,16 @@ import { View,Flex } from '@aws-amplify/ui-react';
 import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 // OverRide Views
-import { OrideSipTabDisption } from './custom-components/OrideSipTabDisption';
+import { OrideSipTabDisptionView } from './custom-components/OrideSipTabDisption';
 
 Amplify.configure(awsExports);
 
 
 function SignUpView() {
   return(
-    <Flex direction="row">
-      {OrideSipTabDisption()}
-      <View
-        as="div"
-        width="50%"
-        height="auto"
-      >
-        <SipTabSignIn />
-      </View>      
+    <Flex direction="colomn">
+      {OrideSipTabDisptionView()}
+      {OrideSipTabDisptionView()}    
     </Flex>
   )
 };

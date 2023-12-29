@@ -1,7 +1,7 @@
 import { Flex } from "@aws-amplify/ui-react";
 import { SipTabDisption } from "../ui-components";
 
-export function OrideSipTabDisption(){
+export function OrideSipTabDisptionView(){
     return(
         <SipTabDisption
             width="50vw"
