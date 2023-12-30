@@ -40,7 +40,7 @@ export default function SipTabSignInOrCreateAcountChangeBar(props) {
         height="unset"
         shrink="0"
         size="small"
-        isDisabled={true}
+        isDisabled={false}
         variation="link"
         children="CreateAcount"
         {...getOverrideProps(overrides, "CreateAcountBtn")}

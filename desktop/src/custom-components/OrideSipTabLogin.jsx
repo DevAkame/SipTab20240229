@@ -1,5 +1,5 @@
 import { Flex } from "@aws-amplify/ui-react";
-import { SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-components";
+import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-components";
 
 
 
@@ -10,15 +10,24 @@ export function SipTabLoginView(){
         width="50vw"
         height="100%"
         gap="0rem"
-        padding="auto"
+        justifyContent="center"
         >
             <SipTabSignInOrCreateAcountChangeBar 
-            width="400px"
-            height="50px"
+                width="400px"
+                height="50px"
             />
             <SipTabSignIn 
-            width="400px"
+                width="400px"
             />
+            <SipTabCreateAccount
+                width="400px"
+                display="none"
+            />
+            <SipTabForgetPassword
+                width="400px"
+                display="none"
+            />
+
         </Flex>
     )
 }
