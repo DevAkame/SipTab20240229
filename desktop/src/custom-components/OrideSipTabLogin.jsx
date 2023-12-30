@@ -9,7 +9,9 @@ export function SipTabLoginView(){
         width="50vw"
         height="100%"
         padding="auto">
-            <SipTabSignInOrCreateAcountChangeBar />
+            <SipTabSignInOrCreateAcountChangeBar 
+            height="20px"
+            />
             <SipTabSignIn />
         </Flex>
     )
