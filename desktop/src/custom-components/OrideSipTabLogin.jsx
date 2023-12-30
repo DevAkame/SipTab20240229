@@ -8,7 +8,7 @@ export function SipTabLoginView(){
         <Flex direction="column"
         width="50vw"
         height="100%"
-        padding="auto">
+        >
             <SipTabSignInOrCreateAcountChangeBar 
             height="100px"
             />
