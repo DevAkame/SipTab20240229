@@ -5,14 +5,19 @@ import { SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-component
 
 export function SipTabLoginView(){
     return(
-        <Flex direction="column"
+        <Flex
+        direction="column"
         width="50vw"
         height="100%"
+        gap="0rem"
         >
             <SipTabSignInOrCreateAcountChangeBar 
-            height="100px"
+            width="400px"
+            height="50px"
             />
-            <SipTabSignIn />
+            <SipTabSignIn 
+            width="400px"
+            />
         </Flex>
     )
 }
