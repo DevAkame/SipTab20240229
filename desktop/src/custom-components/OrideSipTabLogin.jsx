@@ -11,6 +11,7 @@ export function SipTabLoginView(){
         height="100%"
         gap="0rem"
         justifyContent="center"
+        padding-top="50px"
         >
             <SipTabSignInOrCreateAcountChangeBar 
                 width="400px"

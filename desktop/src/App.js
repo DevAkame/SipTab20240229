@@ -23,7 +23,7 @@ Amplify.configure(awsExports);
 
 function SignUpView() {
   return(
-    <Flex direction="colomn">
+    <Flex direction="column">
       {SipTabDisptionView()}
       {SipTabLoginView()}
     </Flex>
