@@ -2,9 +2,7 @@ import { Flex } from "@aws-amplify/ui-react";
 import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-components";
 
 
-function HiddenBtn(){
 
-};
 
 
 export function SipTabLoginView(){
@@ -15,11 +13,14 @@ export function SipTabLoginView(){
         height="100%"
         gap="0rem"
         justifyContent="center"
-        padding-top="50px"
+        alignItems="center"
+        paddingTop="100px"
         >
             <SipTabSignInOrCreateAcountChangeBar 
                 width="400px"
                 height="50px"
+                
+
             />
             <SipTabSignIn 
                 width="400px"
