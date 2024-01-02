@@ -24,9 +24,14 @@ export function SipTabLoginView(){
             <SipTabSignInOrCreateAcountChangeBar 
                 width="400px"
                 height="50px"
-                
-                
-
+                overrides={{
+                    "SignInBtn":{
+                        onclick:changeSignInOrCreateAccount
+                    },
+                    "CreateAcountBtn":{
+                        onclick:changeSignInOrCreateAccount
+                    }
+                }}
             />
             <SipTabSignIn 
                 width="400px"
