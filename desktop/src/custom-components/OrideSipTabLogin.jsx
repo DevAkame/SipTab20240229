@@ -3,9 +3,11 @@ import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrC
 
 
 const changeSignInOrCreateAccount = (e) => {
-    if(e == "SignInBtn"){
+    console.log(e.target.id);
+    console.log(e);
+    if(e.target.id == "SignInBtn"){
         console.log("SignInBtn")
-    }else if (e == "CreateAcountBtn"){
+    }else if (e.target.id == "CreateAcountBtn"){
         console.log("CreateAcountBtn")
     }
 };
@@ -26,10 +28,10 @@ export function SipTabLoginView(){
                 height="50px"
                 overrides={{
                     "SignInBtn":{
-                        onclick:changeSignInOrCreateAccount("SignInBtn")
+                        onclick:changeSignInOrCreateAccount
                     },
                     "CreateAcountBtn":{
-                        onclick:changeSignInOrCreateAccount("CreateAcountBtn")
+                        onclick:changeSignInOrCreateAccount
                     }
                 }}
             />
