@@ -28,7 +28,7 @@ export function SipTabLoginView(){
                 height="50px"
                 overrides={{
                     "SignInBtn":{
-                        onclick:changeSignInOrCreateAccount
+                        onclick:{console.log("test")}
                     },
                     "CreateAcountBtn":{
                         onclick:changeSignInOrCreateAccount
