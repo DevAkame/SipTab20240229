@@ -2,8 +2,13 @@ import { Flex } from "@aws-amplify/ui-react";
 import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-components";
 
 
-
-
+const changeSignInOrCreateAccount = (e) => {
+    if(e == "SignInBtn"){
+        console.log("SignInBtn")
+    }else if (e == "CreateAcountBtn"){
+        console.log("CreateAcountBtn")
+    }
+};
 
 export function SipTabLoginView(){
     return(
@@ -19,6 +24,7 @@ export function SipTabLoginView(){
             <SipTabSignInOrCreateAcountChangeBar 
                 width="400px"
                 height="50px"
+                
                 
 
             />
