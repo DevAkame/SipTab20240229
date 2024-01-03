@@ -2,9 +2,9 @@ import { Flex } from "@aws-amplify/ui-react";
 import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrCreateAcountChangeBar} from "../ui-components";
 
 
-const changeSignInOrCreateAccount = (e) => {
-    console.log(e.target.id);
-    console.log(e);
+const changeSignInOrCreateAccount = () => {
+    console.log(target.id);
+    console.log("test");
     if(e.target.id == "SignInBtn"){
         console.log("SignInBtn")
     }else if (e.target.id == "CreateAcountBtn"){
