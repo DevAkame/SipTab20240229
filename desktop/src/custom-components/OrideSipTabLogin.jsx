@@ -3,7 +3,7 @@ import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrC
 
 
 const changeSignInOrCreateAccount = () => {
-    console.log(target.id);
+    //console.log(target.id);
     console.log("test");
     if(e.target.id == "SignInBtn"){
         console.log("SignInBtn")
