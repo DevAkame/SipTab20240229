@@ -4,6 +4,7 @@ import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn,SipTabSignInOrC
 
 
 export function SipTabLoginView(){
+    document.getElementById("SignInBtn").addEventListener('click',console.log("test"),false);
     return(
         <Flex
         direction="column"
