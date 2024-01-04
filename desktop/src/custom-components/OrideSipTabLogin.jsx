@@ -12,6 +12,8 @@ const changeSignInOrCreateAccount = () => {
     }
 };
 
+document.getElementById("SignInBtn").addEventListener('click',console.log("test"),false);
+
 export function SipTabLoginView(){
     return(
         <Flex
