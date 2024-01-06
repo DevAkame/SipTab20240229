@@ -15,7 +15,7 @@ export function SipTabLoginView(){
         alignItems="center"
         paddingTop="100px"
         >
-            <SipTabSignInOrCreateAcountChangeBar 
+            <STLoginViews
                 width="400px"
                 height="50px"
                 
