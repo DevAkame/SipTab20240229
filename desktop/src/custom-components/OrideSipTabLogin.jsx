@@ -1,6 +1,6 @@
 import { Flex } from "@aws-amplify/ui-react";
 import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn} from "../ui-components";
-import STLoginViews from "./STLoginViews";
+import {STLoginViews} from "./STLoginViews";
 
 export function SipTabLoginView(){
     document.getElementById("SignInBtn").addEventListener('click',console.log("test"),false);
