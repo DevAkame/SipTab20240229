@@ -1,7 +1,7 @@
 import * as React from "react";
 import { getOverrideProps } from "../ui-components/utils";
 import { Button, Flex } from "@aws-amplify/ui-react";
-export default function STLoginViews(props) {
+export function STLoginViews(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
