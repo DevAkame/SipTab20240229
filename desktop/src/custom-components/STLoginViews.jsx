@@ -3,6 +3,9 @@ import { getOverrideProps } from "../ui-components/utils";
 import { Button, Flex } from "@aws-amplify/ui-react";
 export function STLoginViews(props) {
   const { overrides, ...rest } = props;
+  const btnhandlers = () => {
+    console.log("test")
+  };
   return (
     <Flex
       gap="10px"
@@ -27,7 +30,7 @@ export function STLoginViews(props) {
         variation="link"
         children="SingIn"
         {...getOverrideProps(overrides, "SIBtn")}
-      onClick={console.log("test")} ></Button>
+      onClick={btnhandlers} ></Button>
       <Button
         width="150px"
         height="unset"
