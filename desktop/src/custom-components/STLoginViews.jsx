@@ -33,7 +33,7 @@ export function STLoginViews(props) {
         variation="link"
         children="SingIn"
         {...getOverrideProps(overrides, "SIBtn")}
-      onClick={() => btnhandlers} ></Button>
+      onClick={() => btnhandlers()} ></Button>
       <Button
         width="150px"
         height="unset"
