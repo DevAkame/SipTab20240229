@@ -3,7 +3,7 @@ import { SipTabCreateAccount, SipTabForgetPassword, SipTabSignIn} from "../ui-co
 import {STLoginViews} from "./STLoginViews";
 
 export function SipTabLoginView(){
-    document.getElementById("SignInBtn").addEventListener('click',console.log("test"),false);
+    
     return(
         <Flex
         direction="column"
