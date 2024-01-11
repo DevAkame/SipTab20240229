@@ -19,18 +19,6 @@ export function SipTabLoginView(){
                 height="50px"
                 
             />
-            <SipTabSignIn 
-                width="400px"
-            />
-            <SipTabCreateAccount
-                width="400px"
-                display="none"
-            />
-            <SipTabForgetPassword
-                width="400px"
-                display="none"
-            />
-
         </Flex>
     )
 }
