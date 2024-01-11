@@ -2,7 +2,10 @@ import * as React from "react";
 import { getOverrideProps } from "../ui-components/utils";
 import { Button, Flex } from "@aws-amplify/ui-react";
 
-export function btnhandlers(e){
+// tmp
+import { SipTabSignIn,SipTabCreateAccount,SipTabForgetPassword } from "../ui-components";
+
+const BtnChangeCompSgnOrCrateAccount = (e) =>{
     console.log(e);
 };
 
@@ -42,18 +45,18 @@ export function STLoginViews(props) {
                     variation="link"
                     children="SingIn"
                     {...getOverrideProps(overrides, "SIBtn")}
-                    onClick={() => btnhandlers(props)} 
-                >
-                </Button>
+                    onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
+                ></Button>
                 <Button
-                  width="150px"
-                  height="unset"
-                  shrink="0"
-                  size="small"
-                  isDisabled={false}
-                  variation="link"
-                  children="CreateAcount"
-                  {...getOverrideProps(overrides, "CAcountBtn")}
+                    width="150px"
+                    height="unset"
+                    shrink="0"
+                    size="small"
+                    isDisabled={false}
+                    variation="link"
+                    children="CreateAcount"
+                    {...getOverrideProps(overrides, "CAcountBtn")}
+                    onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
                 ></Button>
             </Flex>
 
