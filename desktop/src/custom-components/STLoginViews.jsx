@@ -13,8 +13,8 @@ import {
 // tmp
 import {SipTabForgetPassword } from "../ui-components";
 
-const BtnChangeCompSgnOrCrateAccount = (e) =>{
-    console.log(e);
+const BtnChangeCompSgnOrCrateAccount = (p) =>{
+    console.log(p.children);
 };
 
 export function STLoginViews(props) {
@@ -234,8 +234,8 @@ export function STLoginViews(props) {
         ></Button>
     </Flex>
         <SipTabForgetPassword
-            width="400px"
             display="none"
+            width="400px"
         />
 
     </Flex>
