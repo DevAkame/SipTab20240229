@@ -24,7 +24,7 @@ export function STLoginViews(props) {
     <Flex
         direction="column"
         width="50vw"
-        height="100%"
+        height="auto"
         gap="0rem"
         justifyContent="center"
         alignItems="center"
@@ -35,7 +35,7 @@ export function STLoginViews(props) {
             gap="10px"
             direction="row"
             width="unset"
-            height="unset"
+            height="100px"
             justifyContent="flex-start"
             alignItems="flex-start"
             overflow="hidden"
@@ -102,7 +102,7 @@ export function STLoginViews(props) {
                 height="unset"
                 label="Email"
                 shrink="0"
-                placeholder="Placeholder"
+                placeholder="Mail Address"
                 size="small"
                 isDisabled={false}
                 labelHidden={false}
@@ -114,7 +114,7 @@ export function STLoginViews(props) {
                 height="unset"
                 label="Password"
                 shrink="0"
-                placeholder="Placeholder"
+                placeholder="password"
                 size="small"
                 isDisabled={false}
                 labelHidden={false}
