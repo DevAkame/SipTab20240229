@@ -15,6 +15,23 @@ import {SipTabForgetPassword } from "../ui-components";
 
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
     console.log(p.children);
+
+    if (p.children == "CAcountBtn"){
+        return(
+            overrides={
+                {
+                    "SipTabCreateAccount":{
+                        display:block
+                    }
+                },
+                {
+                    "SipTabSignIn":{
+                        display:none
+                    }
+                }
+            }
+        )
+    }
 };
 
 export function STLoginViews(props) {
