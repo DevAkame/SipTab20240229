@@ -11,7 +11,7 @@ import {
 
 
 // tmp
-import { SipTabSignIn,SipTabCreateAccount,SipTabForgetPassword } from "../ui-components";
+import {SipTabForgetPassword } from "../ui-components";
 
 const BtnChangeCompSgnOrCrateAccount = (e) =>{
     console.log(e);
@@ -24,7 +24,7 @@ export function STLoginViews(props) {
     <Flex
         direction="column"
         width="50vw"
-        height="auto"
+        height="unset"
         gap="0rem"
         justifyContent="center"
         alignItems="center"
@@ -142,11 +142,97 @@ export function STLoginViews(props) {
                 {...getOverrideProps(overrides, "Heading")}
             ></Heading>
         </Flex>
-
-        <SipTabCreateAccount
-            width="400px"
+{/* アカウント新規作成画面 */}
+        <Flex
             display="none"
-        />
+            gap="19px"
+            direction="column"
+            width="401px"
+            height="unset"
+            justifyContent="flex-start"
+            alignItems="center"
+            overflow="hidden"
+            position="relative"
+            padding="31px 47px 31px 47px"
+            backgroundColor="rgba(255,255,255,1)"
+            {...getOverrideProps(overrides, "SipTabCreateAccount")}
+            {...rest}
+        >
+        <Alert
+            width="unset"
+            height="unset"
+            heading="Error"
+            shrink="0"
+            alignSelf="stretch"
+            variation="error"
+            isDismissible={false}
+            hasIcon={true}
+            children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            {...getOverrideProps(overrides, "Alert")}
+        ></Alert>
+        <TextField
+            width="300px"
+            height="unset"
+            label="Email"
+            shrink="0"
+            placeholder="Placeholder"
+            size="small"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "EmailField")}
+        ></TextField>
+        <TextField
+            width="300px"
+            height="unset"
+            label="Name"
+            shrink="0"
+            placeholder="Placeholder"
+            size="small"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "NameField")}
+        ></TextField>
+        <PasswordField
+            width="300px"
+            height="unset"
+            label="Password"
+            shrink="0"
+            placeholder="Placeholder"
+            size="small"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            hideShowPassword={false}
+            {...getOverrideProps(overrides, "PasswordField")}
+        ></PasswordField>
+        <PasswordField
+            width="300px"
+            height="unset"
+            label="Confirm Password"
+            shrink="0"
+            placeholder="Placeholder"
+            size="small"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            hideShowPassword={false}
+            {...getOverrideProps(overrides, "ConfirmPasswordField")}
+        ></PasswordField>
+        <Button
+            width="unset"
+            height="unset"
+            padding="3px 0px 3px 0px"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            variation="primary"
+            children="Confirm"
+            {...getOverrideProps(overrides, "ConfirmBtn")}
+        ></Button>
+    </Flex>
         <SipTabForgetPassword
             width="400px"
             display="none"
