@@ -24,7 +24,7 @@ export function STLoginViews(props) {
     <Flex
         direction="column"
         width="50vw"
-        height="unset"
+        height="550px"
         gap="0rem"
         justifyContent="center"
         alignItems="center"
