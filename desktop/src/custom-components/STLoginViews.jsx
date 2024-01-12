@@ -24,7 +24,7 @@ export function STLoginViews(props) {
     <Flex
         direction="column"
         width="50vw"
-        height="550px"
+        height="100vh"
         gap="0rem"
         justifyContent="center"
         alignItems="center"
@@ -35,7 +35,7 @@ export function STLoginViews(props) {
             gap="10px"
             direction="row"
             width="unset"
-            height="600px"
+            height="100px"
             justifyContent="flex-start"
             alignItems="flex-start"
             overflow="hidden"
