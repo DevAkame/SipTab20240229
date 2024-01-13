@@ -35,7 +35,7 @@ export function STLoginViews(props) {
             direction="row"
             gap="10px"
             width="100%"
-            height="100px"
+            height="50px"
             justifyContent="flex-start"
             alignItems="flex-start"
             overflow="hidden"
