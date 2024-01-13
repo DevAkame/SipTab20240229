@@ -34,7 +34,7 @@ export function STLoginViews(props) {
         <Flex
             direction="row"
             gap="10px"
-            width="unset"
+            width="100%"
             height="100px"
             justifyContent="flex-start"
             alignItems="flex-start"
@@ -46,24 +46,24 @@ export function STLoginViews(props) {
             {...rest}
         >
             <Button
-                width="150px"
+                width="50%"
                 height="unset"
                 shrink="0"
                 size="small"
                 isDisabled={false}
                 variation="link"
-                children="SingIn"
+                children="SIBtn"
                 {...getOverrideProps(overrides, "SIBtn")}
                 onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
             ></Button>
             <Button
-                width="150px"
+                width="50%"
                 height="unset"
                 shrink="0"
                 size="small"
                 isDisabled={false}
                 variation="link"
-                children="CreateAcount"
+                children="CAcountBtn"
                 {...getOverrideProps(overrides, "CAcountBtn")}
                 onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
             ></Button>
