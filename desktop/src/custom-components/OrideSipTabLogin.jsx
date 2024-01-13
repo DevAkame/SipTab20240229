@@ -14,11 +14,7 @@ export function SipTabLoginView(){
         alignItems="center"
         paddingTop="100px"
         >
-            <STLoginViews
-                width="400px"
-                height="50px"
-                
-            />
+            <STLoginViews />
         </Flex>
     )
 }
