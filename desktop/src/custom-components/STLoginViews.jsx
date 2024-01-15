@@ -9,10 +9,6 @@ import {
     TextField,
   } from "@aws-amplify/ui-react";
 
-
-// tmp
-import {SipTabForgetPassword } from "../ui-components";
-
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
     console.log(p.children);
 };
@@ -26,7 +22,7 @@ export function STLoginViews(props) {
         width="50vw"
         height="100vh"
         gap="0rem"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
         paddingTop="20px"
     >
