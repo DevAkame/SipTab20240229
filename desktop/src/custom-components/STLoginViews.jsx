@@ -11,6 +11,8 @@ import {
 
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
     console.log(p.children);
+    console.log(p.id);
+    console.log(p.classname);
 };
 
 export function STLoginViews(props) {
@@ -50,7 +52,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="SIBtn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
+                onClick={(event) => BtnChangeCompSgnOrCrateAccount(props)} 
             ></Button>
             <Button
                 width="50%"
@@ -61,7 +63,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="CAcountBtn"
                 {...getOverrideProps(overrides, "CAcountBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(props)} 
+                onClick={(event) => BtnChangeCompSgnOrCrateAccount(props)} 
             ></Button>
         </Flex>
 {/* ログイン　*/}
