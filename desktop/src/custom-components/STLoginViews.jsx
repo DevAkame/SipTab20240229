@@ -10,9 +10,7 @@ import {
   } from "@aws-amplify/ui-react";
 
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
-    console.log(p.children);
-    console.log(p.id);
-    console.log(p.classname);
+    console.log(p.currentTarget);
 };
 
 export function STLoginViews(props) {
@@ -32,7 +30,7 @@ export function STLoginViews(props) {
         <Flex
             direction="row"
             gap="10px"
-            width="401px"
+            width="500px"
             height="50px"
             justifyContent="flex-start"
             alignItems="flex-start"
@@ -50,9 +48,9 @@ export function STLoginViews(props) {
                 size="small"
                 isDisabled={false}
                 variation="link"
-                children="SIBtn"
+                children="SignIn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={(event) => BtnChangeCompSgnOrCrateAccount(props)} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount} 
             ></Button>
             <Button
                 width="50%"
@@ -61,9 +59,9 @@ export function STLoginViews(props) {
                 size="small"
                 isDisabled={false}
                 variation="link"
-                children="CAcountBtn"
+                children="CreateAcount"
                 {...getOverrideProps(overrides, "CAcountBtn")}
-                onClick={(event) => BtnChangeCompSgnOrCrateAccount(props)} 
+                onClick={(event) => BtnChangeCompSgnOrCrateAccount} 
             ></Button>
         </Flex>
 {/* ログイン　*/}
