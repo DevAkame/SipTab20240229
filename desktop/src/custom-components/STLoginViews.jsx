@@ -24,13 +24,13 @@ export function STLoginViews(props) {
         gap="0rem"
         justifyContent="flex-start"
         alignItems="center"
-        paddingTop="20px"
+        paddingTop="10px"
     >
 {/* ログイン　アカウント作成表示切り替えバー */}
         <Flex
             direction="row"
             gap="10px"
-            width="100%"
+            width="401px"
             height="50px"
             justifyContent="flex-start"
             alignItems="flex-start"
