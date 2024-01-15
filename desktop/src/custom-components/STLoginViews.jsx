@@ -9,8 +9,8 @@ import {
     TextField,
   } from "@aws-amplify/ui-react";
 
-const BtnChangeCompSgnOrCrateAccount = (p) =>{
-    console.log(p);
+const BtnChangeCompSgnOrCrateAccount = (e) =>{
+    console.log(e.target);
 };
 
 export function STLoginViews(props) {
@@ -51,7 +51,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="SignIn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(this.id)} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount()} 
             ></Button>
             <Button
                 id="ActivateCreateAccount"
@@ -63,7 +63,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="CreateAcount"
                 {...getOverrideProps(overrides, "CAcountBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(this.id)} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount()} 
             ></Button>
         </Flex>
 {/* ログイン　*/}
