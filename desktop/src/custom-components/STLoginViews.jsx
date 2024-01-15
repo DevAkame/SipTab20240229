@@ -10,7 +10,7 @@ import {
   } from "@aws-amplify/ui-react";
 
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
-    console.log(currentTarget.id);
+    console.log(p);
 };
 
 export function STLoginViews(props) {
@@ -51,7 +51,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="SignIn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount()} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount(id)} 
             ></Button>
             <Button
                 id="ActivateCreateAccount"
@@ -63,7 +63,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="CreateAcount"
                 {...getOverrideProps(overrides, "CAcountBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount()} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount(id)} 
             ></Button>
         </Flex>
 {/* ログイン　*/}
