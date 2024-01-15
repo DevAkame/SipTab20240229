@@ -51,7 +51,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="SignIn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={(event) => BtnChangeCompSgnOrCrateAccount()} 
+                onClick={(event) => BtnChangeCompSgnOrCrateAccount(event)} 
             ></Button>
             <Button
                 id="ActivateCreateAccount"
