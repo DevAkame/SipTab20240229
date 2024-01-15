@@ -51,7 +51,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="SignIn"
                 {...getOverrideProps(overrides, "SIBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(id)} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount(this.id)} 
             ></Button>
             <Button
                 id="ActivateCreateAccount"
@@ -63,7 +63,7 @@ export function STLoginViews(props) {
                 variation="link"
                 children="CreateAcount"
                 {...getOverrideProps(overrides, "CAcountBtn")}
-                onClick={() => BtnChangeCompSgnOrCrateAccount(id)} 
+                onClick={() => BtnChangeCompSgnOrCrateAccount(this.id)} 
             ></Button>
         </Flex>
 {/* ログイン　*/}
