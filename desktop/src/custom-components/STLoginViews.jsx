@@ -10,7 +10,7 @@ import {
   } from "@aws-amplify/ui-react";
 
 const BtnChangeCompSgnOrCrateAccount = (p) =>{
-    console.log(p.currentTarget.id);
+    console.log(currentTarget.id);
 };
 
 export function STLoginViews(props) {
