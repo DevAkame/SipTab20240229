@@ -22,8 +22,7 @@ export function STLoginViews(props) {
         return (
             overrides={
                  "SIBtn":{
-                    isDisabled:false
-                    backgroundColor:rgba(255,255,255,1)
+                    isDisabled : {false}
                  }
             }
         )
