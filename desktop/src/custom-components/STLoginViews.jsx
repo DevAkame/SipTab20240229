@@ -16,12 +16,14 @@ export function STLoginViews(props) {
   
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
         console.log(e);
-        const IdSignIn =  "ActivateSginIn";
-        const IdCreateAcunt = "ActivateCreateAccount";
-        if(e.currentTarget.id === IdCreateAcunt){
-            var elm = document.getElementById(IdSignIn);
-            elm.style.backgroundColor = "rgba(255,255,255,1)"
-            elm.style.isDisabled = false
+        const cmpSignIn =  document.getElementById("ActivateSginIn");
+        const cmpCreateAcunt = document.getElementById("ActivateCreateAccount");
+        if(e.currentTarget.id === "ActivateCreateAccount"){
+            cmpSignIn.backgroundColor = "rgba(255,255,255,1)";
+            cmpCreateAcunt.backgroundColor = "rgba(178,34,34,1)";
+            cmpSignIn.isDisabled = "false";
+            cmpCreateAcunt.isDisabled = "true";
+
         };
     
     };
