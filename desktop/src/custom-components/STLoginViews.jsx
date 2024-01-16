@@ -16,6 +16,25 @@ export function STLoginViews(props) {
   
   const BtnChangeCompSgnOrCrateAccount = (e) =>{
     console.log(e);
+    const IdSignIn =  "ActivateSginIn";
+    const IdCreateAcunt = "ActivateCreateAccount";
+    if(e.currentTarget.id === IdCreateAcunt){
+        return (
+            overrides={
+                 "SIBtn":{
+                    isDisabled:false
+                    backgroundColor:rgba(255,255,255,1)
+                 },
+                 "CAcountBtn":{
+                    isDisabled:true
+                    backgroundColor=rgba(178,34,34,1)
+
+                 }
+
+            }
+        )
+    };
+    
 };
 
 
@@ -51,9 +70,10 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                isDisabled={false}
+                isDisabled={true}
                 variation="link"
                 children="SignIn"
+                backgroundColor="rgba(178,34,34,1)"
                 {...getOverrideProps(overrides, "SIBtn")}
                 onClick={BtnChangeCompSgnOrCrateAccount} 
             ></Button>
@@ -66,6 +86,7 @@ export function STLoginViews(props) {
                 isDisabled={false}
                 variation="link"
                 children="CreateAcount"
+                backgroundColor="rgba(255,255,255,1)"
                 {...getOverrideProps(overrides, "CAcountBtn")}
                 onClick={BtnChangeCompSgnOrCrateAccount} 
             ></Button>
