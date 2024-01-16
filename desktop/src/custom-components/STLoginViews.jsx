@@ -16,13 +16,18 @@ export function STLoginViews(props) {
   
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
         console.log(e);
-        const cmpSignIn =  document.getElementById("ActivateSginIn");
-        const cmpCreateAcunt = document.getElementById("ActivateCreateAccount");
+        const BtmSignIn =  document.getElementById("ActivateSginIn");
+        const BtmCreateAcunt = document.getElementById("ActivateCreateAccount");
+        const ViewSignIn = document.getElementById("SignInView");
+        const ViewCreateAcunt = document.getElementById("CreateAcountView");
         if(e.currentTarget.id === "ActivateCreateAccount"){
-            cmpSignIn.backgroundColor = "rgba(255,255,255,1)";
-            cmpCreateAcunt.backgroundColor = "rgba(178,34,34,1)";
-            cmpSignIn.isDisabled = "false";
-            cmpCreateAcunt.isDisabled = "true";
+            BtmSignIn.style.backgroundColor = "rgba(255,255,255,1)";
+            BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
+            BtmSignIn.isDisabled = false;
+            BtmCreateAcunt.isDisabled = true;
+
+            ViewSignIn.style.display = "none";
+            ViewCreateAcunt.style.display = "block";
 
         };
     
@@ -84,6 +89,7 @@ export function STLoginViews(props) {
         </Flex>
 {/* ログイン　*/}
         <Flex
+            id="SignInView"
             gap="35px"
             direction="column"
             width="500px"
@@ -136,6 +142,7 @@ export function STLoginViews(props) {
         </Flex>
 {/* アカウント新規作成画面 */}
         <Flex
+            id="CreateAcountView"
             display="none"
             gap="19px"
             direction="column"
