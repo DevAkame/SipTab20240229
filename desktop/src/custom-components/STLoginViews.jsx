@@ -14,21 +14,17 @@ import {
 export function STLoginViews(props) {
   const { overrides, ...rest } = props;
   
-  const BtnChangeCompSgnOrCrateAccount = (e) =>{
-    console.log(e);
-    const IdSignIn =  "ActivateSginIn";
-    const IdCreateAcunt = "ActivateCreateAccount";
-    if(e.currentTarget.id === IdCreateAcunt){
-        return (
-            overrides={
-                 "SIBtn":{
-                    isDisabled : false
-                 }
-            }
-        )
-    };
+    const BtnChangeCompSgnOrCrateAccount = (e) =>{
+        console.log(e);
+        const IdSignIn =  "ActivateSginIn";
+        const IdCreateAcunt = "ActivateCreateAccount";
+        if(e.currentTarget.id === IdCreateAcunt){
+            var elm = document.getElementById(IdSignIn);
+            elm.style.backgroundColor = "rgba(255,255,255,1)"
+            elm.style.isDisabled = false
+        };
     
-};
+    };
 
 
 
