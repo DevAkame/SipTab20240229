@@ -22,7 +22,7 @@ export function STLoginViews(props) {
         return (
             overrides={
                  "SIBtn":{
-                    isDisabled : {false}
+                    isDisabled : false
                  }
             }
         )
