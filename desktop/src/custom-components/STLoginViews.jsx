@@ -24,13 +24,7 @@ export function STLoginViews(props) {
                  "SIBtn":{
                     isDisabled:false
                     backgroundColor:rgba(255,255,255,1)
-                 },
-                 "CAcountBtn":{
-                    isDisabled:true
-                    backgroundColor=rgba(178,34,34,1)
-
                  }
-
             }
         )
     };
