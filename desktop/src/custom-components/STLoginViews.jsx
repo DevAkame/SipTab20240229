@@ -29,8 +29,8 @@ export function STLoginViews(props) {
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
             boolSignInBtn = false;
             boolCreateAcountBtn = true;
-            BtmSignIn.isDisabled = boolSignInBtn;
-            BtmCreateAcunt.isDisabled = boolCreateAcountBtn;
+            BtmSignIn.isDisabled = false;
+            BtmCreateAcunt.isDisabled = true;
 
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
@@ -72,7 +72,7 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                isDisabled={boolSignInBtn}
+                isDisabled={false}
                 variation="link"
                 children="SignIn"
                 backgroundColor="rgba(178,34,34,1)"
@@ -85,7 +85,7 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                isDisabled={boolCreateAcountBtn}
+                isDisabled={true}}
                 variation="link"
                 children="CreateAcount"
                 backgroundColor="rgba(255,255,255,1)"
