@@ -11,8 +11,12 @@ import {
 
 
 
+
 export function STLoginViews(props) {
-  const { overrides, ...rest } = props;
+    const boolSignInBtn = ture;
+    const boolCreateAcountBtn = false;
+    const { overrides, ...rest } = props;
+
   
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
         console.log(e);
@@ -23,8 +27,8 @@ export function STLoginViews(props) {
         if(e.currentTarget.id === "ActivateCreateAccount"){
             BtmSignIn.style.backgroundColor = "rgba(255,255,255,1)";
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
-            BtmSignIn.disabled = false;
-            BtmCreateAcunt.disabled = true;
+            boolSignInBtn = false;
+            boolCreateAcountBtn = true;
 
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
@@ -66,7 +70,7 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                disabled={true}
+                isDisabled={boolSignInBtn}
                 variation="link"
                 children="SignIn"
                 backgroundColor="rgba(178,34,34,1)"
@@ -79,7 +83,7 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                disabled={false}
+                isDisabled={boolCreateAcountBtn}
                 variation="link"
                 children="CreateAcount"
                 backgroundColor="rgba(255,255,255,1)"
