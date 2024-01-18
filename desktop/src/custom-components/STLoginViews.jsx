@@ -13,7 +13,7 @@ import {
 
 
 export function STLoginViews(props) {
-    const boolSignInBtn = ture;
+    const boolSignInBtn = true;
     const boolCreateAcountBtn = false;
     const { overrides, ...rest } = props;
 
