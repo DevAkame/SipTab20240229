@@ -29,6 +29,8 @@ export function STLoginViews(props) {
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
             boolSignInBtn = false;
             boolCreateAcountBtn = true;
+            BtmSignIn.isDisabled = boolSignInBtn;
+            BtmCreateAcunt.isDisabled = boolCreateAcountBtn;
 
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
