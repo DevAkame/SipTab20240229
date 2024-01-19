@@ -15,8 +15,7 @@ import {
 
 export function STLoginViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
-    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(undefined);
-    setSgnInBtnDisabled(true);
+    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
 
     const { overrides, ...rest } = props;
 
