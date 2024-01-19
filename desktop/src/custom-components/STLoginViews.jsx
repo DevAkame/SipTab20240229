@@ -22,7 +22,6 @@ export function STLoginViews(props) {
 
   
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
-        console.log(e);
         const BtmSignIn =  document.getElementById("ActivateSginIn");
         const BtmCreateAcunt = document.getElementById("ActivateCreateAccount");
         const ViewSignIn = document.getElementById("SignInView");
