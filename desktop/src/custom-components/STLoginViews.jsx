@@ -177,8 +177,6 @@ export function STLoginViews(props) {
                 shrink="0"
                 placeholder="Placeholder"
                 size="small"
-                isDisabled={false}
-                labelHidden={false}
                 variation="default"
                 {...getOverrideProps(overrides, "CreateAccountEmailField")}
             ></TextField>
@@ -189,8 +187,6 @@ export function STLoginViews(props) {
                 shrink="0"
                 placeholder="Placeholder"
                 size="small"
-                isDisabled={false}
-                labelHidden={false}
                 variation="default"
                 {...getOverrideProps(overrides, "CreateAccountNameField")}
             ></TextField>
@@ -201,8 +197,6 @@ export function STLoginViews(props) {
                 shrink="0"
                 placeholder="Placeholder"
                 size="small"
-                isDisabled={false}
-                labelHidden={false}
                 variation="default"
                 hideShowPassword={false}
                 {...getOverrideProps(overrides, "CreateAccountPasswordField")}
@@ -214,8 +208,6 @@ export function STLoginViews(props) {
                 shrink="0"
                 placeholder="Placeholder"
                 size="small"
-                isDisabled={false}
-                labelHidden={false}
                 variation="default"
                 hideShowPassword={false}
                 {...getOverrideProps(overrides, "CreateAccountConfirmPasswordField")}
@@ -227,7 +219,6 @@ export function STLoginViews(props) {
                 shrink="0"
                 alignSelf="stretch"
                 size="default"
-                isDisabled={false}
                 variation="primary"
                 children="Confirm"
                 {...getOverrideProps(overrides, "CreateAccountConfirmBtn")}
