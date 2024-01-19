@@ -34,7 +34,7 @@ export function STLoginViews(props) {
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
 
-        }else if(e.currentTarget.id === "ActivateSginIn"){
+        } else if (e.currentTarget.id === "ActivateSginIn"){
             BtmCreateAcunt.style.backgroundColor = "rgba(255,255,255,1)";
             BtmSignIn.style.backgroundColor = "rgba(178,34,34,1)";
             setcreateAcountBtnDisabled(false);
