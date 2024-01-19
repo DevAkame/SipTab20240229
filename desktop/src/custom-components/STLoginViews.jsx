@@ -15,7 +15,8 @@ import {
 
 export function STLoginViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
-    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
+    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(undefined);
+    setSgnInBtnDisabled(true);
 
     const { overrides, ...rest } = props;
 
@@ -33,6 +34,14 @@ export function STLoginViews(props) {
             setSgnInBtnDisabled(false);
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
+
+        }else if(e.currentTarget.id === "ActivateSginIn"){
+            BtmCreateAcunt.style.backgroundColor = "rgba(255,255,255,1)";
+            BtmSignIn.style.backgroundColor = "rgba(178,34,34,1)";
+            setcreateAcountBtnDisabled(false);
+            setSgnInBtnDisabled(true);
+            ViewSignIn.style.display = "block";
+            ViewCreateAcunt.style.display = "none";
 
         };
     
