@@ -6,10 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useStateMutationAction } from "./utils";
 import { Button, Flex } from "@aws-amplify/ui-react";
 export default function SipTabSignInOrCreateAcountChangeBar(props) {
   const { overrides, ...rest } = props;
+  const [createAcountBtnDisabled, setCreateAcountBtnDisabled] =
+    useStateMutationAction(undefined);
+  const signInBtnOnClick = () => {
+    setCreateAcountBtnDisabled(false);
+  };
   return (
     <Flex
       gap="10px"
@@ -33,6 +38,9 @@ export default function SipTabSignInOrCreateAcountChangeBar(props) {
         isDisabled={false}
         variation="link"
         children="SingIn"
+        onClick={() => {
+          signInBtnOnClick();
+        }}
         {...getOverrideProps(overrides, "SignInBtn")}
       ></Button>
       <Button
@@ -43,6 +51,7 @@ export default function SipTabSignInOrCreateAcountChangeBar(props) {
         isDisabled={false}
         variation="link"
         children="CreateAcount"
+        disabled={createAcountBtnDisabled}
         {...getOverrideProps(overrides, "CreateAcountBtn")}
       ></Button>
     </Flex>

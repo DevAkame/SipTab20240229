@@ -1,5 +1,6 @@
 import * as React from "react";
 import { getOverrideProps } from "../ui-components/utils";
+import { useStateMutationAction } from "../ui-components/utils";
 import {
     Alert,
     Button,
@@ -13,8 +14,7 @@ import {
 
 
 export function STLoginViews(props) {
-    const boolSignInBtn = true;
-    const boolCreateAcountBtn = false;
+    const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
     const { overrides, ...rest } = props;
 
   
@@ -27,11 +27,7 @@ export function STLoginViews(props) {
         if(e.currentTarget.id === "ActivateCreateAccount"){
             BtmSignIn.style.backgroundColor = "rgba(255,255,255,1)";
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
-            boolSignInBtn = false;
-            boolCreateAcountBtn = true;
-            BtmSignIn.isDisabled = false;
-            BtmCreateAcunt.isDisabled = true;
-
+            setcreateAcountBtnDisabled(false)
             ViewSignIn.style.display = "none";
             ViewCreateAcunt.style.display = "block";
 
@@ -85,7 +81,7 @@ export function STLoginViews(props) {
                 height="unset"
                 shrink="0"
                 size="small"
-                isDisabled={true}}
+                disabled={createAcountBtnDisabled}
                 variation="link"
                 children="CreateAcount"
                 backgroundColor="rgba(255,255,255,1)"
