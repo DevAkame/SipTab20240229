@@ -42,12 +42,9 @@ export function STLoginViews(props) {
             ViewSignIn.style.display = "block";
             ViewCreateAcunt.style.display = "none";
 
-        };
+        }
     
     };
-
-
-
   return (
     <Flex
         direction="column"
