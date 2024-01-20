@@ -14,8 +14,8 @@ import {
 
 
 export function STLoginViews(props) {
-    const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
-    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
+    const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined); // アカウント作成ビュー表示ボタンの無効制御
+    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true); // サインイン作成ビュー表示ボタンの無効制御
 
     const { overrides, ...rest } = props;
 
