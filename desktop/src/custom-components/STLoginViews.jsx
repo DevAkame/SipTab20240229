@@ -163,7 +163,7 @@ export function STLoginViews(props) {
                 labelHidden={false}
                 variation="default"
                 hideShowPassword={false}
-                value={TextSginInPasswd}
+                TextSginInPasswd={TextSginInPasswd}
                 {...getOverrideProps(overrides, "SignInPasswd")}
             ></PasswordField>
             <Button
