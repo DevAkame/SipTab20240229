@@ -8,6 +8,7 @@ import {
     Heading,
     PasswordField,
     TextField,
+    View,
   } from "@aws-amplify/ui-react";
 
 
@@ -100,9 +101,11 @@ export function STLoginViews(props) {
             ></Button>
         </Flex>
 {/* ログイン　*/}
+    <View 
+      display={SginInViewNone}
+      >
         <Flex
             id="SignInView"
-            display={SginInViewNone}
             gap="35px"
             direction="column"
             width="500px"
@@ -154,10 +157,13 @@ export function STLoginViews(props) {
                 {...getOverrideProps(overrides, "SignInSubmitBtn")}
             ></Button>
         </Flex>
+    </View>
 {/* アカウント新規作成画面 */}
+    <View
+      display={CreateAcountViewNone}
+      >
         <Flex
             id="CreateAcountView"
-            display={CreateAcountViewNone}
             gap="19px"
             direction="column"
             width="500px"
@@ -169,6 +175,7 @@ export function STLoginViews(props) {
             position="relative"
             padding="31px 47px 31px 47px"
             backgroundColor="rgba(255,255,255,1)"
+            
             {...getOverrideProps(overrides, "SipTabCreateAccount")}
             {...rest}
         >
@@ -226,6 +233,7 @@ export function STLoginViews(props) {
                 {...getOverrideProps(overrides, "CreateAccountConfirmBtn")}
             ></Button>
         </Flex>
+        </View>
     </Flex>
   );
 }
