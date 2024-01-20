@@ -14,8 +14,10 @@ import {
 
 
 export function STLoginViews(props) {
-    const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined); // アカウント作成ビュー表示ボタンの無効制御
-    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true); // サインイン作成ビュー表示ボタンの無効制御
+    const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
+    const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
+    const [CreateAcountViewNone,setCreateAcountViewNone] = useStateMutationAction("none");
+    const [SginInViewNone,setSginInViewNone] = useStateMutationAction("block");
 
     const { overrides, ...rest } = props;
 
@@ -30,16 +32,16 @@ export function STLoginViews(props) {
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
             setcreateAcountBtnDisabled(true);
             setSgnInBtnDisabled(false);
-            ViewSignIn.style.display = "none";
-            ViewCreateAcunt.style.display = "block";
+            setSginInViewNone("none");
+            setCreateAcountViewNone("block");
 
         } else if (e.currentTarget.id === "ActivateSginIn"){
             BtmCreateAcunt.style.backgroundColor = "rgba(255,255,255,1)";
             BtmSignIn.style.backgroundColor = "rgba(178,34,34,1)";
             setcreateAcountBtnDisabled(false);
             setSgnInBtnDisabled(true);
-            ViewSignIn.style.display = "block";
-            ViewCreateAcunt.style.display = "none";
+            setSginInViewNone("block");
+            setCreateAcountViewNone("none");
 
         };
     
@@ -100,6 +102,7 @@ export function STLoginViews(props) {
 {/* ログイン　*/}
         <Flex
             id="SignInView"
+            display={SginInViewNone}
             gap="35px"
             direction="column"
             width="500px"
@@ -154,7 +157,7 @@ export function STLoginViews(props) {
 {/* アカウント新規作成画面 */}
         <Flex
             id="CreateAcountView"
-            display="none"
+            display={CreateAcountViewNone}
             gap="19px"
             direction="column"
             width="500px"
