@@ -19,7 +19,8 @@ export function STLoginViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
     const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
     const [SginInConfineAccept,setSginInConfineAccept] = useStateMutationAction(true);
-    const [TextSginInEmail,TextSginInPasswd] = useStateMutationAction(null);
+    const [TextSginInEmail] = useStateMutationAction("");
+    const [TextSginInPasswd,setTextSginInPasswd] =useStateMutationAction("");
 
     const [CreateAcountViewNone,setCreateAcountViewNone] = useStateMutationAction("none");
     const [SginInViewNone,setSginInViewNone] = useStateMutationAction("block");
@@ -163,7 +164,8 @@ export function STLoginViews(props) {
                 labelHidden={false}
                 variation="default"
                 hideShowPassword={false}
-                TextSginInPasswd={TextSginInPasswd}
+                value={props.TextSginInPasswd}
+                onChange={(e) => props.setTextSginInPasswd(e.target.value)}
                 {...getOverrideProps(overrides, "SignInPasswd")}
             ></PasswordField>
             <Button
