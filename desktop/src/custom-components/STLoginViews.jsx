@@ -29,6 +29,8 @@ export function STLoginViews(props) {
     useEffect(() =>{
         if(TextSginInEmail !== null && TextSginInPasswd !== null){
             setSginInConfineAccept(false);
+        }else {
+            setSginInConfineAccept(true);
         };
 
     },[TextSginInEmail,TextSginInPasswd]);
@@ -170,7 +172,6 @@ export function STLoginViews(props) {
                 paddingTop="10px"
                 shrink="0"
                 size="small"
-                isDisabled={false}
                 variation="primary"
                 children="Confirm"
                 disabled={SginInConfineAccept}
