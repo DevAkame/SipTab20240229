@@ -19,14 +19,19 @@ export function STLoginViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
     const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
     const [SginInConfineAccept,setSginInConfineAccept] = useStateMutationAction(true);
-    
-    // form chack obj
-    cost [TextSginInEmail,TextSginInPasswd] = React.useRef();
+    const [TextSginInEmail,TextSginInPasswd] = useStateMutationAction(null);
 
     const [CreateAcountViewNone,setCreateAcountViewNone] = useStateMutationAction("none");
     const [SginInViewNone,setSginInViewNone] = useStateMutationAction("block");
 
     const { overrides, ...rest } = props;
+
+    useEffect(() =>{
+        if(TextSginInEmail !== null && TextSginInPasswd !== null){
+            setSginInConfineAccept(false);
+        };
+
+    },[TextSginInEmail,TextSginInPasswd]);
 
     
     
@@ -34,8 +39,6 @@ export function STLoginViews(props) {
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
         const BtmSignIn =  document.getElementById("ActivateSginIn");
         const BtmCreateAcunt = document.getElementById("ActivateCreateAccount");
-        const ViewSignIn = document.getElementById("SignInView");
-        const ViewCreateAcunt = document.getElementById("CreateAcountView");
         if(e.currentTarget.id === "ActivateCreateAccount"){
             BtmSignIn.style.backgroundColor = "rgba(255,255,255,1)";
             BtmCreateAcunt.style.backgroundColor = "rgba(178,34,34,1)";
