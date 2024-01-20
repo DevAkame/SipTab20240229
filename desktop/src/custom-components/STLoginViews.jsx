@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { getOverrideProps } from "../ui-components/utils";
 import { useStateMutationAction } from "../ui-components/utils";
 import {
@@ -17,11 +18,18 @@ import {
 export function STLoginViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
     const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
+    const [SginInConfineAccept,setSginInConfineAccept] = useStateMutationAction(true);
+    
+    // form chack obj
+    cost [TextSginInEmail,TextSginInPasswd] = React.useRef();
+
     const [CreateAcountViewNone,setCreateAcountViewNone] = useStateMutationAction("none");
     const [SginInViewNone,setSginInViewNone] = useStateMutationAction("block");
 
     const { overrides, ...rest } = props;
 
+    
+    
   
     const BtnChangeCompSgnOrCrateAccount = (e) =>{
         const BtmSignIn =  document.getElementById("ActivateSginIn");
@@ -46,6 +54,11 @@ export function STLoginViews(props) {
 
         };
     
+    };
+
+    const BtnSginInJob = event =>{
+        event.preventDefault();
+        console.log(TextSginInEmail,TextSginInPasswd);
     };
 
   return (
@@ -101,7 +114,8 @@ export function STLoginViews(props) {
             ></Button>
         </Flex>
 {/* ログイン　*/}
-    <View 
+    <View
+      as="div"
       display={SginInViewNone}
       >
         <Flex
@@ -130,6 +144,7 @@ export function STLoginViews(props) {
                 isDisabled={false}
                 labelHidden={false}
                 variation="default"
+                value={TextSginInEmail}
                 {...getOverrideProps(overrides, "SignInMail")}
             ></TextField>
             <PasswordField
@@ -143,6 +158,7 @@ export function STLoginViews(props) {
                 labelHidden={false}
                 variation="default"
                 hideShowPassword={false}
+                value={TextSginInPasswd}
                 {...getOverrideProps(overrides, "SignInPasswd")}
             ></PasswordField>
             <Button
@@ -154,12 +170,15 @@ export function STLoginViews(props) {
                 isDisabled={false}
                 variation="primary"
                 children="Confirm"
+                disabled={SginInConfineAccept}
+                onClick={BtnSginInJob}
                 {...getOverrideProps(overrides, "SignInSubmitBtn")}
             ></Button>
         </Flex>
     </View>
 {/* アカウント新規作成画面 */}
     <View
+      as="div"
       display={CreateAcountViewNone}
       >
         <Flex
@@ -233,7 +252,7 @@ export function STLoginViews(props) {
                 {...getOverrideProps(overrides, "CreateAccountConfirmBtn")}
             ></Button>
         </Flex>
-        </View>
+    </View>
     </Flex>
   );
 }
