@@ -141,7 +141,7 @@ export function STLoginViews(props) {
             <Button
                 width="300px"
                 height="unset"
-                padding="3px 0px 3px 0px"
+                paddingTop="10px"
                 shrink="0"
                 size="small"
                 isDisabled={false}
