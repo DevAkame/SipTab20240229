@@ -21,6 +21,10 @@ import { SipTabLoginView } from './custom-components/OrideSipTabLogin';
 Amplify.configure(awsExports);
 
 
+// router 
+
+
+
 function SignUpView() {
   return(
     <Flex direction="row">
@@ -31,7 +35,7 @@ function SignUpView() {
 };
 
 
-function App() {
+function App1() {
   const [user, setUser] = useState(null);
   var tmpObj = null;
   var userProfilesAry = null;

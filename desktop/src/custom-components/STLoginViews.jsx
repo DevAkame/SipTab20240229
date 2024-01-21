@@ -12,8 +12,6 @@ import {
     View,
   } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
-import { MailAddress } from "../ui-components";
-
 
 
 
@@ -147,6 +145,7 @@ export function STLoginViews(props) {
             backgroundColor="rgba(255,255,255,1)"
             {...getOverrideProps(overrides, "SipTabSignIns")}
             {...rest}
+            
         >
             <TextField
                 width="300px"
