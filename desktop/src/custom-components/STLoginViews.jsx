@@ -11,6 +11,8 @@ import {
     TextField,
     View,
   } from "@aws-amplify/ui-react";
+import { Auth } from "aws-amplify";
+import { MailAddress } from "../ui-components";
 
 
 
@@ -27,6 +29,8 @@ export function STLoginViews(props) {
 
     const { overrides, ...rest } = props;
 
+
+    // アカウント入力状態の監視
     useEffect(() =>{
         if(TextSginInEmail !== "" && TextSginInPasswd !== ""){
             setSginInConfineAccept(false);
@@ -35,6 +39,8 @@ export function STLoginViews(props) {
         };
 
     },[TextSginInEmail,TextSginInPasswd]);
+
+    
 
     
     
@@ -62,9 +68,11 @@ export function STLoginViews(props) {
     
     };
 
-    const BtnSginInJob = event =>{
+    const BtnSginInJob = async event =>{
         event.preventDefault();
         console.log(TextSginInEmail,TextSginInPasswd);
+        
+        console.log(await Auth.signIn(TextSginInEmail,TextSginInPasswd));
     };
 
   return (
