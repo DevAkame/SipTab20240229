@@ -15,7 +15,7 @@ import { View,Flex } from '@aws-amplify/ui-react';
 import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 // router 
-import { BrowserRouter,Route } from 'react-router-dom';
+//import { BrowserRouter,Route } from 'react-router-dom';
 import TopLoginView from './production/TopLogin';
 
 
