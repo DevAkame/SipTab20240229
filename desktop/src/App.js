@@ -22,15 +22,14 @@ Amplify.configure(awsExports);
 
 
 // router 
-import { BrowserRouter,Route } from 'react-router-dom'
+import { BrowserRouter,Route } from 'react-router-dom';
+import TopLoginView from './production/TopLogin';
 
 
 function SignUpView() {
   return(
-    <Flex direction="row">
-      <SipTabDisptionView />
-      <SipTabLoginView />
-    </Flex>
+
+    <TopLoginView />
   )
 };
 
