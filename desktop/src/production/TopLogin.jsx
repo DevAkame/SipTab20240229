@@ -11,6 +11,7 @@ export default function TopLoginView(prop){
               as="div"
               width="30vw"
               height="100vh"
+              backgroundColor="rgba(170,170,191,0.15)"
             >
                 <Flex
                   direction="column"
@@ -19,7 +20,8 @@ export default function TopLoginView(prop){
                   alignItems="center"
                   position="relative"
                   padding="0px 0px 0px 0px"
-                  backgroundColor="rgba(64,170,191,0.15)"
+                  backgroundColor="rgba(170,170,191,0.15)"
+    {/* backgroundColor="rgba(64,170,191,0.15)"*/}
                 >
 
                 </Flex>
