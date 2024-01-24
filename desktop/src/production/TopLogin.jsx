@@ -21,7 +21,6 @@ export default function TopLoginView(prop){
                   position="relative"
                   padding="0px 0px 0px 0px"
                   backgroundColor="rgba(170,170,191,0.15)"
-    {/* backgroundColor="rgba(64,170,191,0.15)"*/}
                 >
 
                 </Flex>
