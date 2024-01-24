@@ -1,4 +1,5 @@
 import { Flex, View } from "@aws-amplify/ui-react";
+import backgroundimageData from "../../public/img/common/siptab_icom.png"
 
 
 export default function TopLoginView(prop){
@@ -12,12 +13,11 @@ export default function TopLoginView(prop){
               width="30vw"
               height="100vh"
               backgroundColor="rgba(170,170,191,0.15)"
+              style={
+                backgroundImage : `url(${backgroundimageData})`
+              }
               >
-                <ImageBackground
-                  source=`${process.env.PUBLIC_URL}/img/common/siptab_icon.png`
-                  resizeMode="cover"
-                  style={styles.image}
-                >
+                
                 <Flex
                   direction="column"
                   gap="10px"
