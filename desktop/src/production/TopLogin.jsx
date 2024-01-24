@@ -14,7 +14,7 @@ export default function TopLoginView(prop){
               height="100vh"
               backgroundColor="rgba(170,170,191,0.15)"
               style={
-                backgroundImage : `url(${backgroundimageData})`
+                background : `url(${backgroundimageData})`
               }
               >
                 
