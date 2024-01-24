@@ -13,9 +13,9 @@ export default function TopLoginView(prop){
               width="30vw"
               height="100vh"
               backgroundColor="rgba(170,170,191,0.15)"
-              style={
+              style={{
                 background : `url(${backgroundimageData})`
-              }
+              }}
               >
                 
                 <Flex
