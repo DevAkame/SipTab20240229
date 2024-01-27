@@ -16,7 +16,7 @@ import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 // router 
 //import { BrowserRouter,Route } from 'react-router-dom';
-import TopLoginView from './production/TopLogin';
+import LoginView from './ui-lib/login/MainLogin';
 
 
 Amplify.configure(awsExports);
@@ -24,7 +24,7 @@ Amplify.configure(awsExports);
 function SignUpView() {
   return(
 
-    <TopLoginView />
+    <LoginView />
   )
 };
 
