@@ -1,6 +1,7 @@
 import { Flex, View } from "@aws-amplify/ui-react";
 import Foods from "../common/Foods";
 
+
 export default function LoginView(prop){
 
     return(
