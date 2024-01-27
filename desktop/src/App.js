@@ -15,7 +15,7 @@ import { View,Flex } from '@aws-amplify/ui-react';
 import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 // router 
-//import { BrowserRouter,Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import LoginView from './ui-lib/login/MainLogin';
 
 
@@ -27,6 +27,14 @@ function SignUpView() {
     <LoginView />
   )
 };
+
+function App () {
+  return(
+    <Routes>
+      <Route path='/' element={<LoginView />} />
+    </Routes>
+  )
+}
 
 
 function App1() {
@@ -127,6 +135,6 @@ function App1() {
 }
 
 //export default withAuthenticator(App);
-export default SignUpView;
+export default App;
 
 

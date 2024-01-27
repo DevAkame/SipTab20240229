@@ -1,6 +1,6 @@
 import * as React from "react";
 import { getOverrideProps } from "../../ui-components/utils";
-import { Button, Flex, View } from "@aws-amplify/ui-react";
+import { Button, Flex, View ,Image} from "@aws-amplify/ui-react";
 
 
 export default function Foods(props){
