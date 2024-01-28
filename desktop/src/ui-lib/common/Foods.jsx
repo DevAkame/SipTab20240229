@@ -5,9 +5,11 @@ import { Button, Flex, View ,Image} from "@aws-amplify/ui-react";
 
 export default function Foods(props){
     const {overrides, ...rest } = props;
+
+
     return(
         <Flex
-          gap="2px"
+          gap="0px"
           direction="row"
           width="100%"
           height="unset"
@@ -16,7 +18,7 @@ export default function Foods(props){
           alignItems="center"
           position="relative"
           padding="0px"
-          backgroundColor="rgba(255,255,255,1)"
+          backgroundColor="rgba(197,61,67,1)"
         >
             <Button
               width="100%"
@@ -41,7 +43,7 @@ export default function Foods(props){
                   width="unset"
                   height="unset"
                   fontSize="small"
-                  color="rgba(0,0,0,10)"
+                  color="rgba(255,255,255,10)"
                 >
                     Akame
                 </View>
