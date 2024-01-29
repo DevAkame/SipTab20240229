@@ -42,7 +42,7 @@ export default function  DistView(prop){
               <Foods />
             </Flex>
         
-        </>
+        </View>
 
     )
 }
