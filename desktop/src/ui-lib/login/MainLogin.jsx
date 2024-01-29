@@ -1,5 +1,5 @@
 import { Flex, View } from "@aws-amplify/ui-react";
-import Foods from "../common/Foods";
+import DistView from "./dist/MainDist";
 
 
 export default function LoginView(prop){
@@ -14,7 +14,7 @@ export default function LoginView(prop){
             <Flex 
               direction="row"
             >
-              <Foods />
+              <DistView />
             </Flex>
         </View>
     )

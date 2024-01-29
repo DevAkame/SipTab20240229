@@ -1,5 +1,4 @@
 import * as React from "react";
-import { getOverrideProps } from "../../ui-components/utils";
 import { Button, Flex, View ,Image} from "@aws-amplify/ui-react";
 
 
