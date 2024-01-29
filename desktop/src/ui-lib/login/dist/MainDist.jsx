@@ -12,12 +12,13 @@ export default function  DistView(prop){
         >
           <Flex
             direction="column"
-            justifyContent="flex-end"
+            justifyContent="start"
           >
             <View
               as="div"
               width="100%"
               height="unset"
+              padding="auto"
               backgroundColor="rgba(255,170,191,0.15)"
             >
               <Flex
