@@ -15,6 +15,7 @@ export default function LoginView(prop){
               direction="row"
             >
               <DistView />
+              <LoginAuth />
             </Flex>
         </View>
     )
