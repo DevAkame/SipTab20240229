@@ -25,18 +25,18 @@ export default function  DistView(prop){
                 direction="column"
                 justifyContent="start"
                 width="100%"
-                height="unset"
+                height="100%"
               >
                 <View
                   as="p"
                   backgroundColor="rgba(255,170,255,0.15)"
 
                 >
-                業務統合管理アプリSipTabへようこそ<br />
-                　当アプリのご利用方法ご確認の場合は下記を参照ください。
+                　業務統合管理アプリSipTabへようこそ<br />
+                当アプリのご利用方法ご確認の場合は下記を参照ください。
                 </View>
                 <Flex
-                  gap="10px"
+                  gap="5px"
                   direction="column"
                   width="unset"
                   height="unset"
