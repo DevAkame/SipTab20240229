@@ -1,5 +1,6 @@
 import { Flex, View } from "@aws-amplify/ui-react";
 import DistView from "./dist/MainDist";
+import AuthViews from "./auth/LoginAuth";
 
 
 export default function LoginView(prop){
@@ -15,7 +16,7 @@ export default function LoginView(prop){
               direction="row"
             >
               <DistView />
-              <LoginAuth />
+              <AuthViews />
             </Flex>
         </View>
     )

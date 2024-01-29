@@ -15,7 +15,7 @@ import { Auth } from "aws-amplify";
 
 
 
-export function AuthViews(props) {
+export default function AuthViews(props) {
     const [createAcountBtnDisabled,setcreateAcountBtnDisabled] = useStateMutationAction(undefined);
     const [SgnInBtnDisabled,setSgnInBtnDisabled] = useStateMutationAction(true);
     const [SginInConfineAccept,setSginInConfineAccept] = useStateMutationAction(true);
