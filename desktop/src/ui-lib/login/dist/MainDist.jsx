@@ -6,7 +6,7 @@ export default function  DistView(prop){
     return(
         <View
           as="div"
-          width="30vw"
+          width="40vw"
           height="100vh"
           backgroundColor="rgba(170,170,191,0.15)"
         >
@@ -35,6 +35,56 @@ export default function  DistView(prop){
                 業務統合管理アプリSipTabへようこそ<br />
                 　当アプリのご利用方法ご確認の場合は下記を参照ください。
                 </View>
+                <Flex
+                  gap="10px"
+                  direction="column"
+                  width="unset"
+                  height="unset"
+                  justifyContent="flex-start"
+                  alignItems="flex-start"
+                  shrink="0"
+                  position="relative"
+                  padding="10px 10px 10px 10px"
+                  {...getOverrideProps(overrides, "DisContent")}
+                >
+                  <Button
+                    width="unset"
+                    height="unset"
+                    justifyContent="flex-start"
+                    shrink="0"
+                    alignSelf="stretch"
+                    size="small"
+                    isDisabled={false}
+                    variation="link"
+                    children="SIpTabについて"
+                    {...getOverrideProps(overrides, "WhySipTab")}
+                  ></Button>
+                  <Button
+                    width="unset"
+                    height="unset"
+                    justifyContent="flex-start"
+                    shrink="0"
+                    alignSelf="stretch"
+                    size="small"
+                    isDisabled={false}
+                    variation="link"
+                    children="SipTabご利用方法"
+                    {...getOverrideProps(overrides, "DocSipTab")}
+                  ></Button>
+                  <Button
+                    width="unset"
+                    height="unset"
+                    justifyContent="flex-start"
+                    shrink="0"
+                    alignSelf="stretch"
+                    size="small"
+                    isDisabled={false}
+                    variation="link"
+                    children="お問い合わせ"
+                    {...getOverrideProps(overrides, "ContactAs")}
+                  ></Button>
+                </Flex>
+
 
               </Flex>
 
