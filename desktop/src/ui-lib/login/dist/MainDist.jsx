@@ -45,7 +45,6 @@ export default function  DistView(prop){
                   shrink="0"
                   position="relative"
                   padding="10px 10px 10px 10px"
-                  {...getOverrideProps(overrides, "DisContent")}
                 >
                   <Button
                     width="unset"
@@ -57,7 +56,6 @@ export default function  DistView(prop){
                     isDisabled={false}
                     variation="link"
                     children="SIpTabについて"
-                    {...getOverrideProps(overrides, "WhySipTab")}
                   ></Button>
                   <Button
                     width="unset"
@@ -69,7 +67,6 @@ export default function  DistView(prop){
                     isDisabled={false}
                     variation="link"
                     children="SipTabご利用方法"
-                    {...getOverrideProps(overrides, "DocSipTab")}
                   ></Button>
                   <Button
                     width="unset"
@@ -81,7 +78,6 @@ export default function  DistView(prop){
                     isDisabled={false}
                     variation="link"
                     children="お問い合わせ"
-                    {...getOverrideProps(overrides, "ContactAs")}
                   ></Button>
                 </Flex>
 
