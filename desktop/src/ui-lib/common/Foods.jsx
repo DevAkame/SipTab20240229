@@ -13,7 +13,7 @@ export default function Foods(props){
           width="100%"
           height="unset"
           alignSelf="stretch"
-          justifyContent="center"
+          justifyContent="flex-end"
           alignItems="center"
           position="relative"
           padding="0px"
