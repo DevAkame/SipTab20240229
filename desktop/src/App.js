@@ -15,7 +15,7 @@ import { fechUserProfiles } from './custom-job/orginCustomJob';
 
 
 // router 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes,Navigate} from 'react-router-dom';
 import LoginView from './ui-lib/login/MainLogin';
 
 
@@ -52,6 +52,7 @@ function App () {
   },[]);
 
   var flugProfiles = false;
+  var tmpObj = null;
   useEffect(() => {
     if (user !== null){
       tmpObj = fechUserProfiles(user.attributes.sub);
@@ -80,8 +81,6 @@ function App () {
 function App1() {
   const [user, setUser] = useState(null);
   var tmpObj = null;
-  var userProfilesAry = null;
-  var ObjsetUsreProfile = null;
   const container = document.getElementById('root');
   const root = createRoot(container);
   
