@@ -10,7 +10,6 @@ export default function LoginView(prop){
           as="div"
           width="100vw"
           height="100vh"
-          backgroundColor="rgba(170,170,191,0.15)"
         >
             <Flex 
               direction="row"
