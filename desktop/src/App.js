@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Auth, Hub } from 'aws-amplify';
-import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import {SipTabMainHeader, SipTabSideNav} from './ui-components';
@@ -48,7 +47,7 @@ function App () {
         setUserSginIn(false);
       };
     });
-
+  };
     
   },[]);
 
