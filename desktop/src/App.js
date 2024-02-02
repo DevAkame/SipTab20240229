@@ -25,7 +25,7 @@ function App () {
     try {
       const userData = await Auth.currentAuthenticatedUser();
       setUser(userData);
-      setUserSginIn(true);
+      setUserSginIn(false);
     } catch (error) {
       setUser(null);
       setUserSginIn(false);
