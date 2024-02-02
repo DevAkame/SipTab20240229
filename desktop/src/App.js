@@ -65,8 +65,7 @@ function App () {
 
   return(
     <Routes>
-      <Route path='/' element={ userSginIn ? <LoginView /> : <Navigate replace to="/login" />} />
-      <Route path='/login' element={<LoginView />} />
+      <Route path='/' element={<LoginView />} />
     </Routes>
   )
 };
