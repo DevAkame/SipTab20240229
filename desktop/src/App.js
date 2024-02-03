@@ -31,7 +31,7 @@ function App () {
 
   Hub.listen('auth',(data) =>{
     const payload = data;
-    console,log(payload.event);
+    console.log(payload.event);
     if (payload.event === 'signOut'){
       setUser(null);
     };
