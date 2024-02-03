@@ -17,19 +17,21 @@ Amplify.configure(awsExports);
 
 function App () {
   const [user,setUser ] = useState(null);
-  const [userProfile,setUserProfile] =useState(null);
-  const [userSginIn,setUserSginIn] =false;
+
 
   useEffect(() => {
     const fetchUserData = async () =>{
       try {
+        console.log("test1");
         await setUser(Auth.currentAuthenticatedUser());
+        console.log("test2");
       } catch (error){
         console.log(error);
         setUser(null);
       }
     };
   },[]);
+
   return(
     <Routes>
       <Route path='/' element={<LoginView />} />
