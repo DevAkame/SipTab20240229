@@ -23,7 +23,7 @@ function App () {
     const fetchUserData = async () =>{
       try {
         console.log("test1");
-        await setUser(Auth.currentAuthenticatedUser());
+        setUser(await Auth.currentAuthenticatedUser());
         console.log("test2");
       } catch (error){
         console.log(error);
