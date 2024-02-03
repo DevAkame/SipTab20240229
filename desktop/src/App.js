@@ -22,36 +22,22 @@ function App () {
 
   useEffect(() => {
     const fetchUserData = async () =>{
-    try {
-      const userData = await Auth.currentAuthenticatedUser();
-      setUser(userData);
-      setUserSginIn(false);
-    } catch (error) {
-      setUser(null);
-      setUserSginIn(false);
-    };
-
-    fetchUserData();
-
-    Hub.listen('auth', (data) => {
-      const { payload } = data;
-      if (payload.event === 'signOut') {
-        // ユーザーがログアウトした場合の処理
+      try {
+        await setUser(Auth.currentAuthenticatedUser());
+      } catch (error){
+        console.log(error);
         setUser(null);
-        setUserSginIn(false);
-      };
-    });
-  };
-    
+      }
+    };
   },[]);
-
-
   return(
     <Routes>
-      <Route path='/' element={<LoginView />} />
+      <Route path='/login' element={<LoginView />} />
     </Routes>
   )
 };
 
 
 export default App;
+
+
