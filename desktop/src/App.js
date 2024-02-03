@@ -4,7 +4,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
 // router 
-import { Route,Navigate, BrowserRouter} from 'react-router-dom';
+import { Route,Navigate, BrowserRouter, Router} from 'react-router-dom';
 
 // imported Compornent
 import LoginView from './ui-lib/login/MainLogin';
@@ -39,12 +39,12 @@ function App () {
   });
 
   return(
-    <BrowserRouter>
+    <Router>
       <switch>
         <Route path='/login' element={<MainHomeViews />} />
         <Route path='/' element={ user ? <LoginView /> : <Navigate replace to="/login" />} />
       </switch>
-    </BrowserRouter>
+      </Router>
   )
 };
 
