@@ -4,10 +4,11 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
 // router 
-import { Route, Routes,Navigate} from 'react-router-dom';
+import { Route,Navigate, BrowserRouter} from 'react-router-dom';
 
 // imported Compornent
 import LoginView from './ui-lib/login/MainLogin';
+import MainHomeViews from './ui-lib/home/MainHome';
 
 
 Amplify.configure(awsExports);
@@ -38,10 +39,12 @@ function App () {
   });
 
   return(
-    <Routes>
-      <Route path='/login' element={<LoginView />} />
-      <Route path='/' element={ user ? <LoginView /> : <Navigate replace to="/login" />} />
-    </Routes>
+    <BrowserRouter>
+      <switch>
+        <Route path='/login' element={<LoginView />} />
+        <Route path='/' element={ user ? <MainHomeViews /> : <Navigate replace to="/login" />} />
+      </switch>
+    </BrowserRouter>
   )
 };
 
