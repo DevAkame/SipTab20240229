@@ -40,10 +40,9 @@ function App () {
 
   return(
     <Router>
-      <switch>
+
         <Route path='/login' element={<LoginView />} />
         <Route path='/' element={ user ? <LoginView /> : <Navigate replace to="/login" />} />
-      </switch>
       </Router>
   )
 };
