@@ -39,8 +39,10 @@ function App () {
   });
 
   return(
-    
-    <MainHomeViews />
+    <Router>
+      <Route path='/' element={<MainHomeViews /> } />
+      <Route path='/login' element={<LoginView />} />
+    </Router>
     
   )
 };
