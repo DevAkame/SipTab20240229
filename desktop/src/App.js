@@ -32,7 +32,7 @@ function App () {
   },[]);
   return(
     <Routes>
-      <Route path='/login' element={<LoginView />} />
+      <Route path='/' element={<LoginView />} />
     </Routes>
   )
 };
