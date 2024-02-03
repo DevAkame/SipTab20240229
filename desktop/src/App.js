@@ -41,8 +41,8 @@ function App () {
   return(
     <BrowserRouter>
       <switch>
-        <Route path='/login' element={<LoginView />} />
-        <Route path='/' element={ user ? <MainHomeViews /> : <Navigate replace to="/login" />} />
+        <Route path='/login' element={<MainHomeViews />} />
+        <Route path='/' element={ user ? <LoginView /> : <Navigate replace to="/login" />} />
       </switch>
     </BrowserRouter>
   )
