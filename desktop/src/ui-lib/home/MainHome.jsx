@@ -3,7 +3,7 @@ import * as React from "react";
 
 export default function MainHomeViews(props){
     return(
-        <View>test1</View>
+        <View as="div">test1</View>
         
     );
 
