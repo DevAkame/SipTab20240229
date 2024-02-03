@@ -3,9 +3,6 @@ import { Amplify, Auth, Hub } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
-// imported Orign Jobs
-import { fechUserProfiles } from './custom-job/orginCustomJob';
-
 // router 
 import { Route, Routes,Navigate} from 'react-router-dom';
 
@@ -32,9 +29,18 @@ function App () {
     };
   },[]);
 
+  Hub.listen('auth',(data) =>{
+    const payload = data;
+    console,log(payload.event);
+    if (payload.event === 'signOut'){
+      setUser(null);
+    };
+  });
+
   return(
     <Routes>
-      <Route path='/' element={<LoginView />} />
+      <Route path='/login' element={<LoginView />} />
+      <Route path='/' element={ user ? <LoginView /> : <Navigate replace to="/login" />} />
     </Routes>
   )
 };
