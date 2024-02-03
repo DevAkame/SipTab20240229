@@ -40,10 +40,12 @@ function App () {
 
   return(
     <Routes>
-      <Route path='/' element={<MainHomeViews /> } />
-      <Route path='/login' element={<LoginView />} />
+      <Route path='/login' element={<LoginView /> } />
+      <Route path='/' element={user ? <MainHomeViews /> : <Navigate replace to="/login" />} />
+
     </Routes>
-    
+   
+
   )
 };
 
