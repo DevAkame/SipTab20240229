@@ -68,7 +68,8 @@ export default function AuthViews(props) {
 
     const BtnSginInJob = async event =>{
         event.preventDefault();
-        props.SetUser(await Auth.signIn(TextSginInEmail,TextSginInPasswd));
+        await Auth.signIn(TextSginInEmail,TextSginInPasswd);
+        await props.setUser(await Auth.currentAuthenticatedUser());
     };
 
   return (
