@@ -4,7 +4,7 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 
 // router 
-import { Route,Navigate, Router, Routes} from 'react-router-dom';
+import { Route,Navigate, Routes} from 'react-router-dom';
 
 // imported Compornent
 import LoginView from './ui-lib/login/MainLogin';
