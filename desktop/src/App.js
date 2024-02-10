@@ -9,6 +9,7 @@ import { Route,Navigate, Routes} from 'react-router-dom';
 // imported Compornent
 import LoginView from './ui-lib/login/MainLogin';
 import MainHomeViews from './ui-lib/home/MainHome';
+import { Button, View } from '@aws-amplify/ui-react';
 
 
 Amplify.configure(awsExports);
@@ -17,11 +18,14 @@ Amplify.configure(awsExports);
 function PreApp() {
   const [count,setCount] = useState(0);
   return(
-    <div className='App'>
-      <h1>Count:{count}</h1>
-      <button onClick={()=> setCount(count + 1)}>UP</button>
-      <button onClick={()=> setCount(count - 1 )}>down</button>
-    </div>
+    <View
+      as='div'>
+      <View
+      as='div'>Count:{count}
+      </View>
+      <Button onClick={()=> setCount(count + 1)}>UP</Button>
+      <Button onClick={()=> setCount(count - 1 )}>down</Button>
+    </View>
   );
 };
 
