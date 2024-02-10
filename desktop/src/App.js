@@ -14,7 +14,7 @@ import MainHomeViews from './ui-lib/home/MainHome';
 Amplify.configure(awsExports);
 
 
-function preApp() {
+function PreApp() {
   const [count,setCount] = useState(0);
   return(
     <div className='App'>
@@ -63,6 +63,6 @@ function App () {
 
 //export default App;
 // test
-export default preApp;
+export default PreApp;
 
 
