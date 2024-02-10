@@ -13,6 +13,18 @@ import MainHomeViews from './ui-lib/home/MainHome';
 
 Amplify.configure(awsExports);
 
+
+function pre() {
+  const [count,setCount] = useState(0);
+  return(
+    <div className='App'>
+      <h1>Count:{count}</h1>
+      <button onClick={()=> setCount(count + 1)}>UP</button>
+      <button onClick={()=> setCount(count - 1 )}>down</button>
+    </div>
+  );
+};
+
 function App () {
   const [user,setUser ] = useState(null);
 
@@ -49,7 +61,8 @@ function App () {
   )
 };
 
-
-export default App;
+//export default App;
+// test
+export default pre;
 
 
