@@ -21,10 +21,8 @@ function PreApp() {
     <View
       as='div'>
       <View
-      as='div'>Count:{count}
+      as='p'>Count:{count}
       </View>
-      <Button onClick={()=> setCount(count + 1)}>UP</Button>
-      <Button onClick={()=> setCount(count - 1 )}>down</Button>
     </View>
   );
 };
