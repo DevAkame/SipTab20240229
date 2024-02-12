@@ -28,7 +28,7 @@ variation="link"
 children={count}
 backgroundColor="rgba(255,255,255,1)"
 onClick={() => dispatch(increase())}
-></Button>
+>{count}</Button>
   );
 };
 
