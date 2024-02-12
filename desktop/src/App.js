@@ -18,17 +18,20 @@ Amplify.configure(awsExports);
 function PreApp() {
   const [count,setCount] = useState(0);
   return(
-    <Button
-                    width="unset"
-                    height="unset"
-                    justifyContent="flex-start"
-                    shrink="0"
-                    alignSelf="stretch"
-                    size="small"
-                    isDisabled={false}
-                    variation="link"
-                    children="SIpTabについて"
-                  ></Button>
+    <View
+      as='div'>
+      <View
+      as='p'>Count:{count}
+      </View>
+      <Button 
+      children="UP"
+      onClick={()=> setCount(count + 1)}>
+      </Button>
+      <Button 
+      children="down"
+      onClick={()=> setCount(count - 1 )}></Button>
+
+    </View>
   );
 };
 
