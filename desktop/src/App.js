@@ -29,7 +29,6 @@ disabled={false}
 variation="link"
 children={count}
 backgroundColor="rgba(255,255,255,1)"
-{...getOverrideProps(overrides, "CAcountBtn")}
 onClick={()=> setCount(count + 1)}
 ></Button>
   );
