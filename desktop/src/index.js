@@ -8,13 +8,13 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
   <Provider store={store}>
-    {/*<BrowserRouter>*/}
+    <BrowserRouter>
       <App />
-{/*    </BrowserRouter>*/}
-  </Provider>,
-  document.getElementById('root')
+    </BrowserRouter>
+  </Provider>
 );
 
 reportWebVitals();
