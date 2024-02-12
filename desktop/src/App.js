@@ -5,14 +5,14 @@ import awsExports from './aws-exports';
 import { Button } from '@aws-amplify/ui-react';
 
 
-import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { increase } from './redux/TmpSlider';
 
 Amplify.configure(awsExports);
 
 
 function App() {
-  const count = useSelector ((state) => state.counter.count);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
 
   return(
@@ -28,7 +28,7 @@ variation="link"
 children={count}
 backgroundColor="rgba(255,255,255,1)"
 onClick={() => dispatch(increase())}
->{count}</Button>
+></Button>
   );
 };
 
