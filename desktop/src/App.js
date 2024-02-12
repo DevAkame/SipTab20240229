@@ -18,20 +18,20 @@ Amplify.configure(awsExports);
 function PreApp() {
   const [count,setCount] = useState(0);
   return(
-    <View
-      as='div'>
-      <View
-      as='p'>Count:{count}
-      </View>
-      <Button 
-      children="UP"
-      onClick={()=> setCount(count + 1)}>
-      </Button>
-      <Button 
-      children="down"
-      onClick={()=> setCount(count - 1 )}></Button>
 
-    </View>
+<Button
+id="ActivateCreateAccount"
+width="50%"
+height="unset"
+shrink="0"
+size="small"
+disabled={false}
+variation="link"
+children={count}
+backgroundColor="rgba(255,255,255,1)"
+{...getOverrideProps(overrides, "CAcountBtn")}
+onClick={()=> setCount(count + 1)}
+></Button>
   );
 };
 
