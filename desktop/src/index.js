@@ -11,11 +11,7 @@ import PreApp from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
       <PreApp />
-    </BrowserRouter>
-  </Provider>
 );
 
 reportWebVitals();
