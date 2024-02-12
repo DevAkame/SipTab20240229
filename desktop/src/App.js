@@ -23,6 +23,14 @@ function PreApp() {
       <View
       as='p'>Count:{count}
       </View>
+      <Button 
+      children="UP"
+      onClick={()=> setCount(count + 1)}>
+      </Button>
+      <Button 
+      children="down"
+      onClick={()=> setCount(count - 1 )}></Button>
+
     </View>
   );
 };
