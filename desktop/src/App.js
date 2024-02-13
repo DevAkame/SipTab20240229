@@ -13,7 +13,6 @@ Amplify.configure(awsExports);
 
 
 function App() {
-  const count = useSelector((state) => state.counter.count);
   const {hello,loading,error} = useSelector((state) => state.hello);
 
   const dispatch = useDispatch();
@@ -37,7 +36,7 @@ variation="link"
 children="test"
 backgroundColor="rgba(255,255,255,1)"
 onClick={() => dispatch(getUsers())}
-></Button>
+>test</Button>
 
   );
 };
