@@ -7,16 +7,23 @@ import { Button } from '@aws-amplify/ui-react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { increase } from './redux/counter';
+import { getUsers } from './redux/userSlice';
 
 Amplify.configure(awsExports);
 
 
 function App() {
   const count = useSelector((state) => state.counter.count);
-  console.log(count);
+  const {hello,loading,error} = useSelector((state) => state.hello);
+
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUsers());
+  },[dispatch]);
+
 
   return(
+
 
 <Button
 id="ActivateCreateAccount"
@@ -26,10 +33,11 @@ shrink="0"
 size="small"
 disabled={false}
 variation="link"
-children={count}
+children={hello}
 backgroundColor="rgba(255,255,255,1)"
-onClick={() => dispatch(increase())}
+onClick={() => dispatch(getUsers())}
 ></Button>
+
   );
 };
 
