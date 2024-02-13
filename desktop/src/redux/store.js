@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducter from './TmpSlider';
+import {counterReducer} from "./TmpSlider"
 
 
 export const store = configureStore({
     reducter: {
-        counter: counterReducter,
+        counter: counterReducer,
     },
 });
