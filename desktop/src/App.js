@@ -19,6 +19,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());
+    console.log(hello)
   },[dispatch]);
 
 
@@ -42,5 +43,3 @@ onClick={() => dispatch(getUsers())}
 };
 
 export default App;
-
-

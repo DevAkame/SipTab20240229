@@ -30,5 +30,6 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const userReducer = userSlice.reducer;
 
 
