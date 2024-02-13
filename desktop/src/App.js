@@ -19,7 +19,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());
-    console.log(hello)
+    console.log(hello);
   },[dispatch]);
 
 
@@ -34,7 +34,7 @@ shrink="0"
 size="small"
 disabled={false}
 variation="link"
-children={hello}
+children="test"
 backgroundColor="rgba(255,255,255,1)"
 onClick={() => dispatch(getUsers())}
 ></Button>
