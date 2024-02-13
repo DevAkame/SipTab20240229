@@ -13,6 +13,7 @@ Amplify.configure(awsExports);
 
 function App() {
   const count = useSelector((state) => state.counter.count);
+  console.log(count);
   const dispatch = useDispatch();
 
   return(
