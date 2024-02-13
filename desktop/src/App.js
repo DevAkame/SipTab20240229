@@ -6,7 +6,7 @@ import { Button } from '@aws-amplify/ui-react';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { increase } from './redux/TmpSlider';
+import { increase } from './redux/counter';
 
 Amplify.configure(awsExports);
 
