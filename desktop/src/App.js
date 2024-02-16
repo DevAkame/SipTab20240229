@@ -7,7 +7,7 @@ import { Button } from '@aws-amplify/ui-react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { increase } from './redux/counter';
-import { getUsers } from './redux/userSlice';
+import { getSession } from './redux/userSlice';
 
 Amplify.configure(awsExports);
 
@@ -17,7 +17,7 @@ function App() {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUsers());
+    dispatch(getSession());
     console.log(hello);
   },[dispatch]);
 
@@ -35,7 +35,7 @@ disabled={false}
 variation="link"
 children="test"
 backgroundColor="rgba(255,255,255,1)"
-onClick={() => dispatch(getUsers())}
+onClick={() => getSession()}
 >test</Button>
 
   );
