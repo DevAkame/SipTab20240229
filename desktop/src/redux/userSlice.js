@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useReducer } from "react";
 
 const urlHello = 'https://yf3f8gsib9.execute-api.ap-northeast-1.amazonaws.com/default/userauth-staging'
 
@@ -19,6 +20,7 @@ const userSlice = createSlice({
     },
 });
 
-export default userSlice.reducer;
+export const userReducer = userSlice.reducer;
+
 
 
