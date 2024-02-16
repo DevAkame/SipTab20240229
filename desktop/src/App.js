@@ -6,7 +6,6 @@ import { Button } from '@aws-amplify/ui-react';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { increase } from './redux/counter';
 import { getSession } from './redux/userSlice';
 
 Amplify.configure(awsExports);
@@ -19,7 +18,7 @@ function App() {
   useEffect(() => {
     dispatch(getSession());
     console.log(hello);
-  },[dispatch]);
+  },);
 
 
   return(
@@ -35,8 +34,7 @@ disabled={false}
 variation="link"
 children={getSession()}
 backgroundColor="rgba(255,255,255,1)"
-onClick={() => getSession()}
->{getSession()}</Button>
+>{user.session}</Button>
 
   );
 };
