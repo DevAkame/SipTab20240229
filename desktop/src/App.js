@@ -33,10 +33,10 @@ shrink="0"
 size="small"
 disabled={false}
 variation="link"
-children="test"
+children={getSession()}
 backgroundColor="rgba(255,255,255,1)"
 onClick={() => getSession()}
->test</Button>
+>{getSession()}</Button>
 
   );
 };
