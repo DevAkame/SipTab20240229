@@ -20,7 +20,7 @@ const userSlice = createSlice({
     },
 });
 
-export const userReducer = userSlice.reducer;
+export const userReducer = userSlice.extraReducers;
 
 
 
