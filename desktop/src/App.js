@@ -32,9 +32,9 @@ shrink="0"
 size="small"
 disabled={false}
 variation="link"
-children={getSession()}
+onClick={getSession()}
 backgroundColor="rgba(255,255,255,1)"
->{state.session}</Button>
+>"test"</Button>
 
   );
 };
