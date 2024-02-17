@@ -34,7 +34,7 @@ disabled={false}
 variation="link"
 children={getSession()}
 backgroundColor="rgba(255,255,255,1)"
->{user.session}</Button>
+>{state.hello}</Button>
 
   );
 };
