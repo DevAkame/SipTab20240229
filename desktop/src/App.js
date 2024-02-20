@@ -5,8 +5,7 @@ import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import store from './store';
-import Home from './components/Home'; // 仮のコンポーネント名
-
+import {MainHomeViews} from './ui-lib/home/MainHome';
 Amplify.configure(awsconfig);
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
       <AmplifyAuthenticator>
         <Router>
           <div>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" element={<MainHomeViews />} />
             {/* 他のルートをここに追加 */}
           </div>
         </Router>
