@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import store from './redux/store';
-import {MainHomeViews} from './ui-lib/home/MainHome';
+import MainHomeViews from './ui-lib/home/MainHome';
 Amplify.configure(awsconfig);
 
 function App() {
