@@ -1,31 +1,54 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const getUsers = createAsyncThunk('users/getUsers', async () => {
-  return await fetch('https://jsonplaceholder.typicode.com/users').then((res) =>
-    res.json()
-  );
-});
-
-const usersSlice = createSlice({
-  name: 'users',
+export const authSlice = createSlice({
+  name: 'auth',
   initialState: {
-    users: [],
-    loading: false,
-    error: false,
+    user: null,
+    isAuthenticated: false,
+    isLoading: false,
+    error: null,
   },
-  extraReducers: {
-    [getUsers.pending]: (state) => {
-      state.loading = true;
+  reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload;
+      state.isAuthenticated = !!action.payload;
+      state.isLoading = false;
     },
-    [getUsers.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.users = action.payload;
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
-    [getUsers.rejected]: (state) => {
-      state.loading = false;
-      state.error = true;
+    setError: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    },
+    clearError: (state) => {
+      state.error = null;
     },
   },
 });
 
-export default usersSlice.reducer;
+export const { setUser, setLoading, setError, clearError } = authSlice.actions;
+
+export default authSlice.reducer;
+
+// ログイン処理
+export const login = (username, password) => async (dispatch) => {
+  dispatch(setLoading(true));
+  try {
+    // Cognitoのログイン処理
+    // 成功したらdispatch(setUser(user))
+  } catch (error) {
+    dispatch(setError(error.message));
+  }
+};
+
+// ログアウト処理
+export const logout = () => async (dispatch) => {
+  dispatch(setLoading(true));
+  try {
+    // Cognitoのログアウト処理
+    // 成功したらdispatch(setUser(null))
+  } catch (error) {
+    dispatch(setError(error.message));
+  }
+};
