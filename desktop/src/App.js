@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import MainHomeViews from './ui-lib/home/MainHome';
-import store from './redux/store';
+import authstore from './redux/store';
 Amplify.configure(awsconfig);
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={authstore}>
         <Router>
           <div>
             <Route exact path="/" element={<MainHomeViews />} />
