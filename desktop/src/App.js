@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import store from './redux/store';
 import MainHomeViews from './ui-lib/home/MainHome';
+import store from './redux/store';
 Amplify.configure(awsconfig);
 
 function App() {
